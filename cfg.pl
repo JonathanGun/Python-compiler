@@ -1,21 +1,10 @@
 :- use_module(library(dcg/basics)).
+:- use_module(library(pio)).
+:- include(number).
+:- include(alphabet).
 
-s -->
-	number.
-number -->
-	int;float;complex.
-digit -->
-	"1";"2";"3";"4";"5";"6";"7";"8";"9";"0".
-int -->
-	digit;
-	(
-		digit,
-		int
-	).
-float -->
-	int, ".", int.
-complex -->
-	(float;int), "+", (float;int), "j".
-
-cfg(X) :-
-	phrase(s, X, []),format('~s~n', [X]).
+start(X) :-
+	phrase_from_file(X, 'input1.txt').
+start(Z, X) :-
+	string_codes(X, Y),
+	phrase(Z, Y).
