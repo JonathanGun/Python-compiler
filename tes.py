@@ -8,10 +8,11 @@ print(a, b)
 
 print("TESSS")
 print(type({'a','b',}))
-print(5<>5)
 while 2.5678:
     print(1)
     break
+
+print({1:1,1:"asd","2":"a"})
 
 b = 5 + 5j
 print(1 == (1 - 0.00000j))

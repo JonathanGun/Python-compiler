@@ -6,15 +6,22 @@ uppercase -->
     "A";"B";"C";"D";"E";"F";"G";"H";"I";"J";"K";"L";"M";"N";"O";"P";"Q";"R";"S";"T";"U";"V";"W";
     "X";"Y";"Z".
 
+letter -->
+	lowercase;uppercase.
+
 symbol -->
     "`";"~";"!";"@";"#";"$";"%";"^";"&";"*";"(";")";"-";"_";"=";"+";"{";"[";"}";"]";"\\";"|";";";
     ":";"'";"\"";",";"<";".";">";"/";"?";" ".
 
-sentences -->
-    (lowercase,sentences) ; (uppercase,sentences); (symbol,sentences); symbol; lowercase ; uppercase.
+alphanumeric -->
+    (letter,(eps;alphanumeric));
+    (digit,(eps;alphanumeric)).
+
+string_body -->
+    (lowercase,string_body) ; (uppercase,string_body); (symbol,string_body); symbol; lowercase ; uppercase.
 
 string -->
-	("'", sentences, "'") ; ("\"", sentences, "\"").
+	("'", string_body, "'") ; ("\"", string_body, "\"").
 
 
 

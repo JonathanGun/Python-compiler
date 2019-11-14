@@ -4,20 +4,32 @@ datatype -->
 none -->
 	"None".
 
+element_single -->
+	any_blanks, datatype, any_blanks.
+
 element -->
-	(datatype);(datatype,",",element).
+	(element_single;(element_single,",",any_element)).
+
+any_element -->
+	eps;element.
+
+dict_element_single -->
+	any_blanks, datatype, any_blanks, ":", any_blanks, datatype, any_blanks.
 
 dict_element -->
-	(datatype, ":", datatype);(datatype, ":", datatype, ",", dict_element).
+	dict_element_single;(dict_element_single, ",", any_dict_element).
+
+any_dict_element -->
+	eps;dict_element.
 
 set -->
-	"{",element,"}".
+	"{",any_element,"}".
 
 list -->
-	"[",element,"]".
+	"[",any_element,"]".
 
 tuple -->
-	"(",element,")".
+	"(",any_element,")".
 
 dict -->
-	"{", dict_element, "}".
+	"{", any_dict_element, "}".
