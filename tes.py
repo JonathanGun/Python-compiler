@@ -42,7 +42,7 @@ if 1:
     \
 			print("COBA INDENT")
 print("INI")
-
+print("\O")
 
 class __b__:
     print(a)
