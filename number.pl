@@ -9,6 +9,7 @@ int -->
 		int
 	).
 float -->
-	int, ".", int.
+	((eps;int), ".", int);
+	(int, ".", (eps;int)).
 complex -->
-	(float;int), "+", (float;int), "j".
+	(float;int), (eps;blanks), "+", (eps;blanks), (float;int), "j".
