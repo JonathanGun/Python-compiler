@@ -2,7 +2,7 @@
 :- include(util).
 :- include(number).
 :- include(alphabet).
-:- include(operator).
+
 
 start(X) :-
 	phrase_from_file(X, 'input1.txt').
