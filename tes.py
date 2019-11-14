@@ -8,7 +8,7 @@ print(a, b)
 
 print("TESSS")
 print(type({'a','b',}))
-
+print(5<>5)
 while 2.5678:
     print(1)
     break
@@ -25,6 +25,9 @@ x: int = True
 print(x)
 x = []
 print(x)
+
+print(not (5 not in [5]))
+print(5 + 1 + 5j and [] is 391 & 132 or "5agvbahjsjkd" and 4 or 13781)
 
 print(
 "§◄",

@@ -7,9 +7,11 @@ int -->
 	(
 		digit,
 		int
-	).
+	);
+	"True";
+	"False".
 float -->
 	((eps;int), ".", int);
 	(int, ".", (eps;int)).
 complex -->
-	(float;int), (eps;blanks), "+", (eps;blanks), (float;int), "j".
+	(float;int), (eps;blanks), ("+";"-"), (eps;blanks), (float;int), "j".
