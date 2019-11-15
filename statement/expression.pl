@@ -15,10 +15,11 @@ maybe_expr_after -->
 maybe_expr_before -->
 	eps; (expr_body, expr_op_infix).
 
-expr -->
+expr -->(
 	((eps; "not",(prefix_multi;blanks)), expr_body);
 	(maybe_expr_before, open_bracket, expr, close_bracket);
-	(open_bracket, expr, close_bracket, maybe_expr_after).
+	(open_bracket, expr, close_bracket, maybe_expr_after)
+	),{write("INI")}.
 
 
 assign -->

@@ -14,8 +14,8 @@ any_statement -->
 	empty_statement;statement.
 
 empty_statement -->
-	{valid_indent(no), current_indent(X)},
-	indent_n(X),
+	{valid_indent(no), current_indent(X), write(X)},
+	((indent_n(X), !); (!, unindent)),
 	{
 		retract(valid_indent(no)),
 		asserta(valid_indent(yes))
@@ -26,22 +26,22 @@ empty_statement -->
 	eps, newline.
 
 statement_single -->
-	{valid_indent(no), current_indent(X)},
-	indent_n(X),
+	{valid_indent(no), current_indent(X), write(X)},
+	((indent_n(X), !) ; (!, unindent)),
 	{
 		retract(valid_indent(no)),
 		asserta(valid_indent(yes))
 	},
 	(simple_stmt;compound_stmt), newline.
 statement_single -->
-	{valid_indent(yes)},
-	(simple_stmt;compound_stmt), newline.
+	{valid_indent(yes), write("oof")},
+	(simple_stmt;compound_stmt), {write("X")}, newline.
 
 compound_stmt -->
-	if;while;for;with;funcdef;classdef.
+	(if;while;for;with;funcdef;classdef),{write("compound_stmt")}.
 
 simple_stmt -->
-	expr;assign;pass;return;break;continue;import.
+	(expr;assign;pass;return;break;continue;import),{write("simple_stmt")}.
 
 indent_n(0) --> [].
 indent_n(N) -->

@@ -22,8 +22,8 @@ newline -->
 	{
 		retract(valid_indent(yes)),
 		asserta(valid_indent(no)),
-		write("enter!")
-	}.
+		write("enter!"), nl
+	}, !.
 
 open_bracket -->
 	"(", any_blanks.

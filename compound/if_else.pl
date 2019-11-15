@@ -1,5 +1,5 @@
 if_only -->
-	"if", any_blanks, expr, block.
+	"if", {write("if block")}, any_blanks, expr, block.
 
 elif_only -->
 	"el", if_only.
