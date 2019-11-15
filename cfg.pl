@@ -5,7 +5,6 @@
 % ======================================================================== %
 
 :- use_module(library(pio)).
-<<<<<<< HEAD
 
 :- include(atom/datatype).
 :- include(atom/number).
@@ -13,25 +12,26 @@
 :- include(atom/string).
 :- include(atom/util).
 
-:- include(compound/expression).
-:- include(compound/import).
-:- include(compound/variable).
+:- include(statement/expression).
+:- include(statement/function).
+:- include(statement/import).
+:- include(statement/parameter).
+:- include(statement/variable).
 
-:- include(block/if_else).
-=======
-:- include(datatype).
-:- include(expression).
-:- include(keyword).
-:- include(number).
-:- include(operator).
-:- include(string).
-:- include(util).
-:- include(import).
-:- include(parameter).
->>>>>>> a7bcfb330f08fcf60faafd0fcb1830ed85381d6d
+:- include(compound/block).
+:- include(compound/class).
+:- include(compound/if_else).
+:- include(compound/loop).
+:- include(compound/with_as).
+
+:- dynamic(current_indent/1).
+current_indent(0).
 
 start(X) :-
 	phrase_from_file(X, 'input1.txt'),!.
 start(Z, X) :-
 	string_codes(X, Y),
 	phrase(Z, Y),!.
+
+cfg -->
+	statement.

@@ -19,6 +19,9 @@ underscores -->
 any_underscore -->
 	eps; underscores.
 
+newline -->
+	"\n".
+
 keywords -->
 	"False"; "class"; "finally"; "is"; "return"; "None"; "continue"; "for";
 	"lambda"; "try"; "True"; "def"; "from"; "nonlocal"; "while"; "and"; "del";

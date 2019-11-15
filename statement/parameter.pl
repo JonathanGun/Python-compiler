@@ -10,4 +10,4 @@ parameter_multiple_key -->
 	parameter_args ,"," ,"**kwargs", any_blanks.
 
 param -->
-	any_blanks,"(",any_blanks,(parameter_only;parameter_args;parameter_kwargs;parameter_multiple_key),any_blanks,")",any_blanks.
+	"(",any_blanks,(parameter_only;parameter_args;parameter_kwargs;parameter_multiple_key),any_blanks,")".

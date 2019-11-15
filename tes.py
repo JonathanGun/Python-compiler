@@ -1,4 +1,3 @@
-import re._
 
 c = 5
 a = b = d = 6 - c == 1 == 1 == 1 + 1 == 1 - 1 is 2
@@ -12,7 +11,15 @@ while 2.5678:
     print(1)
     break
 
+if 1==1 : print(a)
+
+print(*a)
+
 print(5j)
+print("AING BUAT DISIINIII")
+
+int = 5
+print(int)
 
 b = 5 + 5j
 print(1 == (1 - 0.00000j))
