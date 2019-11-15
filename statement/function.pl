@@ -25,6 +25,6 @@ funcdef -->
 return -->
 	{
 		current_level_function(X),
-		X > 0,
+		X > 0
 	},
 	"return", any_blanks , expr.
