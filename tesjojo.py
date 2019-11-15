@@ -1,1 +1,2 @@
-print(1+(not+5))
+with (1,2) as f:
+	print(2)
