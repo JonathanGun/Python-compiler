@@ -27,12 +27,21 @@
 
 :- dynamic(current_indent/1).
 :- dynamic(current_level_function/1).
+
 current_indent(0).
 current_level_function(0).
 
 start(X) :-
+	retract(current_indent(_)),
+	retract(current_level_function(_)),
+	asserta(current_indent(0)),
+	asserta(current_level_function(0)),
 	phrase_from_file(X, 'input1.txt'),!.
 start(Z, X) :-
+	retract(current_indent(_)),
+	retract(current_level_function(_)),
+	asserta(current_indent(0)),
+	asserta(current_level_function(0)),
 	string_codes(X, Y),
 	phrase(Z, Y),!.
 
