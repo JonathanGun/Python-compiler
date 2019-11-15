@@ -1,4 +1,3 @@
-import re
 
 c = 5
 a = b = d = 6 - c == 1 == 1 == 1 + 1 == 1 - 1 is 2
@@ -12,7 +11,15 @@ while 2.5678:
     print(1)
     break
 
-print({1:1,1:"asd","2":"a"})
+if 1==1 : print(a)
+
+print(*a)
+
+print(5j)
+print("AING BUAT DISIINIII")
+
+int = 5
+print(int)
 
 b = 5 + 5j
 print(1 == (1 - 0.00000j))
@@ -57,3 +64,13 @@ if (((((((((((((((a))))))))))))))) :
 	fsafasfasfadfasfasfasfasfasas
 
 import  __224
+
+def willi (halo              ,           kamu,  _Pika, fsafasfsafsafasfasf                   ,                         fasfdsafasfsafasfsafsafsa,_999999999, *args, **kwargs):
+	pass
+
+
+
+with 6j as _:
+	pass
+
+

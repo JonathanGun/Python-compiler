@@ -1,2 +1,3 @@
-*.txt
-tes.py
+input1.txt
+__pycache__/
+

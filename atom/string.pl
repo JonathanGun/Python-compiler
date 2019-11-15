@@ -9,13 +9,12 @@ uppercase -->
 letter -->
 	lowercase;uppercase.
 
-symbol -->
-    "`";"~";"!";"@";"#";"$";"%";"^";"&";"*";"(";")";"-";"_";"=";"+";"{";"[";"}";"]";"\\";"|";";";
+symbol_without_underscore -->
+    "`";"~";"!";"@";"#";"$";"%";"^";"&";"*";"(";")";"-";"=";"+";"{";"[";"}";"]";"\\";"|";";";
     ":";"'";"\"";",";"<";".";">";"/";"?";" ".
 
-alphanumeric -->
-    (letter,(eps;alphanumeric));
-    (digit,(eps;alphanumeric)).
+symbol -->
+	symbol_without_underscore;underscore.
 
 string_body -->
     (lowercase,string_body) ; (uppercase,string_body); (symbol,string_body); symbol; lowercase ; uppercase.
