@@ -26,6 +26,9 @@ open_bracket -->
 close_bracket -->
 	any_blanks, ")".
 
+separator -->
+	any_blanks, ",", any_blanks.
+
 keywords -->
 	"False"; "class"; "finally"; "is"; "return"; "None"; "continue"; "for";
 	"lambda"; "try"; "True"; "def"; "from"; "nonlocal"; "while"; "and"; "del";

@@ -1,9 +1,12 @@
 block -->
-	any_blanks, ":", any_blanks,
+	colon,
 	(
 		statement_single;
 		(newline,indent,statement,unindent)
 	).
+
+colon -->
+	any_blanks, ":", any_blanks.
 
 statement -->
 	statement_single;(statement_single,statement).

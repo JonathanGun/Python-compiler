@@ -1,4 +1,2 @@
-def a(a=1, /c):
-	print("tes")
-
-a(1,2,b=3)
+with (1,2) as f:
+	print(2)

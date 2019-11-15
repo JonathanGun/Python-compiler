@@ -1,8 +1,11 @@
 while -->
-	"while" , blanks , expr , blanks , ":" , block.
+	"while", blanks, expr, block.
 
 for -->
-    "for" , blanks , variable , blanks , "in" , blanks , (expr;function) ,":" , block.
+    "for", blanks, variable, blanks, in.
+
+in -->
+	"in", blanks, expr, block.
 
 break -->
 	{
