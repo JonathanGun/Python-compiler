@@ -1,1 +1,1 @@
-(self.main,                     _fsafasfsafsa, *args      )
+1+(not+5)
