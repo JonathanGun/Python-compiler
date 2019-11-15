@@ -36,14 +36,11 @@ start(X) :-
 	retract(current_level_function(_)),
 	asserta(current_indent(0)),
 	asserta(current_level_function(0)),
-	phrase_from_file(X, 'input1.txt'),!.
-start(Z, X) :-
-	retract(current_indent(_)),
-	retract(current_level_function(_)),
-	asserta(current_indent(0)),
-	asserta(current_level_function(0)),
-	string_codes(X, Y),
-	phrase(Z, Y),!.
+	phrase_from_file(X, 'input1.txt'),
+	write("Accepted"),
+	!.
+start(_) :-
+	write("Syntax Error!").
 
 cfg -->
 	statement.
