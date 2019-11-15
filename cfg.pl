@@ -7,6 +7,7 @@
 :- include(string).
 :- include(util).
 :- include(import).
+:- include(parameter).
 
 start(X) :-
 	phrase_from_file(X, 'input1.txt'),!.
