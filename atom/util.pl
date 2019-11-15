@@ -7,8 +7,7 @@ blanks -->
 any_blanks -->
 	eps;blanks.
 
-eps -->
-	"".
+eps --> [].
 
 underscore -->
 	"_".

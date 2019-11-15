@@ -1,3 +1,1 @@
-import java.util.io
-from aku import cintaku as cintakupadamu
-x
+print(1+(not+5))
