@@ -9,3 +9,15 @@ Int -> Digit | NonzeroNextint
 Nextint -> Digit | DigitNextint
 Float -> Int.LeadingzeroInt | .LeadingzeroInt
 Complex -> Float+Floatj
+
+
+Conditional:
+1. If statement
+
+2. Switch case
+
+Todo :
+Buat Willi :
+1. import .. from  (oke mantap uda)
+2. if - then - else 
+3. with... as...

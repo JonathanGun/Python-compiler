@@ -51,3 +51,9 @@ print(1+1j)
 
 class __b__:
     print(a)
+
+
+if (((((((((((((((a))))))))))))))) :
+	fsafasfasfadfasfasfasfasfasas
+
+import  __224
