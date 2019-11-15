@@ -12,14 +12,16 @@ funcdef -->
 	any_blanks, ":", 
 	any_blanks,
 	{
-	current_level_function(X),
-	retract(current_level_function(X)),
-	X1 is X + 1,
-	asserta(current_level_function(X1)),
+		current_level_function(X),
+		retract(current_level_function(X)),
+		X1 is X + 1,
+		asserta(current_level_function(X1))
+	},
 	block,
-	retract(current_level_function(Y)),
-	Y1 is Y - 1,
-	asserta(current_level_function(Y1))
+	{
+		retract(current_level_function(Y)),
+		Y1 is Y - 1,
+		asserta(current_level_function(Y1))
 	}.
 
 return -->

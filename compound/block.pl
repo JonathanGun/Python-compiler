@@ -2,7 +2,7 @@ block -->
 	colon,
 	(
 		statement_single;
-		(newline,indent,statement,unindent)
+		(newline,indent,statement_single,any_statement,unindent)
 	).
 
 colon -->
@@ -10,6 +10,8 @@ colon -->
 
 statement -->
 	statement_single;(statement_single,statement).
+any_statement -->
+	newline;statement.
 
 statement_single -->
 	{current_indent(X)},
