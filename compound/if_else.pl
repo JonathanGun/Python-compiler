@@ -1,5 +1,5 @@
 if_only -->
-	"if", any_blanks,expr ,any_blanks,":", any_blanks, block.
+	"if", any_blanks, expr ,any_blanks,":", any_blanks, block.
 
 elif_only -->
 	"el", if_only.

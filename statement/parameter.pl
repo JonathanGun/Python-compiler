@@ -1,3 +1,11 @@
+/*
+	Parameter order :
+	1. Normal
+	2. Default
+	3. Args
+	4. Keyword Arguments
+*/
+
 parameter_element -->
 	variable.
 parameter_default -->

@@ -8,8 +8,6 @@ args -->
 	"(",
 		any_blanks,
 		(eps ; args_ins),
-		%% any_blanks,
-		%% (eps ; args_separator),
 		any_blanks,
 	")".
 	
