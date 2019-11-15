@@ -1,7 +1,11 @@
 parameter_element -->
-	variable;assign_without_op.
+	variable.
+parameter_default -->
+	assign_without_op.
 parameter_only -->
 	parameter_element;(parameter_element,parameter_separator,parameter_only).
+parameter_only_default -->
+	parameter_default;(parameter_default,parameter_separator,parameter_default).
 parameter_args -->
 	"*",variable. 
 parameter_kwargs -->
@@ -13,7 +17,8 @@ param -->
 	"(",
 		any_blanks,
 		(eps ; parameter_only),
-		(eps ; (parameter_separator, parameter_args)),
-		(eps ; (parameter_separator, parameter_kwargs)),
+		(eps ; parameter_only_default ; (parameter_separator,parameter_only_default)),
+		(eps ; parameter_args ; (parameter_separator, parameter_args)),
+		(eps ; parameter_kwargs ; (parameter_separator, parameter_kwargs)),
 		any_blanks,
 	")".
