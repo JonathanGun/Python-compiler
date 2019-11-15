@@ -15,4 +15,4 @@ variable_single -->
 	).
 
 variable -->
-	variable_single, (eps;(".",variable)).
+	variable_single, (eps;(any_blanks,(".";","),any_blanks,variable)).

@@ -1,2 +1,2 @@
 for -->
-    "for",blanks,variable,blanks,"in",blanks,(method;expr),":".
+    "for",blanks,variable,blanks,"in",blanks,(expr;function),":".
