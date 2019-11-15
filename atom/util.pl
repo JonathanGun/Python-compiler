@@ -18,7 +18,12 @@ any_underscore -->
 	eps; underscores.
 
 newline -->
-	any_blanks, "\n".
+	any_blanks, "\n",
+	{
+		retract(valid_indent(yes)),
+		asserta(valid_indent(no)),
+		write("enter!")
+	}.
 
 open_bracket -->
 	"(", any_blanks.

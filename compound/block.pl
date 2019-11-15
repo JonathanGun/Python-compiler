@@ -11,11 +11,30 @@ colon -->
 statement -->
 	statement_single;(statement_single,statement).
 any_statement -->
-	newline;statement.
+	empty_statement;statement.
+
+empty_statement -->
+	{valid_indent(no), current_indent(X)},
+	indent_n(X),
+	{
+		retract(valid_indent(no)),
+		asserta(valid_indent(yes))
+	},
+	eps, newline.
+empty_statement -->
+	{valid_indent(yes)},
+	eps, newline.
 
 statement_single -->
-	{current_indent(X)},
+	{valid_indent(no), current_indent(X)},
 	indent_n(X),
+	{
+		retract(valid_indent(no)),
+		asserta(valid_indent(yes))
+	},
+	(simple_stmt;compound_stmt), newline.
+statement_single -->
+	{valid_indent(yes)},
 	(simple_stmt;compound_stmt), newline.
 
 compound_stmt -->
@@ -32,12 +51,14 @@ indent -->
 	{
 		retract(current_indent(N)),
 		NNext is N+1,
-		asserta(current_indent(NNext))
+		asserta(current_indent(NNext)),
+		write("indent jadi"), write(NNext), nl
 	}.
 
 unindent -->
 	{
 		retract(current_indent(N)),
 		NPrev is N-1,
-		asserta(current_indent(NPrev))
+		asserta(current_indent(NPrev)),
+		write("unindent jadi "), write(NPrev), nl
 	}.

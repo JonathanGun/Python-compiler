@@ -27,20 +27,25 @@
 
 :- dynamic(current_indent/1).
 :- dynamic(current_level_function/1).
+:- dynamic(valid_indent/1).
 
 current_indent(0).
 current_level_function(0).
+valid_indent(no).
 
 start(X) :-
 	retract(current_indent(_)),
 	retract(current_level_function(_)),
+	retract(valid_indent(_)),
 	asserta(current_indent(0)),
 	asserta(current_level_function(0)),
+	asserta(valid_indent(no)),
 	phrase_from_file(X, 'input1.txt'),
-	write("Accepted"),
-	!.
+	ansi_format([bold, fg(green)], 'Accepted!', []),
+	abort.
 start(_) :-
-	write("Syntax Error!").
+	ansi_format([bold, fg(red)], 'Syntax Error!', []),
+	abort.
 
 cfg -->
 	statement.
