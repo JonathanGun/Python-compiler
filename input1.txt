@@ -1,6 +1,0 @@
-if (mybro) :
-	pass
-elif fafasfaf:   
-	pass
-else :
-	fsadfasfd
