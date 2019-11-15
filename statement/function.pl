@@ -26,5 +26,15 @@ return -->
 	{
 		current_level_function(X),
 		X > 0
+
 	},
 	"return", any_blanks , expr.
+
+
+from_expr -->
+	"from", any_blanks ,expr.
+
+
+raise -->
+	"raise",any_blanks,
+	 (eps;(expr,any_blanks,(eps;from_expr))).
