@@ -1,14 +1,16 @@
+variables -->
+	variable; (variable,variables).
 import_only -->
-	"import",blanks,variable.
+	"import",blanks,variables.
 
 import_all -->
 	"import",blanks,"*".
 
 import_alias -->
-	import_only,blanks,"as", blanks, variable.
+	import_only,blanks,"as", blanks, variables.
 
 import_with_from -->
-	"from", blanks, variable, blanks, (import_without_from;import_all).
+	"from", blanks, variables, blanks, (import_without_from;import_all).
 
 import_without_from -->
 	import_only;import_alias.
