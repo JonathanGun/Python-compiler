@@ -8,7 +8,11 @@ else -->
 	"else", any_blanks, ":", any_blanks, block.
 
 pass -->
-	"pass", any_blanks.
+	{
+		current_indent(X),
+		X > 0,
+	},
+		"pass", any_blanks.
 
 elif -->
 	elif_only,(eps;elif).

@@ -94,3 +94,16 @@ print('filename.txt', )
 print(kontitt = bangsat)
 
 print((10000 + 100000,       isjfisafiasifasij   , jfsajfjasifjasojoijfdisajfiajsfjaoisfjoia, 1000+ 1000))
+
+def tes():
+	def sfafda():
+		for i in range(sfaf):
+			def x():
+				return x
+				return y
+
+		return 0
+	return x
+
+def tes(dzdfsf) -> int:
+	return  

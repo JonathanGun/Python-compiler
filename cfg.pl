@@ -26,7 +26,9 @@
 :- include(compound/with_as).
 
 :- dynamic(current_indent/1).
+:- dynamic(current_level_function/1).
 current_indent(0).
+current_level_function(0).
 
 start(X) :-
 	phrase_from_file(X, 'input1.txt'),!.
