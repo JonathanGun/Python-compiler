@@ -1,25 +1,24 @@
+eps --> [].
+
 blank -->
 	" ".
-
+tab -->
+	"\t".
 blanks -->
-	blank;(blank,blanks).
-
+	tab;(tab, blanks);
+	blank;(blank, blanks).
 any_blanks -->
 	eps;blanks.
 
-eps --> [].
-
 underscore -->
 	"_".
-
 underscores -->
 	underscore;(underscore, underscores).
-
 any_underscore -->
 	eps; underscores.
 
 newline -->
-	"\n".
+	any_blanks, "\n".
 
 open_bracket -->
 	"(", any_blanks.

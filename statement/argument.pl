@@ -5,5 +5,6 @@ args_ins -->
 	args_element;(args_element,separator,args_ins).
 
 args -->
-	open_bracket,(eps ; args_ins),close_bracket.
-
+	open_bracket,
+		(eps ; args_ins),
+	close_bracket.
