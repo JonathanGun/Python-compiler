@@ -12,6 +12,3 @@ maybe_add_another_expr_body -->
 
 expr -->
 	expr_body;("(", blank_coated_expr, maybe_add_another_expr_body, ")", maybe_add_another_expr_body).
-
-variable -->
-	("_";letter),(eps;alphanumeric).
