@@ -14,7 +14,7 @@ statement -->
 statement_single -->
 	{current_indent(X)},
 	indent_n(X),
-	(simple_stmt;compound_stmt), any_blanks, newline.
+	(simple_stmt;compound_stmt), newline.
 
 compound_stmt -->
 	if;while;for;with;funcdef;classdef.

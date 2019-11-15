@@ -7,6 +7,9 @@ elif_only -->
 else -->
 	"else", block.
 
+maybe_else -->
+	(eps; else).
+
 pass -->
 	{
 		current_indent(X),
