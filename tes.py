@@ -74,3 +74,7 @@ with 6j as _:
 	pass
 
 
+def william():
+	pass
+
+

@@ -1,14 +1,17 @@
-if -->
-	"if" , any_blank,expr ,":", block.
+if_only -->
+	"if", any_blanks,expr ,any_blanks,":", any_blanks, block.
 
-elif -->
-	eps; (("elif", expr , ":"), block);(("elif", expr , ":", block), elif). 
+elif_only -->
+	"el", if_only.
 
 else -->
-	"else", ":", block.
+	"else", any_blanks, ":", any_blanks, block.
 
 pass -->
-	"pass".
+	"pass", any_blanks.
 
-if_else -->
-	if,elif,(eps;else).
+elif -->
+	elif_only,(eps;elif).
+
+if -->
+	if_only,(eps;elif),(eps;else).

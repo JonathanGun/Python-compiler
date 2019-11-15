@@ -1,13 +1,19 @@
-parameter -->
-	variable;(variable,parameter).
+parameter_element -->
+	variable;assign_without_op.
 parameter_only -->
-	eps;(any_blanks,(variable;(variable, any_blanks , "," , parameter)), any_blanks).
+	parameter_element;(parameter_element,parameter_separator,parameter_only).
 parameter_args -->
-	parameter_only, "," ,"*args", any_blanks. 
+	"*",variable. 
 parameter_kwargs -->
-	parameter_only, "," ,"**kwargs", any_blanks.
-parameter_multiple_key -->
-	parameter_args ,"," ,"**kwargs", any_blanks.
+	"**",variable.
+parameter_separator -->
+	any_blanks, ",", any_blanks.
 
 param -->
-	"(",any_blanks,(parameter_only;parameter_args;parameter_kwargs;parameter_multiple_key),any_blanks,")".
+	"(",
+		any_blanks,
+		(eps ; parameter_only),
+		(eps ; (parameter_separator, parameter_args)),
+		(eps ; (parameter_separator, parameter_kwargs)),
+		any_blanks,
+	")".
