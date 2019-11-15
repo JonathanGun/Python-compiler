@@ -12,7 +12,7 @@ compound_stmt -->
 	if;while;for;with;funcdef;classdef.
 
 simple_stmt -->
-	expr;pass;return;break;continue;import.
+	expr;assign;pass;return;break;continue;import.
 
 indent_n(0) --> [].
 indent_n(N) -->

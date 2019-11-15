@@ -1,1 +1,31 @@
+<<<<<<< HEAD
 with 1 + 6j                       as __________________________: 
+=======
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+import java.util.io
+from aku import cintaku as cintakupadamu
+x5 = 5
+>>>>>>> origin/master
