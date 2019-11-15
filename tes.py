@@ -78,3 +78,19 @@ def william():
 	pass
 
 
+with open('filename.txt',rb) as f:
+	print(f)
+
+
+if (mybro) :
+	pass
+elif fafasfaf:
+	pass
+else :
+	fsadfasfd
+
+print('filename.txt', )
+
+print(kontitt = bangsat)
+
+print((10000 + 100000,       isjfisafiasifasij   , jfsajfjasifjasojoijfdisajfiajsfjaoisfjoia, 1000+ 1000))
