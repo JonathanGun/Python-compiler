@@ -1,5 +1,5 @@
 block -->
-	any_blanks,
+	any_blanks, ":", any_blanks,
 	(
 		statement_single;
 		(newline,indent,statement,unindent)

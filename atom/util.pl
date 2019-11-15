@@ -21,6 +21,11 @@ any_underscore -->
 newline -->
 	"\n".
 
+open_bracket -->
+	"(", any_blanks.
+close_bracket -->
+	any_blanks, ")".
+
 keywords -->
 	"False"; "class"; "finally"; "is"; "return"; "None"; "continue"; "for";
 	"lambda"; "try"; "True"; "def"; "from"; "nonlocal"; "while"; "and"; "del";
