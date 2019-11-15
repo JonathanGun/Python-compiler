@@ -1,7 +1,3 @@
-alphanumeric -->
-    (letter,(eps;alphanumeric));
-    (digit,(eps;alphanumeric)).
-
 alphanumeric_underscore -->
 	(alphanumeric;underscore), (eps;alphanumeric_underscore).
 
