@@ -17,13 +17,25 @@ underscores -->
 any_underscore -->
 	eps; underscores.
 
-newline -->
-	any_blanks, "\n",
+newline_only -->
+	"\n",
 	{
-		retract(valid_indent(yes)),
+		retract(valid_indent(_)),
 		asserta(valid_indent(no)),
-		write("enter!"), nl
-	}, !.
+		nl
+	}.
+
+newline -->
+	any_blanks,
+	(eof;newline_only).
+newline -->
+	[X], {
+		retract(wrong(L)),
+		asserta(wrong([X|L]))
+	}.
+
+eof -->
+	\+[_], {write("end-of-file"),nl, accepted}.
 
 open_bracket -->
 	"(", any_blanks.

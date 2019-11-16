@@ -1,3 +1,5 @@
-if a:
-	p
+if x:
+	x
 
+elif y:
+	p(y)

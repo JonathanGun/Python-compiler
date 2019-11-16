@@ -28,10 +28,12 @@
 :- dynamic(current_indent/1).
 :- dynamic(current_level_function/1).
 :- dynamic(valid_indent/1).
+:- dynamic(wrong/1).
 
 current_indent(0).
 current_level_function(0).
 valid_indent(no).
+wrong([]).
 
 start(X) :-
 	retract(current_indent(_)),
@@ -41,11 +43,23 @@ start(X) :-
 	asserta(current_level_function(0)),
 	asserta(valid_indent(no)),
 	phrase_from_file(X, 'input1.txt'),
-	ansi_format([bold, fg(green)], 'Accepted!', []),
-	abort.
+	accepted.
 start(_) :-
-	ansi_format([bold, fg(red)], 'Syntax Error!', []),
-	abort.
+	error.
 
 cfg -->
 	statement.
+
+accepted :-	
+	ansi_format([bold, fg(green)], 'Accepted!', []),
+	!, abort.
+
+error :-
+	ansi_format([bold, fg(red)], 'Syntax Error!', []),
+	wrong(L), show_error(L),
+	
+	!, abort.
+
+show_error([]).
+show_error([X|L]) :-
+	write("salah di '"), char_code(C, X), write(C),write("' ("), write(X), write(")"), nl, show_error(L).

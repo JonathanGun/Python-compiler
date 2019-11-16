@@ -1,8 +1,8 @@
 block -->
 	colon,
 	(
-		statement_single;
-		(newline,indent,statement_single,any_statement,unindent)
+		inline_statement;
+		(newline,indent,statement_single,any_statement)
 	).
 
 colon -->
@@ -11,37 +11,25 @@ colon -->
 statement -->
 	statement_single;(statement_single,statement).
 any_statement -->
-	empty_statement;statement.
+	statement.
 
-empty_statement -->
-	{valid_indent(no), current_indent(X), write(X)},
-	((indent_n(X), !); (!, unindent)),
-	{
-		retract(valid_indent(no)),
-		asserta(valid_indent(yes))
-	},
-	eps, newline.
-empty_statement -->
-	{valid_indent(yes)},
-	eps, newline.
+inline_statement -->
+	{write("in-line block ")}, any_blanks, (simple_stmt;compound_stmt), newline.
 
 statement_single -->
-	{valid_indent(no), current_indent(X), write(X)},
-	((indent_n(X), !) ; (!, unindent)),
+	{valid_indent(no), current_indent(X), write("(cur-indent: "), write(X), write(") ")},
+	((indent_n(X), {write("(same block) ")}, !) ; (!, unindent)),
 	{
-		retract(valid_indent(no)),
+		retract(valid_indent(_)),
 		asserta(valid_indent(yes))
 	},
-	(simple_stmt;compound_stmt), newline.
-statement_single -->
-	{valid_indent(yes), write("oof")},
-	(simple_stmt;compound_stmt), {write("X")}, newline.
+	(((simple_stmt;compound_stmt), !);eps), newline, !.
 
 compound_stmt -->
-	(if;while;for;with;funcdef;classdef),{write("compound_stmt")}.
+	(if;while;for;with;funcdef;classdef),{write("compound_stmt ")}.
 
 simple_stmt -->
-	(expr;assign;pass;return;break;continue;import),{write("simple_stmt")}.
+	(expr;assign;pass;return;break;continue;import),{write("simple_stmt ")}.
 
 indent_n(0) --> [].
 indent_n(N) -->
@@ -52,7 +40,7 @@ indent -->
 		retract(current_indent(N)),
 		NNext is N+1,
 		asserta(current_indent(NNext)),
-		write("indent jadi"), write(NNext), nl
+		write("indent jadi "), write(NNext), nl
 	}.
 
 unindent -->
