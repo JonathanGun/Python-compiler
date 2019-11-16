@@ -18,7 +18,7 @@ inline_statement -->
 
 statement_single -->
 	{valid_indent(no), current_indent(X), write("(cur-indent: "), write(X), write(") ")},
-	((indent_n(X), {write("(same block) ")}, !) ; (!, unindent)),
+	((indent_n(X), !) ; (!, unindent)),
 	{
 		retract(valid_indent(_)),
 		asserta(valid_indent(yes))

@@ -51,15 +51,15 @@ cfg -->
 	statement.
 
 accepted :-	
-	ansi_format([bold, fg(green)], 'Accepted!', []),
+	ansi_format([bold, fg(green)], 'Accepted!', []),nl,
 	!, abort.
 
 error :-
-	ansi_format([bold, fg(red)], 'Syntax Error!', []),
+	ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
 	wrong(L), show_error(L),
 	
 	!, abort.
 
 show_error([]).
-show_error([X|L]) :-
-	write("salah di '"), char_code(C, X), write(C),write("' ("), write(X), write(")"), nl, show_error(L).
+show_error([X|_]) :-
+	write("salah di '"), char_code(C, X), write(C),write("' ("), write(X), write(")"), nl.

@@ -1,5 +1,4 @@
-if x:
+if p(X):
 	x
-
 elif y:
-	p(y)
+	5+5
