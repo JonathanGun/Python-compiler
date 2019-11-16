@@ -1,8 +1,8 @@
 block -->
 	colon,
 	(
-		inline_statement;
-		(newline,indent,statement_single,any_statement)
+		(newline,indent,statement_single,any_statement);
+		inline_statement
 	).
 
 colon -->
@@ -18,12 +18,14 @@ inline_statement -->
 
 statement_single -->
 	{valid_indent(no), current_indent(X), write("(cur-indent: "), write(X), write(") ")},
-	((indent_n(X), !) ; (!, unindent)),
+	(indent_n(X), !),
 	{
 		retract(valid_indent(_)),
 		asserta(valid_indent(yes))
-	},
-	(((simple_stmt;compound_stmt), !);eps), newline, !.
+	}.
+statement_single -->
+	{valid_indent(yes)},
+	(simple_stmt;compound_stmt), newline.
 
 compound_stmt -->
 	(if;while;for;with;funcdef;classdef),{write("compound_stmt ")}.

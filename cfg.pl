@@ -39,9 +39,11 @@ start(X) :-
 	retract(current_indent(_)),
 	retract(current_level_function(_)),
 	retract(valid_indent(_)),
+	retract(wrong(_)),
 	asserta(current_indent(0)),
 	asserta(current_level_function(0)),
 	asserta(valid_indent(no)),
+	asserta(wrong([])),
 	phrase_from_file(X, 'input1.txt'),
 	accepted.
 start(_) :-
@@ -56,8 +58,7 @@ accepted :-
 
 error :-
 	ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
-	wrong(L), show_error(L),
-	
+	wrong(L), show_error(L),	
 	!, abort.
 
 show_error([]).

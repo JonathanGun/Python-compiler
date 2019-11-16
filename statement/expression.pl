@@ -1,5 +1,5 @@
 expr_elmt -->
-	function;variable;datatype.
+	variable;function;datatype.
 expr_body -->
 	expr_prefix, (expr_elmt ; (expr_elmt, expr_op_infix, expr_body)).
 
