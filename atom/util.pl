@@ -25,9 +25,9 @@ any_underscore -->
 	eps; underscores.
 
 newline_only -->
-	"\n".
+	any_comment, "\n".
 newline -->
-	eof;(any_blanks,newline_only,(eps;tabs;newline)).
+	eof;(any_blanks,newline_only,(any_tabs;newline)).
 
 colon -->
 	any_blanks, ":", any_blanks.

@@ -22,7 +22,7 @@ any_other_char_var -->
 variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->
-	variable_name,(eps;args),any_access_array.
+	variable_name,any_blanks,(eps;args),any_access_array.
 
 variable -->
 	variable_single, (eps;(any_blanks,(".";","),any_blanks,variable)).

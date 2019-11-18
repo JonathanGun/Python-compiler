@@ -1,1 +1,2 @@
-a()[0]
+def a():
+	return a += 5

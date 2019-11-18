@@ -5,4 +5,6 @@ comment_body -->
 any_comment_body -->
 	eps;comment_body.
 comment -->
-	any_blanks,"#", !, any_comment_body, newline.
+	"#", !, any_comment_body.
+any_comment -->
+	eps;comment.
