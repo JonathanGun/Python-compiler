@@ -24,5 +24,3 @@ scientific -->
 
 complex_number -->
 	(eps; (non_complex_number, any_blanks, op_num_plus_min, any_blanks)), non_complex_number, "j".
-
-/*Fak u*/

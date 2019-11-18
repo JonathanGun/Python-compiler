@@ -14,10 +14,10 @@ symbol_without_underscore -->
     ":";"'";"\"";",";"<";".";">";"/";"?";" ".
 symbol_without_single_quote -->
     "`";"~";"!";"@";"#";"$";"%";"^";"&";"*";"(";")";"-";"=";"+";"{";"[";"}";"]";"\\";"|";";";
-    ":";"\"";",";"<";".";">";"/";"?";" ";escaped_single_quote;underscore.
+    ":";"\"";",";"<";".";">";"/";"?";" ";escaped_single_quote;underscore;"\t".
 symbol_without_double_quote -->
     "`";"~";"!";"@";"#";"$";"%";"^";"&";"*";"(";")";"-";"=";"+";"{";"[";"}";"]";"\\";"|";";";
-    ":";"'";",";"<";".";">";"/";"?";" ";escaped_double_quote;underscore.
+    ":";"'";",";"<";".";">";"/";"?";" ";escaped_double_quote;underscore;"\t".
 
 single_quote -->
     "'".
@@ -41,14 +41,37 @@ string_body_without_single_quote -->
     eps;
     (letter,string_body_without_single_quote);
     (digit,string_body_without_single_quote);
-    ("\t",string_body_without_single_quote);
     (symbol_without_single_quote,string_body_without_single_quote).
 string_body_without_double_quote -->
     eps;
     (letter,string_body_without_double_quote);
     (digit,string_body_without_double_quote);
-    ("\t",string_body_without_double_quote);
     (symbol_without_double_quote,string_body_without_double_quote).
 
+string_multi_body_without_double_quote -->
+    symbol_without_double_quote;
+    digit;
+    letter;
+    "\n".
+
+string_body_multi_body_without_double_quote -->
+    eps;
+    (string_multi_body_without_double_quote, string_body_multi_body_without_double_quote);
+    ("\"",string_multi_body_without_double_quote,string_body_multi_body_without_double_quote);
+    ("\"\"", string_multi_body_without_double_quote, string_body_multi_body_without_double_quote).
+
+string_multi_body_without_single_quote -->
+    symbol_without_single_quote;
+    digit;
+    letter;
+    "\n".
+
+string_body_multi_body_without_single_quote -->
+    eps;
+    (string_multi_body_without_single_quote, string_body_multi_body_without_single_quote);
+    ("'", string_multi_body_without_single_quote, string_body_multi_body_without_single_quote);
+    ("''", string_multi_body_without_single_quote, string_body_multi_body_without_single_quote).
+
 string -->
-	("'", string_body_without_single_quote, "'") ; ("\"", string_body_without_double_quote, "\"").
+	("'", string_body_without_single_quote, "'") ; ("\"", string_body_without_double_quote, "\"") ;
+    ("\"\"\"", string_body_multi_body_without_double_quote, "\"\"\""); ("'''", string_body_multi_body_without_single_quote,"'''").
