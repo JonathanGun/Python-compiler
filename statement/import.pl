@@ -13,7 +13,7 @@ as -->
 import_alias_body -->
 	blanks, as.
 import_alias -->
-	import_only,import_alias_body.
+	import_only, import_alias_body.
 
 import_with_from_elmt -->
 	import_without_from;import_all.
@@ -29,6 +29,6 @@ import_without_from -->
 
 
 import -->
-	"import",any_blanks, is_eof,!,{write("empty import file"), error}.
+	"import",any_blanks, is_eof,!,{write("cant import empty file"), error}.
 import -->
-	(import_without_from;import_with_from), !, {write("berhasil import")}.
+	(import_without_from;import_with_from),{write("berhasil import")}.
