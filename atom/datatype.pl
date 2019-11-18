@@ -23,13 +23,13 @@ any_dict_element -->
 	eps;dict_element.
 
 set -->
-	"{",any_element,"}".
+	"{",any_element,"}",!.
 
 list -->
-	"[",any_element,"]".
+	"[",any_element,"]",!.
 
 tuple -->
-	"(",any_element,")".
+	"(",any_element,")",!.
 
 dict -->
-	"{", any_dict_element, "}".
+	"{", any_dict_element, "}",!.

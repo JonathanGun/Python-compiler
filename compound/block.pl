@@ -1,8 +1,8 @@
 block -->
 	colon,
 	(
-		(newline,statement);
-		inline_statement
+		inline_statement;
+		(newline,statement)
 	).
 
 colon -->
@@ -12,7 +12,7 @@ statement -->
 	statement_single;(statement_single,statement).
 
 inline_statement -->
-	any_blanks, statement_single, {write("in-line block ")}.
+	any_blanks, statement_single.
 
 statement_single -->
 	eof;(any_tabs, (compound_stmt;simple_stmt), newline).

@@ -1,18 +1,15 @@
-function -->
-	variable, any_blanks, args, any_blanks.
-
 maybe_return_var -->
-	eps; ("->", blanks, expr).
+	eps; ("->", !, blanks, expr).
 
 funcdef -->
-	"def", blanks, function, maybe_return_var, {write("function_def ")}, block.
+	"def", !, blanks, function, maybe_return_var, block.
 
 return -->
-	"return", any_blanks , expr, {write("return_stmt ")}.
+	"return", !, any_blanks , expr.
 
 from_expr -->
-	"from", any_blanks ,expr, {write("from_stmt ")}.
+	"from", !, any_blanks ,expr.
 
 raise -->
-	"raise", any_blanks,
-	(eps;(expr,any_blanks,(eps;from_expr))), {write("raise_stmt ")}.
+	"raise", !, any_blanks,
+	(eps;(expr,any_blanks,(eps;from_expr))).
