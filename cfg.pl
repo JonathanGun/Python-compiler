@@ -4,8 +4,6 @@
 %	William 				- 13518138									   %
 % ======================================================================== %
 
-:- use_module(library(pio)).
-
 :- include(atom/datatype).
 :- include(atom/number).
 :- include(atom/operator).
@@ -42,7 +40,3 @@ accepted :-
 error :-
 	nl,ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
 	!, abort.
-
-show_error([]).
-show_error([X|_]) :-
-	write("salah di '"), char_code(C, X), write(C),write("' ("), write(X), write(")"), nl.
