@@ -1,5 +1,5 @@
 comment_elmt -->
-	alphanumeric;symbol;tab.
+	letter;digit;symbol;tab.
 comment_body -->
 	comment_elmt;(comment_elmt,comment_body).
 any_comment_body -->

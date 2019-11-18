@@ -7,9 +7,11 @@ uppercase -->
 letter -->
 	lowercase;uppercase.
 
-symbol_without_underscore -->
+symbol_without_underscore_and_blank -->
     "`";"~";"!";"@";"#";"$";"%";"^";"&";"*";"(";")";"-";"=";"+";"{";"[";"}";"]";"\\";"|";";";
-    ":";"'";"\"";",";"<";".";">";"/";"?";" ".
+    ":";"'";"\"";",";"<";".";">";"/";"?".
+symbol_without_underscore -->
+    symbol_without_underscore_and_blank;" ".
 symbol_without_single_quote -->
     "`";"~";"!";"@";"#";"$";"%";"^";"&";"*";"(";")";"-";"=";"+";"{";"[";"}";"]";"\\";"|";";";
     ":";"\"";",";"<";".";">";"/";"?";" ";escaped_single_quote;underscore;"\t".

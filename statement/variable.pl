@@ -1,6 +1,6 @@
 end_of_variable_char --> is_eof.
 end_of_variable_char -->
-	any_blanks,(op; symbol).
+	any_blanks,(op; symbol_without_underscore_and_blank).
 
 access_array_single -->
 	open_square_bracket, expr, close_square_bracket.

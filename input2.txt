@@ -1,0 +1,7 @@
+x:int = int(input())
+sum = 0
+while (x > 0):
+	tmp = int(input())
+	sum += tmp
+	x -= 1
+print(sum)
