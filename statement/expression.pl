@@ -1,5 +1,5 @@
 expr_elmt -->
-	variable;function;array_elmt;datatype.
+	variable;function;datatype.
 expr_body -->
 	expr_prefix, (expr_elmt ; (expr_elmt, expr_op_infix, expr_body)).
 
@@ -14,14 +14,6 @@ maybe_expr_after -->
 	eps; (expr_op_infix, expr_body).
 maybe_expr_before -->
 	eps; (expr_body, expr_op_infix).
-
-open_square_bracket -->
-	"[", any_blanks.
-close_square_bracket -->
-	any_blanks, "]".
-
-array_elmt -->
-	variable, any_blanks, open_square_bracket, expr, close_square_bracket.
 
 expr -->(
 	((eps; "not",(prefix_multi;blanks)), expr_body);

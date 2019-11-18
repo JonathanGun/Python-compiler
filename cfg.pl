@@ -25,13 +25,7 @@
 :- include(compound/loop).
 :- include(compound/with_as).
 
-:- dynamic(wrong/1).
-
-wrong([]).
-
 start(X) :-
-	retract(wrong(_)),
-	asserta(wrong([])),
 	phrase_from_file(X, 'input1.txt'),
 	accepted.
 start(_) :-
@@ -41,12 +35,11 @@ cfg -->
 	statement.
 
 accepted :-	
-	ansi_format([bold, fg(green)], 'Accepted!', []),nl,
+	nl,ansi_format([bold, fg(green)], 'Accepted!', []),nl,
 	!, abort.
 
 error :-
-	ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
-	wrong(L), show_error(L),	
+	nl,ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
 	!, abort.
 
 show_error([]).

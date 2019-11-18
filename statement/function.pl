@@ -1,5 +1,5 @@
 function -->
-	variable, any_blanks, args, any_blanks, {write("function_call ")}.
+	variable, any_blanks, args, any_blanks.
 
 maybe_return_var -->
 	eps; ("->", blanks, expr).

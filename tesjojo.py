@@ -1,1 +1,1 @@
-x = {1+'asdijs'[2]:1[asdnajs]}
+ a[1]   [2]  .cos_dist()

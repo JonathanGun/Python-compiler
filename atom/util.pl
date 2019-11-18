@@ -35,6 +35,11 @@ open_bracket -->
 close_bracket -->
 	any_blanks, ")".
 
+open_square_bracket -->
+	"[", any_blanks.
+close_square_bracket -->
+	any_blanks, "]".
+
 separator -->
 	any_blanks, ",", any_blanks.
 

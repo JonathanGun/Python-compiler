@@ -13,7 +13,7 @@ op_compare -->
 op_assignment_single -->
 	"=".
 op_assignment -->
-	op_assignment_single; "+="; "-="; "*="; "/="; "//="; "%="; "**=".
+	op_assignment_single; "+="; "-="; "*="; "/="; "//="; "%="; "**="; "<<="; ">>=".
 
 op_bitwise_single -->
 	"&";"|";"^";"~".
