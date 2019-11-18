@@ -76,8 +76,7 @@ string_body_multi_body_without_single_quote -->
     ("''", string_multi_body_without_single_quote, string_body_multi_body_without_single_quote).
 
 string -->
-	(("'", string_body_without_single_quote, "'");
-    ("\"", string_body_without_double_quote, "\"") ;
+	("'", string_body_without_single_quote, "'");
+    ("\"", string_body_without_double_quote, "\"");
     ("\"\"\"", string_body_multi_body_without_double_quote, "\"\"\"");
-    ("'''", string_body_multi_body_without_single_quote,"'''")),
-    !.
+    ("'''", string_body_multi_body_without_single_quote,"'''").
