@@ -13,7 +13,7 @@ while 2.5678:
 
 if 1==1 : print(a)
 
-print(*a)
+print(a)
 
 print(5j)
 print("AING BUAT DISIINIII")
@@ -27,7 +27,6 @@ print(())
 print(5 if 5 else 0)
 print(type(1.0))
 print(1 + 5j + b)
-print(5_000_157312389_5)
 
 x: int = True
 print(x)

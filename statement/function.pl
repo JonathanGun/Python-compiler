@@ -5,7 +5,7 @@ maybe_return_var -->
 	eps; (any_blanks, "->", !, any_blanks, expr).
 funcdef_elmt -->
 	function,maybe_return_var.
-funcdef_cody -->
+funcdef_body -->
 	blanks,funcdef_elmt.
 funcdef -->
 	"def", !, funcdef_body, block.
