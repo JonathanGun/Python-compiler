@@ -6,7 +6,7 @@ import_only -->
 import_all_body -->
 	blanks, "*".
 import_all -->
-	"import",import_all_body.
+	"import", import_all_body.
 
 as -->
 	"as",import_only_body.
@@ -29,4 +29,6 @@ import_without_from -->
 
 
 import -->
-	import_without_from;import_with_from.
+	"import",any_blanks, is_eof,!,{write("empty import file"), error}.
+import -->
+	(import_without_from;import_with_from), !, {write("berhasil import")}.

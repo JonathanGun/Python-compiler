@@ -28,15 +28,16 @@ start(X) :-
 	phrase_from_file(X, 'input1.txt'),
 	accepted.
 start(_) :-
+	write("Ga ada yng cocok.."),
 	error.
 
 cfg -->
 	statement.
 
 accepted :-	
-	nl,ansi_format([bold, fg(green)], 'Accepted!', []),nl,
+	backtrace(20), nl,ansi_format([bold, fg(green)], 'Accepted!', []),nl,
 	!, abort.
 
 error :-
-	nl,ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
+	backtrace(20), nl,ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
 	!, abort.

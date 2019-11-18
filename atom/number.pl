@@ -12,9 +12,7 @@ any_int -->
 	eps;int.
 
 boolean -->
-	"True", !, {write("True")}.
-boolean -->
-	"False", !, {write("False")}.
+	"True";"False".
 
 float -->
 	(any_int, ".", int);

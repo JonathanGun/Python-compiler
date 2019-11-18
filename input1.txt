@@ -1,1 +1,3 @@
-import a23
+import a#ahdjks
+
+print(a)

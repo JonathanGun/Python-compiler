@@ -1,6 +1,8 @@
 eps --> [].
 eof -->
-	\+[_], {accepted}.
+	is_eof, {accepted}.
+is_eof -->
+	\+[_].
 
 blank -->
 	" ".
