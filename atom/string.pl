@@ -41,11 +41,13 @@ string_body_without_single_quote -->
     eps;
     (letter,string_body_without_single_quote);
     (digit,string_body_without_single_quote);
+    ("\t",string_body_without_single_quote);
     (symbol_without_single_quote,string_body_without_single_quote).
 string_body_without_double_quote -->
     eps;
     (letter,string_body_without_double_quote);
     (digit,string_body_without_double_quote);
+    ("\t",string_body_without_double_quote);
     (symbol_without_double_quote,string_body_without_double_quote).
 
 string -->

@@ -21,7 +21,6 @@ expr -->(
 	(open_bracket, expr, close_bracket, maybe_expr_after)
 	),{write("an expr: ")}.
 
-
 assign -->
 	variable, any_blanks, op_assignment, any_blanks, expr.
 assign_without_op -->
