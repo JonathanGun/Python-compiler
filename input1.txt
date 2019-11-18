@@ -1,4 +1,4 @@
 if a:
-	pass
+	a
 if a:
-	pass
+	a

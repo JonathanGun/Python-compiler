@@ -12,10 +12,10 @@ statement -->
 	statement_single;(statement_single,statement).
 
 inline_statement -->
-	{write("in-line block ")}, any_blanks, (simple_stmt;compound_stmt), newline.
+	{write("in-line block ")}, any_blanks, (compound_stmt;simple_stmt), newline.
 
 statement_single -->
-	any_tabs, (simple_stmt;compound_stmt), newline.
+	any_tabs, (compound_stmt;simple_stmt), newline.
 
 compound_stmt -->
 	(if;while;for;with;funcdef;classdef),{write("compound_stmt ")}.

@@ -5,12 +5,7 @@ maybe_return_var -->
 	eps; ("->", blanks, expr).
 
 funcdef -->
-	"def", 
-	blanks, 
-	function, 
-	maybe_return_var, 
-	colon,
-	block.
+	"def", blanks, function, maybe_return_var, colon, block.
 
 return -->
 	"return", any_blanks , expr.

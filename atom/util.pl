@@ -10,7 +10,7 @@ blanks -->
 any_blanks -->
 	eps;blanks.
 tabs -->
-	tab; tabs.
+	tab; (tab,tabs).
 any_tabs -->
 	eps; tabs.
 
@@ -25,12 +25,7 @@ newline_only -->
 	"\n".
 
 newline -->
-	any_blanks,newline_only,any_tabs.
-newline -->
-	[X], {
-		retract(wrong(L)),
-		asserta(wrong([X|L]))
-	}.
+	any_blanks,newline_only,(eof;any_tabs).
 
 eof -->
 	\+[_], {write("end-of-file"),nl, accepted}.
