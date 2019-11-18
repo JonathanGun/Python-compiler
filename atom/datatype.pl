@@ -5,7 +5,7 @@ none -->
 	"None".
 
 element_single -->
-	any_blanks, datatype, any_blanks.
+	any_blanks, expr, any_blanks.
 
 element -->
 	(element_single;(element_single,",",any_element)).

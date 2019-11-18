@@ -5,7 +5,11 @@ digit -->
 	"1";"2";"3";"4";"5";"6";"7";"8";"9";"0".
 
 int -->
-	digit;(digit,int);"True";"False".
+	"True", !, {write("True")}.
+int -->
+	"False", !, {write("False")}.
+int -->
+	digit;(digit,int).
 
 float -->
 	((eps;int), ".", int);
