@@ -27,7 +27,9 @@ any_underscore -->
 newline_only -->
 	any_comment, "\n".
 newline -->
-	eof;(any_blanks,newline_only,(any_tabs;newline)).
+	eof;(any_blanks,newline_only,(any_tabs;empty_line)).
+empty_line -->
+	eof;(any_blanks,any_comment,newline).
 
 colon -->
 	any_blanks, ":", any_blanks.
