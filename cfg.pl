@@ -16,6 +16,7 @@
 :- include(statement/parameter).
 :- include(statement/variable).
 :- include(statement/argument).
+:- include(statement/comment).
 
 :- include(compound/block).
 :- include(compound/class).
