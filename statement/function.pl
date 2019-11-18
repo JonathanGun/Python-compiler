@@ -1,18 +1,32 @@
 function -->
-	variable_name,args.
+	variable_name,any_blanks,args.
 
 maybe_return_var -->
-	eps; ("->", !, blanks, expr).
-
+	eps; (any_blanks, "->", !, any_blanks, expr).
+funcdef_elmt -->
+	function,maybe_return_var.
+funcdef_cody -->
+	blanks,funcdef_elmt.
 funcdef -->
-	"def", !, blanks, function, maybe_return_var, block.
+	"def", !, funcdef_body, block.
 
+return_body -->
+	any_blanks, expr.
 return -->
-	"return", !, any_blanks , expr.
+	"return", !, return_body.
 
+from_expr_body -->
+	any_blanks, expr.
 from_expr -->
-	"from", !, any_blanks ,expr.
+	"from", !, from_expr_body.
+maybe_from_expr -->
+	eps;from_expr.
 
+raise_elmt -->
+	expr,any_blanks,maybe_from_expr.
+any_raise_elmt -->
+	eps;raise_elmt.
+raise_body -->
+	any_blanks, any_raise_elmt.
 raise -->
-	"raise", !, any_blanks,
-	(eps;(expr,any_blanks,(eps;from_expr))).
+	"raise", !, raise_body.

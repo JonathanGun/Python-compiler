@@ -1,35 +1,47 @@
 eps --> [].
-
 eof -->
-	\+[_], {write("end-of-file"),nl, accepted}.
+	\+[_], {accepted}.
 
 blank -->
 	" ".
 tab -->
 	"\t".
+tab_rec -->
+	tab,blanks.
+blank_rec -->
+	blank,blanks.
+blanks_tab -->
+	tab;tab_rec.
+blanks_blank -->
+	blank;blank_rec.
 blanks -->
-	tab;(tab, blanks);
-	blank;(blank, blanks).
+	blanks_tab;blanks_blank.
 any_blanks -->
 	eps;blanks.
+tab_only_rec -->
+	tab,tabs.
 tabs -->
-	tab; (tab,tabs).
+	tab;tab_only_rec.
 any_tabs -->
-	eps; tabs.
+	eps;tabs.
 
 underscore -->
 	"_".
+underscores_rec -->
+	underscore,underscores.
 underscores -->
-	underscore;(underscore, underscores).
+	underscore;underscores_rec.
 any_underscore -->
 	eps; underscores.
 
 newline_only -->
 	any_comment, "\n".
 newline -->
-	eof;(any_blanks,newline_only,(any_tabs;empty_line)).
+	eof;(any_blanks,newline_only,maybe_empty_line).
 empty_line -->
 	eof;(any_blanks,any_comment,newline).
+maybe_empty_line -->
+	any_tabs;empty_line.
 
 colon -->
 	any_blanks, ":", any_blanks.

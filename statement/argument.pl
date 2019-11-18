@@ -6,3 +6,5 @@ any_args_ins -->
 	eps;args_ins.
 args -->
 	open_bracket,any_args_ins,close_bracket.
+any_args -->
+	eps;args.

@@ -1,14 +1,11 @@
-with_singular -->
-	any_blanks,expr,any_blanks.
-
 with_item -->
-	with_singular,"as",with_singular.
+	expr, any_blanks, "as", any_blanks, expr.
 
 with_items -->
-	with_item; (with_item, ",", with_items).
+	with_item; (with_item, separator, with_items).
 
 with -->
-	"with", !, with_items, block.
+	"with", !, any_blanks, with_items, block.
 
 
 

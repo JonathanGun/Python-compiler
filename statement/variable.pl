@@ -22,11 +22,22 @@ any_other_char_var -->
 variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->
-	variable_name,any_blanks,(eps;args),any_access_array.
+	variable_name,any_blanks,any_args,any_access_array.
 
+dot_or_comma -->
+	".";",".
+varparator -->
+	any_blanks, dot_or_comma, any_blanks.
+add_variable -->
+	varparator, variable.
+maybe_add_variable -->
+	eps;add_variable.
 variable -->
-	variable_single, (eps;(any_blanks,(".";","),any_blanks,variable)).
+	variable_single, maybe_add_variable.
+
+variables_rec -->
+	variable,variables.
 variables -->
-	variable; (variable,variables).
+	variable; variables_rec.
 any_variables -->
 	eps; variables.

@@ -1,2 +1,2 @@
 classdef -->
-	"class", !, blanks, variable, (eps; (open_bracket, args, close_bracket)), block.
+	"class", !, blanks, variable, any_blanks, any_args, block.
