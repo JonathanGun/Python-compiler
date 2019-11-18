@@ -1,3 +1,4 @@
-if abc:
-	aaa.ada
-a
+if a:
+	pass
+if a:
+	pass

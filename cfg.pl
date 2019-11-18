@@ -25,24 +25,12 @@
 :- include(compound/loop).
 :- include(compound/with_as).
 
-:- dynamic(current_indent/1).
-:- dynamic(current_level_function/1).
-:- dynamic(valid_indent/1).
 :- dynamic(wrong/1).
 
-current_indent(0).
-current_level_function(0).
-valid_indent(no).
 wrong([]).
 
 start(X) :-
-	retract(current_indent(_)),
-	retract(current_level_function(_)),
-	retract(valid_indent(_)),
 	retract(wrong(_)),
-	asserta(current_indent(0)),
-	asserta(current_level_function(0)),
-	asserta(valid_indent(no)),
 	asserta(wrong([])),
 	phrase_from_file(X, 'input1.txt'),
 	accepted.

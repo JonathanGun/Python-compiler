@@ -9,6 +9,10 @@ blanks -->
 	blank;(blank, blanks).
 any_blanks -->
 	eps;blanks.
+tabs -->
+	tab; tabs.
+any_tabs -->
+	eps; tabs.
 
 underscore -->
 	"_".
@@ -18,16 +22,10 @@ any_underscore -->
 	eps; underscores.
 
 newline_only -->
-	"\n",
-	{
-		retract(valid_indent(_)),
-		asserta(valid_indent(no)),
-		nl
-	}.
+	"\n".
 
 newline -->
-	any_blanks,
-	(eof;newline_only).
+	any_blanks,newline_only,any_tabs.
 newline -->
 	[X], {
 		retract(wrong(L)),

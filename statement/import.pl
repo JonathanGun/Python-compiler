@@ -1,5 +1,3 @@
-variables -->
-	variable; (variable,variables).
 import_only -->
 	"import",blanks,variables.
 

@@ -11,10 +11,6 @@ maybe_else -->
 	(eps; else).
 
 pass -->
-	{
-		current_indent(X),
-		X > 0
-	},
 	"pass".
 
 elif -->
