@@ -35,7 +35,7 @@ any_underscore -->
 	eps; underscores.
 
 newline_only -->
-	any_comment, "\n".
+	eof;(any_comment, "\n").
 newline -->
 	eof;(any_blanks,newline_only,maybe_empty_line).
 empty_line -->

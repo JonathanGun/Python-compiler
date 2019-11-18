@@ -9,6 +9,11 @@ access_array -->
 any_access_array -->
 	eps;access_array.
 
+hint -->
+	colon, expr.
+any_hint -->
+	eps;hint.
+
 first_char_var -->
 	underscore;letter.
 other_char_var -->
@@ -20,11 +25,11 @@ other_char_var -->
 any_other_char_var -->
 	eps;other_char_var.
 variable_name  -->
-	keywords, end_of_variable_char, {error}.
+	keywords, end_of_variable_char, {fail}.
 variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->
-	variable_name,any_blanks,any_args,any_access_array.
+	datatype;(variable_name,any_blanks,any_args,any_access_array).
 
 dot_or_comma -->
 	".";",".
@@ -35,11 +40,11 @@ add_variable -->
 maybe_add_variable -->
 	eps;add_variable.
 variable -->
-	variable_single, maybe_add_variable.
+	variable_single,maybe_add_variable,any_hint.
 
 variables_rec -->
 	variable,variables.
 variables -->
-	variable; variables_rec.
+	variable;variables_rec.
 any_variables -->
 	eps; variables.

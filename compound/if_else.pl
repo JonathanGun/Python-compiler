@@ -1,9 +1,9 @@
 if_only -->
-	"if", !,  any_blanks, expr, block.
+	"if", any_blanks, expr, block.
 elif_only -->
-	"el", !, if_only.
+	"el", if_only.
 else -->
-	"else", !, block.
+	"else", block.
 maybe_else -->
 	(eps; else).
 elif -->
