@@ -1,5 +1,8 @@
 eps --> [].
 
+eof -->
+	\+[_], {write("end-of-file"),nl, accepted}.
+
 blank -->
 	" ".
 tab -->
@@ -23,12 +26,11 @@ any_underscore -->
 
 newline_only -->
 	"\n".
-
 newline -->
-	eof;(any_blanks,newline_only,(eof;any_tabs),(eps;newline)).
+	eof;(any_blanks,newline_only,(eps;tabs;newline)).
 
-eof -->
-	\+[_], {write("end-of-file"),nl, accepted}.
+colon -->
+	any_blanks, ":", any_blanks.
 
 open_bracket -->
 	"(", any_blanks.
