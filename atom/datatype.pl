@@ -1,35 +1,27 @@
 datatype -->
 	number;string;dict;list;set;tuple;none.
-
 none -->
 	"None".
 
 element_single -->
-	any_blanks, expr, any_blanks.
-
+	expr.
 element -->
-	(element_single;(element_single,",",any_element)).
-
+	(element_single;(element_single,separator,any_element)).
 any_element -->
-	eps;element.
+	eps;(any_blanks,element,any_blanks).
 
 dict_element_single -->
-	any_blanks, expr, any_blanks, ":", any_blanks, expr, any_blanks.
-
+	expr, colon, expr.
 dict_element -->
-	dict_element_single;(dict_element_single, ",", any_dict_element).
-
+	dict_element_single;(dict_element_single, separator, any_dict_element).
 any_dict_element -->
-	eps;dict_element.
+	eps;(any_blanks,dict_element,any_blanks).
 
 set -->
 	"{",any_element,"}",!.
-
 list -->
 	"[",any_element,"]",!.
-
 tuple -->
 	"(",any_element,")",!.
-
 dict -->
-	"{", any_dict_element, "}",!.
+	"{",any_dict_element, "}",!.

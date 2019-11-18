@@ -1,15 +1,17 @@
 block -->
-	colon,
-	(
-		inline_statement;
-		(newline,statement)
-	).
+	colon,block_statement.
 
+statement_rec -->
+	statement_single,statement.
 statement -->
-	statement_single;(statement_single,statement).
+	statement_single;statement_rec.
 
+indented_statement -->
+	newline, statement.
 inline_statement -->
 	any_blanks, statement_elmt.
+block_statement -->
+	inline_statement;indented_statement.
 
 compound_stmt -->
 	if;while;for;with;funcdef;classdef.

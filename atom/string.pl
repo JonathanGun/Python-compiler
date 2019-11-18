@@ -1,11 +1,9 @@
 lowercase -->
     "a";"b";"c";"d";"e";"f";"g";"h";"i";"j";"k";"l";"m";"n";"o";"p";"q";"r";"s";"t";"u";"v";"w";
     "x";"y";"z".
-
 uppercase -->
     "A";"B";"C";"D";"E";"F";"G";"H";"I";"J";"K";"L";"M";"N";"O";"P";"Q";"R";"S";"T";"U";"V";"W";
     "X";"Y";"Z".
-
 letter -->
 	lowercase;uppercase.
 
@@ -29,10 +27,15 @@ escaped_double_quote -->
     "\\\"".
 
 alphanumeric -->
-    (letter,(eps;alphanumeric));
-    (digit,(eps;alphanumeric)).
+    (letter,any_alphanumeric);
+    (digit,any_alphanumeric).
+any_alphanumeric -->
+    eps;alphanumeric.
 alphanumeric_underscore -->
-    (alphanumeric;underscore), (eps;alphanumeric_underscore).
+    (alphanumeric;underscore),
+    any_alphanumeric_underscore.
+any_alphanumeric_underscore -->
+    eps;alphanumeric_underscore.
 
 symbol -->
 	symbol_without_underscore;underscore.
