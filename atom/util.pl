@@ -25,7 +25,7 @@ newline_only -->
 	"\n".
 
 newline -->
-	any_blanks,newline_only,(eof;any_tabs).
+	eof;(any_blanks,newline_only,(eof;any_tabs),(eps;newline)).
 
 eof -->
 	\+[_], {write("end-of-file"),nl, accepted}.
