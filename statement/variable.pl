@@ -19,6 +19,8 @@ other_char_var -->
 	(underscore,other_char_var).
 any_other_char_var -->
 	eps;other_char_var.
+variable_name  -->
+	keywords, end_of_variable_char, {error}.
 variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->
