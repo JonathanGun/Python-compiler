@@ -22,6 +22,6 @@ expr -->(
 	).
 
 assign -->
-	variable, any_blanks, op_assignment, !, any_blanks, expr,  {write("assign_var ")}.
+	variable, any_blanks, op_assignment, !, any_blanks, expr.
 assign_without_op -->
 	variable, any_blanks, op_assignment_single, any_blanks, expr.

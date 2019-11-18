@@ -1,1 +1,2 @@
- a[1]   [2]  .cos_dist()
+def a():
+	print(a)

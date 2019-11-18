@@ -1,17 +1,17 @@
 if_only -->
-	"if", !, {write("if block - ")}, any_blanks, expr, block.
+	"if", !,  any_blanks, expr, block.
 
 elif_only -->
-	"el", !, {write("el")}, if_only.
+	"el", !, if_only.
 
 else -->
-	"else", !, {write("else block -")}, block.
+	"else", !, block.
 
 maybe_else -->
 	(eps; else).
 
 pass -->
-	"pass", !, {write("pass_stmt ")}.
+	"pass", !.
 
 elif -->
 	elif_only,(eps;elif).

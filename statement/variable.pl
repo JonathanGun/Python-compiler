@@ -9,8 +9,14 @@ access_array -->
 any_access_array -->
 	eps;access_array.
 
+variable_name -->
+	(underscore;letter),(eps;letter;digit;underscore;variable_single).
+variable_access_array -->
+	variable_name,any_access_array.
+function -->
+	variable_name,args.
 variable_single -->
-	((underscore;letter),(eps;letter;digit;underscore;variable_single)),any_blanks,any_access_array.
+	function;variable_access_array.
 
 variable -->
 	variable_single, (eps;(any_blanks,(".";","),any_blanks,variable)).
