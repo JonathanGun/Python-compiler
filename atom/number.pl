@@ -8,7 +8,9 @@ int -->
 	digit;(digit,int).
 
 boolean -->
-	"True";"False".
+	"True", !, {write("True")}.
+boolean -->
+	"False", !, {write("False")}.
 
 float -->
 	((eps;int), ".", int);
