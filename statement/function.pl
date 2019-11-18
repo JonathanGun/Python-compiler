@@ -1,3 +1,6 @@
+function -->
+	variable_name,args.
+
 maybe_return_var -->
 	eps; ("->", !, blanks, expr).
 
