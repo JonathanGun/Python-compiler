@@ -20,4 +20,4 @@ simple_stmt -->
 statement_elmt -->
 	compound_stmt;simple_stmt.
 statement_single -->
-	eof;(any_tabs, statement_elmt, newline).
+	eof;(any_tabs, statement_elmt, (comment;newline)).
