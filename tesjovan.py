@@ -1,1 +1,2 @@
-import a23 as py2___
+if a>2 :
+    _
