@@ -5,6 +5,6 @@ comment_body -->
 any_comment_body -->
 	eps;comment_body.
 comment -->
-	"#", !, any_comment_body, eof.
+	"#", !, any_comment_body, (eps;eof).
 any_comment -->
 	eps;comment.

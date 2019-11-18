@@ -11,6 +11,8 @@ indented_statement -->
 inline_statement -->
 	any_blanks, statement_elmt.
 block_statement -->
+	(is_eof;newline), is_eof, {write("a block must contain something"), error}.
+block_statement -->
 	inline_statement;indented_statement.
 
 compound_stmt -->
