@@ -1,6 +1,6 @@
-end_of_variable_char --> eof.
+end_of_variable_char --> is_eof.
 end_of_variable_char -->
-	op_single; ":"; "(";")";blank.
+	any_blanks,(op; ":"; "(";")";"\n").
 
 access_array_single -->
 	open_square_bracket, expr, close_square_bracket.
@@ -25,7 +25,7 @@ other_char_var -->
 any_other_char_var -->
 	eps;other_char_var.
 variable_name  -->
-	keywords, end_of_variable_char, {fail}.
+	keywords, end_of_variable_char,{write("Cannot use reserved name as variable!"), nl, error}.
 variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->

@@ -11,9 +11,9 @@ funcdef -->
 	"def", !, funcdef_body, block.
 
 return_body -->
-	any_blanks, expr.
+	any_blanks, (eps;expr).
 return -->
-	"return", !, return_body.
+	"return", return_body.
 
 from_expr_body -->
 	any_blanks, expr.
