@@ -1,1 +1,1 @@
-[ads]
+x = {1+'asdijs'[2]:1[asdnajs]}
