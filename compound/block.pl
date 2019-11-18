@@ -16,7 +16,7 @@ block_statement -->
 compound_stmt -->
 	if;while;for;with;funcdef;classdef.
 simple_stmt -->
-	assign;pass;return;break;continue;import;expr.
+	assign;pass;return;break;continue;import;expr;comment.
 statement_elmt -->
 	compound_stmt;simple_stmt.
 statement_single -->
