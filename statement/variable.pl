@@ -3,7 +3,7 @@ end_of_variable_char -->
 	any_blanks,(op; symbol_without_underscore_and_blank).
 
 access_array_single -->
-	open_square_bracket,!, expr, close_square_bracket.
+	open_square_bracket, expr, close_square_bracket.
 access_array -->
 	access_array_single;(access_array_single,any_blanks,access_array).
 any_access_array -->
@@ -29,26 +29,34 @@ variable_name  -->
 variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->
-	variable_name,any_blanks,any_args,any_access_array.
+	variable_name.
 
 dot -->
 	".".
-comma_term -->
-	",".
-comma -->
-	any_blanks, comma_term.
 maybe_comma -->
-	eps;comma.
-variable -->
+	eps;separator.
+variable_only_no_bracket -->
 	variable_single.
-variable -->
+variable_only_no_bracket -->
 	variable_single,dot,variable.
+variable_only -->
+	variable_only_no_bracket.
+variable_only -->
+	open_bracket, variable_only_no_bracket, close_bracket.
+variable_elmt -->
+	variable_only.
+variable_body_no_bracket -->
+	expr_prefix, (variable_elmt ; (variable_elmt, expr_op_infix, variable_body)).
+variable_body -->
+	variable_body_no_bracket.
+variable_body -->
+	open_bracket,variable_body_no_bracket,close_bracket.
+variable -->
+	(eps; ("not",(prefix_multi;blanks))), variable_body,any_blanks,any_args,any_access_array.
 
 variables_rec -->
-	variable,comma,variables_without_comma.
+	variable,separator,variables_without_comma.
 variables_without_comma -->
 	variable;variables_rec.
 variables -->
 	variables_without_comma,maybe_comma.
-any_variables -->
-	eps; variables.
