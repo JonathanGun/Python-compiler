@@ -1,0 +1,10 @@
+char_True -> 'T' char_rue
+char_rue -> 'r' char_ue
+char_ue -> 'u' char_e
+char_e -> 'e'
+char_Import -> 'I' char_mport
+char_mport -> 'm' char_port
+char_port -> 'p' char_ort
+char_ort -> 'o' char_rt
+char_rt -> 'r' char_t
+char_t -> 't'
