@@ -1,10 +1,145 @@
+char_False -> 'F' char_alse
+char_alse -> 'a' char_lse
+char_lse -> 'l' char_se
+char_se -> 's' char_e
+char_e -> 'e'
+char_class -> 'c' char_lass
+char_lass -> 'l' char_ass
+char_ass -> 'a' char_ss
+char_ss -> 's' char_s
+char_s -> 's'
+char_finally -> 'f' char_inally
+char_inally -> 'i' char_nally
+char_nally -> 'n' char_ally
+char_ally -> 'a' char_lly
+char_lly -> 'l' char_ly
+char_ly -> 'l' char_y
+char_y -> 'y'
+char_is -> 'i' char_s
+char_s -> 's'
+char_return -> 'r' char_eturn
+char_eturn -> 'e' char_turn
+char_turn -> 't' char_urn
+char_urn -> 'u' char_rn
+char_rn -> 'r' char_n
+char_n -> 'n'
+char_None -> 'N' char_one
+char_one -> 'o' char_ne
+char_ne -> 'n' char_e
+char_e -> 'e'
+char_continue -> 'c' char_ontinue
+char_ontinue -> 'o' char_ntinue
+char_ntinue -> 'n' char_tinue
+char_tinue -> 't' char_inue
+char_inue -> 'i' char_nue
+char_nue -> 'n' char_ue
+char_ue -> 'u' char_e
+char_e -> 'e'
+char_for -> 'f' char_or
+char_or -> 'o' char_r
+char_r -> 'r'
+char_lambda -> 'l' char_ambda
+char_ambda -> 'a' char_mbda
+char_mbda -> 'm' char_bda
+char_bda -> 'b' char_da
+char_da -> 'd' char_a
+char_a -> 'a'
+char_try -> 't' char_ry
+char_ry -> 'r' char_y
+char_y -> 'y'
 char_True -> 'T' char_rue
 char_rue -> 'r' char_ue
 char_ue -> 'u' char_e
 char_e -> 'e'
-char_Import -> 'I' char_mport
+char_def -> 'd' char_ef
+char_ef -> 'e' char_f
+char_f -> 'f'
+char_from -> 'f' char_rom
+char_rom -> 'r' char_om
+char_om -> 'o' char_m
+char_m -> 'm'
+char_nonlocal -> 'n' char_onlocal
+char_onlocal -> 'o' char_nlocal
+char_nlocal -> 'n' char_local
+char_local -> 'l' char_ocal
+char_ocal -> 'o' char_cal
+char_cal -> 'c' char_al
+char_al -> 'a' char_l
+char_l -> 'l'
+char_while -> 'w' char_hile
+char_hile -> 'h' char_ile
+char_ile -> 'i' char_le
+char_le -> 'l' char_e
+char_e -> 'e'
+char_and -> 'a' char_nd
+char_nd -> 'n' char_d
+char_d -> 'd'
+char_del -> 'd' char_el
+char_el -> 'e' char_l
+char_l -> 'l'
+char_global -> 'g' char_lobal
+char_lobal -> 'l' char_obal
+char_obal -> 'o' char_bal
+char_bal -> 'b' char_al
+char_al -> 'a' char_l
+char_l -> 'l'
+char_not -> 'n' char_ot
+char_ot -> 'o' char_t
+char_t -> 't'
+char_with -> 'w' char_ith
+char_ith -> 'i' char_th
+char_th -> 't' char_h
+char_h -> 'h'
+char_as -> 'a' char_s
+char_s -> 's'
+char_elif -> 'e' char_lif
+char_lif -> 'l' char_if
+char_if -> 'i' char_f
+char_f -> 'f'
+char_if -> 'i' char_f
+char_f -> 'f'
+char_or -> 'o' char_r
+char_r -> 'r'
+char_yield -> 'y' char_ield
+char_ield -> 'i' char_eld
+char_eld -> 'e' char_ld
+char_ld -> 'l' char_d
+char_d -> 'd'
+char_assert -> 'a' char_ssert
+char_ssert -> 's' char_sert
+char_sert -> 's' char_ert
+char_ert -> 'e' char_rt
+char_rt -> 'r' char_t
+char_t -> 't'
+char_else -> 'e' char_lse
+char_lse -> 'l' char_se
+char_se -> 's' char_e
+char_e -> 'e'
+char_import -> 'i' char_mport
 char_mport -> 'm' char_port
 char_port -> 'p' char_ort
 char_ort -> 'o' char_rt
 char_rt -> 'r' char_t
 char_t -> 't'
+char_pass -> 'p' char_ass
+char_ass -> 'a' char_ss
+char_ss -> 's' char_s
+char_s -> 's'
+char_break -> 'b' char_reak
+char_reak -> 'r' char_eak
+char_eak -> 'e' char_ak
+char_ak -> 'a' char_k
+char_k -> 'k'
+char_except -> 'e' char_xcept
+char_xcept -> 'x' char_cept
+char_cept -> 'c' char_ept
+char_ept -> 'e' char_pt
+char_pt -> 'p' char_t
+char_t -> 't'
+char_in -> 'i' char_n
+char_n -> 'n'
+char_raise -> 'r' char_aise
+char_aise -> 'a' char_ise
+char_ise -> 'i' char_se
+char_se -> 's' char_e
+char_e -> 'e'
