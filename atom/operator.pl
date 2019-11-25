@@ -30,7 +30,7 @@ op_identity -->
 	"is"; "is not".
 
 op_infix -->
-	op_num;op_compare;op_bitwise;op_logical;op_assignment_single; (blank, (op_membership;op_identity), blank).
+	op_num;op_compare;op_bitwise;op_logical; (blank, (op_membership;op_identity), blank).
 
 op_prefix -->
 	op_num_plus_min; "~".

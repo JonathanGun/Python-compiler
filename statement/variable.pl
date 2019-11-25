@@ -29,22 +29,34 @@ variable_name  -->
 variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->
-	datatype;(variable_name,any_blanks,any_args,any_access_array).
+	variable_name.
 
-dot_or_comma -->
-	".";",".
-varparator -->
-	any_blanks, dot_or_comma, any_blanks.
-add_variable -->
-	varparator, variable.
-maybe_add_variable -->
-	eps;add_variable.
+dot -->
+	".".
+maybe_comma -->
+	eps;separator.
+variable_only_no_bracket -->
+	variable_single.
+variable_only_no_bracket -->
+	variable_single,dot,variable.
+variable_only -->
+	variable_only_no_bracket.
+variable_only -->
+	open_bracket, variable_only_no_bracket, close_bracket.
+variable_elmt -->
+	variable_only.
+variable_body_no_bracket -->
+	expr_prefix, (variable_elmt ; (variable_elmt, expr_op_infix, variable_body)).
+variable_body -->
+	variable_body_no_bracket.
+variable_body -->
+	open_bracket,variable_body_no_bracket,close_bracket.
 variable -->
-	variable_single,maybe_add_variable,any_hint.
+	(eps; ("not",(prefix_multi;blanks))), variable_body,any_blanks,any_args,any_access_array.
 
 variables_rec -->
-	variable,variables.
-variables -->
+	variable,separator,variables_without_comma.
+variables_without_comma -->
 	variable;variables_rec.
-any_variables -->
-	eps; variables.
+variables -->
+	variables_without_comma,maybe_comma.

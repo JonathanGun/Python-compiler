@@ -15,12 +15,14 @@ maybe_expr_after -->
 maybe_expr_before -->
 	eps; (expr_body, expr_op_infix).
 
-expr -->(
-	((eps; "not",(prefix_multi;blanks)), expr_body);
-	(maybe_expr_before, open_bracket, expr, close_bracket, maybe_expr_after)
-	).
+expr -->
+	maybe_expr_before,((eps; ("not",(prefix_multi;blanks))), expr_body),maybe_expr_after.
+exprs_without_comma -->
+	expr; (expr, separator, exprs_without_comma).
+exprs -->
+	exprs_without_comma; (exprs_without_comma, separator).
 
 assign -->
-	variable, any_blanks, op_assignment, any_blanks, expr.
+	variables, any_blanks, op_assignment, any_blanks, (exprs;assign_without_op).
 assign_without_op -->
-	variable, any_blanks, op_assignment_single, any_blanks, expr.
+	variables, any_blanks, op_assignment_single, any_blanks, (exprs;assign_without_op).
