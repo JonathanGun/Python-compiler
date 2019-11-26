@@ -1,0 +1,15 @@
+NIM = str(input("masukkan 3 digit awalan NIM: "))
+if NIM == "160":
+	print(NIM + ' adalah mahasiswa FMIPA')
+elif NIM == "161":
+	print(NIM + ' adalah mahasiswa SITH-S')
+elif NIM == "162":
+	print(NIM + ' adalah mahasiswa SF')
+elif NIM == "163":
+	print(NIM + ' adalah mahasiswa FITB')
+elif NIM == "164":
+	print(NIM + ' adalah mahasiswa FTTM')
+elif NIM == "165":
+	print(NIM + ' adalah mahasiswa STEI')
+else :
+	print(NIM + ' tidak diketahui')
