@@ -129,9 +129,9 @@ inline_statement --> any_blanks , statement_elmt.
 block_statement --> inline_statement ; indented_statement.
 compound_stmt --> if ; while ; for ; with ; funcdef ; classdef.
 simple_stmt --> import ; return ; pass ; break ; continue ; assign ; expr.
-statement_elmt --> compound_stmt ; simple_stmt.
+statement_elmt --> (simple_stmt , newline) ; compound_stmt.
 statement_single --> empty_line ; statement_single_01.
-statement_single_01 --> any_tabs , statement_elmt , newline.
+statement_single_01 --> any_tabs , statement_elmt.
 classdef --> char_class , blanks , variable_name , any_blanks , any_args , block.
 if_only --> char_if , blanks , expr , block.
 elif_only --> char_el , if_only.
@@ -234,6 +234,9 @@ other_char_var --> letter ; digit ; underscore ; (letter , other_char_var) ; (di
 any_other_char_var --> eps ; other_char_var.
 variable_name --> first_char_var , any_other_char_var.
 variable_single --> variable_name.
+variable_names_without_comma_rec --> variable_name , separator , variable_names_without_comma.
+variable_names_without_comma --> variable_name ; variable_names_without_comma_rec.
+variable_names --> variable_names_without_comma , maybe_comma.
 maybe_comma --> eps ; separator.
 variable_only_no_bracket --> variable_single ; (variable_single , dot , variable).
 variable_only --> variable_only_no_bracket ; (open_bracket , variable_only_no_bracket , close_bracket).
