@@ -111,19 +111,22 @@ char_6060 --> char_60,char_60.
 char_4361 --> char_43,char_61.
 char_4561 --> char_45,char_61.
 char_4261 --> char_42,char_61.
-char_4761 --> char_47,char_61.
 char_474761 --> char_47,char_4761.
+char_4761 --> char_47,char_61.
 char_3761 --> char_37,char_61.
 char_424261 --> char_42,char_4261.
 char_606061 --> char_60,char_6061.
-char_6061 --> char_60,char_61.
 char_626261 --> char_62,char_6261.
-char_6261 --> char_62,char_61.
 char_6161 --> char_61,char_61.
 char_3361 --> char_33,char_61.
+char_6261 --> char_62,char_61.
+char_6061 --> char_60,char_61.
+char_4242 --> char_42, char_42.
+char_4747 --> char_47, char_47.
+char_6262 --> char_62, char_62.
 char_32 --> " ".
 char_33 --> "!".
-char_34 --> """.
+char_34 --> "\"".
 char_35 --> "#".
 char_36 --> "$".
 char_37 --> "%".
@@ -147,6 +150,7 @@ char_6 --> "6".
 char_7 --> "7".
 char_8 --> "8".
 char_9 --> "9".
+char_10 --> "\n".
 char_58 --> ":".
 char_59 --> ";".
 char_60 --> "<".
@@ -181,7 +185,7 @@ char_X --> "X".
 char_Y --> "Y".
 char_Z --> "Z".
 char_91 --> "[".
-char_92 --> "\".
+char_92 --> "\\".
 char_93 --> "]".
 char_94 --> "^".
 char_95 --> "_".
@@ -216,3 +220,4 @@ char_123 --> "{".
 char_124 --> "|".
 char_125 --> "}".
 char_126 --> "~".
+char_tab --> "\t".
