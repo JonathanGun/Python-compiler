@@ -27,5 +27,5 @@ assign_with_op -->
 assign_without_op -->
 	variable_names, any_blanks, op_assignment_single, any_blanks, (exprs;assign_without_op).
 assign -->
-	assign_without_op;assign_without_op.
+	assign_without_op;assign_with_op.
 

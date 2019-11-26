@@ -22,7 +22,7 @@ int_rec --> digit , int.
 int --> digit ; int_rec.
 any_int --> eps ; int.
 boolean --> char_True ; char_False.
-float --> any_int, char_46, int.
+float --> any_int , char_46 , int.
 float --> int , char_46 , any_int.
 non_complex_number --> float ; int.
 any_op_num_plus_min --> eps ; op_num_plus_min.
@@ -133,7 +133,7 @@ statement_elmt --> compound_stmt ; simple_stmt.
 statement_single --> empty_line ; statement_single_01.
 statement_single_01 --> any_tabs , statement_elmt , newline.
 classdef --> char_class , blanks , variable_name , any_blanks , any_args , block.
-if_only --> char_if , any_blanks , expr , block.
+if_only --> char_if , blanks , expr , block.
 elif_only --> char_el , if_only.
 else --> char_else , block.
 maybe_else --> eps ; else.
@@ -178,10 +178,10 @@ expr_01 --> eps ; (char_not , blank).
 expr_02 --> prefix_multi ; any_blanks.
 exprs_without_comma --> expr ; (expr , separator , exprs_without_comma).
 exprs --> exprs_without_comma ; (exprs_without_comma , separator).
-assign --> variables , any_blanks , op_assignment , any_blanks , assign_01.
-assign_01 --> exprs ; assign_without_op.
-assign_without_op --> variables , any_blanks , op_assignment_single , any_blanks , assign_without_op_01.
+assign_with_op --> variable_names , any_blanks , op_assignment , any_blanks , exprs.
+assign_without_op --> variable_names , any_blanks , op_assignment_single , any_blanks , assign_without_op_01.
 assign_without_op_01 --> exprs ; assign_without_op.
+assign --> assign_without_op ; assign_with_op.
 function --> variable_name , any_blanks , args.
 maybe_return_var --> eps ; (any_blanks , char_45 , char_62 , any_blanks , expr).
 funcdef_elmt --> function , maybe_return_var.
