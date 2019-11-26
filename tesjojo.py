@@ -1,2 +1,1 @@
-class ab():
-	pass
+a + b = c

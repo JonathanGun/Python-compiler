@@ -30,6 +30,12 @@ variable_name -->
 	first_char_var,any_other_char_var.
 variable_single -->
 	variable_name.
+variable_names_without_comma_rec -->
+	variable_name, separator, variable_names_without_comma.
+variable_names_without_comma -->
+	variable_name;variable_names_without_comma_rec.
+variable_names -->
+	variable_names_without_comma, maybe_comma.
 
 maybe_comma -->
 	eps;separator.
