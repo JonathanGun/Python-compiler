@@ -1,5 +1,5 @@
 if_only -->
-	char_if, any_blanks, expr, block.
+	char_if, blanks, expr, block.
 elif_only -->
 	char_el, if_only.
 else -->

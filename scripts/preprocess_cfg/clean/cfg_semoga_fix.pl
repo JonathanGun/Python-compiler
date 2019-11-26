@@ -8,10 +8,10 @@ eps --> [].
 datatype --> number ; string ; dict ; list ; set ; tuple ; none.
 none --> char_None.
 element --> expr ; (expr , separator , any_element).
-any_element --> eps ; element.
+any_element --> eps ; (any_blanks , element , any_blanks).
 dict_element_single --> expr , colon , expr.
 dict_element --> dict_element_single ; (dict_element_single , separator , any_dict_element).
-any_dict_element --> eps ; dict_element.
+any_dict_element --> eps ; (any_blanks , dict_element , any_blanks).
 set --> open_curly_bracket , any_element , close_curly_bracket.
 list --> open_square_bracket , any_element , close_square_bracket.
 tuple --> open_bracket , any_element , close_bracket.
@@ -22,6 +22,7 @@ int_rec --> digit , int.
 int --> digit ; int_rec.
 any_int --> eps ; int.
 boolean --> char_True ; char_False.
+float --> any_int , char_46 , int.
 float --> int , char_46 , any_int.
 non_complex_number --> float ; int.
 any_op_num_plus_min --> eps ; op_num_plus_min.
@@ -128,11 +129,11 @@ inline_statement --> any_blanks , statement_elmt.
 block_statement --> inline_statement ; indented_statement.
 compound_stmt --> if ; while ; for ; with ; funcdef ; classdef.
 simple_stmt --> import ; return ; pass ; break ; continue ; assign ; expr.
-statement_elmt --> compound_stmt ; simple_stmt.
+statement_elmt --> (simple_stmt , newline) ; compound_stmt.
 statement_single --> empty_line ; statement_single_01.
-statement_single_01 --> any_tabs , statement_elmt , newline.
+statement_single_01 --> any_tabs , statement_elmt.
 classdef --> char_class , blanks , variable_name , any_blanks , any_args , block.
-if_only --> char_if , any_blanks , expr , block.
+if_only --> char_if , blanks , expr , block.
 elif_only --> char_el , if_only.
 else --> char_else , block.
 maybe_else --> eps ; else.
@@ -177,10 +178,10 @@ expr_01 --> eps ; (char_not , blank).
 expr_02 --> prefix_multi ; any_blanks.
 exprs_without_comma --> expr ; (expr , separator , exprs_without_comma).
 exprs --> exprs_without_comma ; (exprs_without_comma , separator).
-assign --> variables , any_blanks , op_assignment , any_blanks , assign_01.
-assign_01 --> exprs ; assign_without_op.
-assign_without_op --> variables , any_blanks , op_assignment_single , any_blanks , assign_without_op_01.
+assign_with_op --> variable_names , any_blanks , op_assignment , any_blanks , exprs.
+assign_without_op --> variable_names , any_blanks , op_assignment_single , any_blanks , assign_without_op_01.
 assign_without_op_01 --> exprs ; assign_without_op.
+assign --> assign_without_op ; assign_with_op.
 function --> variable_name , any_blanks , args.
 maybe_return_var --> eps ; (any_blanks , char_45 , char_62 , any_blanks , expr).
 funcdef_elmt --> function , maybe_return_var.
@@ -229,17 +230,20 @@ any_access_array --> eps ; access_array.
 hint --> colon , expr.
 any_hint --> eps ; hint.
 first_char_var --> underscore ; letter.
-other_char_var --> (letter , other_char_var) ; (digit , other_char_var) ; (underscore , other_char_var).
+other_char_var --> letter ; digit ; underscore ; (letter , other_char_var) ; (digit , other_char_var) ; (underscore , other_char_var).
 any_other_char_var --> eps ; other_char_var.
 variable_name --> first_char_var , any_other_char_var.
 variable_single --> variable_name.
+variable_names_without_comma_rec --> variable_name , separator , variable_names_without_comma.
+variable_names_without_comma --> variable_name ; variable_names_without_comma_rec.
+variable_names --> variable_names_without_comma , maybe_comma.
 maybe_comma --> eps ; separator.
-variable_only_no_bracket --> variable_single , dot , variable.
-variable_only --> open_bracket , variable_only_no_bracket , close_bracket.
+variable_only_no_bracket --> variable_single ; (variable_single , dot , variable).
+variable_only --> variable_only_no_bracket ; (open_bracket , variable_only_no_bracket , close_bracket).
 variable_elmt --> variable_only.
 variable_body_no_bracket --> expr_prefix , variable_body_no_bracket_01.
 variable_body_no_bracket_01 --> variable_elmt ; (variable_elmt , expr_op_infix , variable_body).
-variable_body --> open_bracket , variable_body_no_bracket , close_bracket.
+variable_body --> variable_body_no_bracket ; (open_bracket , variable_body_no_bracket , close_bracket).
 variable_prefix --> variable_prefix_01 , variable_prefix_02.
 variable_prefix_01 --> eps ; (char_not , blank).
 variable_prefix_02 --> prefix_multi ; any_blanks.
