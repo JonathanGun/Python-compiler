@@ -229,17 +229,17 @@ any_access_array --> eps ; access_array.
 hint --> colon , expr.
 any_hint --> eps ; hint.
 first_char_var --> underscore ; letter.
-other_char_var --> (letter , other_char_var) ; (digit , other_char_var) ; (underscore , other_char_var).
+other_char_var --> letter ; digit ; underscore ; (letter , other_char_var) ; (digit , other_char_var) ; (underscore , other_char_var).
 any_other_char_var --> eps ; other_char_var.
 variable_name --> first_char_var , any_other_char_var.
 variable_single --> variable_name.
 maybe_comma --> eps ; separator.
-variable_only_no_bracket --> variable_single , dot , variable.
-variable_only --> open_bracket , variable_only_no_bracket , close_bracket.
+variable_only_no_bracket --> variable_single ; (variable_single , dot , variable).
+variable_only --> variable_only_no_bracket ; (open_bracket , variable_only_no_bracket , close_bracket).
 variable_elmt --> variable_only.
 variable_body_no_bracket --> expr_prefix , variable_body_no_bracket_01.
 variable_body_no_bracket_01 --> variable_elmt ; (variable_elmt , expr_op_infix , variable_body).
-variable_body --> open_bracket , variable_body_no_bracket , close_bracket.
+variable_body --> variable_body_no_bracket ; (open_bracket , variable_body_no_bracket , close_bracket).
 variable_prefix --> variable_prefix_01 , variable_prefix_02.
 variable_prefix_01 --> eps ; (char_not , blank).
 variable_prefix_02 --> prefix_multi ; any_blanks.
