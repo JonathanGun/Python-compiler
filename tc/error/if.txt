@@ -3,10 +3,6 @@ x=int(input("Masukkan nilai x: "))
 y=int(input("Masukkan nilai y: "))
 if(x==0 and y==0):
 	print('('+str(x)+','+str(y)+')',"ada di titik pusat.")
-elif(x==0 and y!=0):
-	print('('+str(x)+','+str(y)+')',"ada di sumbu y.")
-elif(x!=0 and y==0):
-	print('('+str(x)+','+str(y)+')',"ada di sumbu x.")
 elif(x>0 and y>0):
 	print('('+str(x)+','+str(y)+')',"ada di kuadran 1.")
 elif(x<0 and y>0):

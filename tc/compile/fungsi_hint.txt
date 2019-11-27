@@ -1,0 +1,8 @@
+MOD = 10e9+7
+def fun(a : int , b=5, *c, **d) -> float:
+	if (b+0 == 0) :
+		return 0
+	return fun((a*b(c**d))%MOD, b-1, c/d, d//a)
+
+x = [1   ,      2.3,   gajah.belalainya.panjang     ,]
+print(fun(1, 10^5, {x}, x.extend(y)))

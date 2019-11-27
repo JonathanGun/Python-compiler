@@ -52,7 +52,7 @@ variable_body -->
 variable_body -->
 	open_bracket,variable_body_no_bracket,close_bracket.
 variable -->
-	(eps; ("not",(prefix_multi;blanks))), variable_body,any_blanks,any_args,any_access_array.
+	(eps; ("not",(prefix_multi;blanks))), variable_body,any_blanks,any_args,any_access_array, any_hint.
 
 variables_rec -->
 	variable,separator,variables_without_comma.

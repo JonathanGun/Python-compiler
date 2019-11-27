@@ -4,7 +4,7 @@ function -->
 maybe_return_var -->
 	eps; (any_blanks, "->", !, any_blanks, expr).
 funcdef_elmt -->
-	function,maybe_return_var.
+	variable_name,any_blanks,param,any_blanks,maybe_return_var.
 funcdef_body -->
 	blanks,funcdef_elmt.
 funcdef -->
