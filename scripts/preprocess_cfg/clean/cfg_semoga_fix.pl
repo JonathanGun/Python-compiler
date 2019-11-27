@@ -1,8 +1,5 @@
-compile_file(X) :- main(cfg, X).
-compile :- start(cfg).
-start(X) :- main(X, "input1.txt").
-main(X, Y) :- phrase_from_file(X, Y), accepted.
-main(_, _) :- write("Ga ada yng cocok.."), error.
+start(X) :- phrase_from_file(X, "input1.txt"), accepted.
+start(_) :- write("Ga ada yng cocok.."), error.
 cfg --> s.
 accepted :- nl,ansi_format([bold, fg(green)], "Accepted!", []), nl, !, abort.
 error :- nl,ansi_format([bold, fg(red)], "Syntax Error!", []), nl, !, abort.
