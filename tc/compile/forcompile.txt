@@ -1,0 +1,14 @@
+'''
+Mencari apakah X merupakan bilangan prima 
+'''
+x=int(input("Masukkan X: "))
+if x<=1: #x kurang dari sama dengan 1
+	print(x,"bukan bilangan prima")
+for i in range(2,x+1):
+	if x>1:
+		if x%i==0:
+			if x==i:
+				print(x,"adalah bilangan prima")
+			else:
+				print(x,"bukan bilangan prima")
+			x=0
