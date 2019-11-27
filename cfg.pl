@@ -24,20 +24,24 @@
 :- include(compound/loop).
 :- include(compound/with_as).
 
+compile_file(X) :-
+	main(cfg, X).
+compile :-
+	start(cfg).
 start(X) :-
-	phrase_from_file(X, 'input1.txt'),
-	accepted.
-start(_) :-
-	write("Ga ada yng cocok.."),
-	error.
+	main(X, "input1.txt").
+main(X, Y) :-
+	phrase_from_file(X, Y), accepted.
+main(_, _) :-
+	write("Ga ada yng cocok.."), error.
 
 cfg -->
 	statement.
 
 accepted :-	
-	backtrace(20), nl,ansi_format([bold, fg(green)], 'Accepted!', []),nl,
+	nl,ansi_format([bold, fg(green)], 'Accepted!', []),nl,
 	!, abort.
 
 error :-
-	backtrace(20), nl,ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
+	nl,ansi_format([bold, fg(red)], 'Syntax Error!', []),nl,
 	!, abort.
