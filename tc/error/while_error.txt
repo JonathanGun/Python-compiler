@@ -1,0 +1,8 @@
+'''Mencari 10^X yang memuat y'''
+x=0
+y=int(input("Masukkan N: "))
+as=10**x
+while as<=y:
+    x+=1
+    as=10**x
+print(as)

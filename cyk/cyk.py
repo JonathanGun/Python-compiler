@@ -1,60 +1,39 @@
 import os.path
 import argparse
-import grammar
+
+def read_grammar(file):
+    # file merupakan file yang berisi grammar yang akan diubah menjadi list of rule
+    with open(file) as cfg:
+        lines = cfg.readlines()
+    return [x.replace("->", "").split() for x in lines]
 
 
 class Node:
-    """
-    Used for storing information about a non-terminal symbol. A node can have a maximum of two
-    children because of the CNF of the grammar.
-    It is possible though that there are multiple parses of a sentence. In this case information
-    about an alternative child is stored in self.child1 or self.child2 (the parser will decide
-    where according to the ambiguous rule).
-    Either child1 is a terminal symbol passed as string, or both children are Nodes.
-    """
-
-    def __init__(self, symbol, child1, child2=None):
+# Mengisi informasi mengenai non_terminal symbol dengan setiap class Node hanya dapat berisi 2 non_terminal atau 1 terminal
+# Jika terdapat 2 non terminal diisi dalam kanan1 dan kanan2, Jika hanya 1 terminal akan diisi kanan1 dengan kanan2 sebagai None
+    def __init__(self, symbol, kanan1, kanan2=None):
         self.symbol = symbol
-        self.child1 = child1
-        self.child2 = child2
-
+        self.kanan1 = kanan1
+        self.kanan2 = kanan2
     def __repr__(self):
-        """
-        :return: the string representation of a Node object.
-        """
+        # Mengembalikkan representasi string sebuah object Node
         return self.symbol
 
-
 class Parser:
-    """
-    A CYK parser which is able to parse any grammar in CNF. The grammar can be read from a file or
-    passed as a string. It either returns a string representation of the parse tree(s) or prints it
-    to standard out.
-    """
-
-    def __init__(self, grammar, sentence):
-        """
-        Creates a new parser object which will read in the grammar and transform it into CNF and
-        then parse the given sentence with that grammar.
-        :param grammar: the file path to the grammar/the string repr. of the grammar to read in
-        :param sentence: the file path to the sentence/the string repr. of the sentence to read in
-        """
-        self.parse_table = None
+# Parsing dengan algoritma CYK dengan grammar dalam CNF, grammar akan dibaca dari file
+    def __init__(self, grammar, kata):
+        # Membaca grammar yang merupakan CNF lalu parse kata dengan grammar yang telah dibaca
+        self.tabel_parsing = None
         self.prods = {}
         self.grammar = None
         if os.path.isfile(grammar):
             self.grammar_from_file(grammar)
-        else:
-            self.grammar_from_string(grammar)
-        self.__call__(sentence)
+        self.__call__(kata)
 
-    def __call__(self, sentence, parse=False):
-        """
-        Parse the given sentence (string or file) with the earlier given grammar.
-        :param sentence: the sentence to parse with self.grammar
-        """
-        if os.path.isfile(sentence):
-            with open(sentence) as inp:
+    def __call__(self, kata, parse=False):
+        # Melakukan parsing kata dengan grammar
+        if os.path.isfile(kata):
+            with open(kata) as inp:
                 self.input = list(inp.read())
                 for i in range(len(self.input)):
                     if self.input[i] == '\t':
@@ -63,107 +42,84 @@ class Parser:
                         self.input[i] = '\\n'
                     if self.input[i] == ' ':
                         self.input[i] = '`'
-                print("input")
+                print("Input:")
                 print(self.input)
                 if parse:
                     self.parse()
         else:
-            self.input = list(sentence)
+            self.input = list(kata)
+            print("Input:")
+            print(self.input)
 
     def grammar_from_file(self, grammar):
-        """
-        Reads in a CFG from a given file, converts it to CNF and stores it in self.grammar.
-        :param grammar: the file in which the grammar is stored.
-        """
-        self.grammar = grammar_converter.convert_grammar(grammar_converter.read_grammar(grammar))
-        # for g in self.grammar:
-        #     print(g[1])
-
-    def grammar_from_string(self, grammar):
-        """
-        Reads in a CFG from a string, converts it to CNF and stores it in self.grammar.
-        :param grammar: the CFG in string representation.
-        :return:
-        """
-        self.grammar = grammar_converter.convert_grammar([x.replace("->", "").split() for x in grammar.split("\n")])
+        #Membaca grammar CNF dari file lalu disimpan dalam self.grammar
+        self.grammar = read_grammar(grammar)
 
     def parse(self):
-        """
-        Does the actual parsing according to the CYK algorithm. The parse table is stored in
-        self.parse_table.
-        """
+        # Melakukan parsing mengikuti Algoritma CYK dengan menyimpan tabel dalam self.tabel_parsing
         length = len(self.input)
-        # self.parse_table[y][x] is the list of nodes in the x+1 cell of y+1 row in the table.
+        # self.tabel_parsing[x][y] adalah list node di dalam baris x+1 dan kolom y+1 di dalam tabel
         # That cell covers the word below it and y more words after.
-        self.parse_table = [[[] for x in range(length - y)] for y in range(length)]
+        self.tabel_parsing = [[[] for x in range(length - y)] for y in range(length)]
 
         for i, word in enumerate(self.input):
-            # Find out which non terminals can generate the terminals in the input string
-            # and put them into the parse table. One terminal could be generated by multiple
-            # non terminals, therefore the parse table will contain a list of non terminals.
+            # Mencari non terminal yang bisa membuat terminal di input string
+            # setelah itu dimasukkan ke dalam parse table. 1 terminal bisa dibuat oleh banyak
+            # non terminal, maka dari itu parse table akan berisi list dari non terminal.
             for rule in self.grammar:
-                # print(rule)
                 if f"'{word}'" == rule[1]:
-                    self.parse_table[0][i].append(Node(rule[0], word))
+                    self.tabel_parsing[0][i].append(Node(rule[0], word))
         for words_to_consider in range(2, length + 1):
-            for starting_cell in range(0, length - words_to_consider + 1):
-                for left_size in range(1, words_to_consider):
-                    right_size = words_to_consider - left_size
+            for sel_start in range(0, length - words_to_consider + 1):
+                for size_kiri in range(1, words_to_consider):
+                    size_kanan = words_to_consider - size_kiri
 
-                    left_cell = self.parse_table[left_size - 1][starting_cell]
-                    right_cell = self.parse_table[right_size - 1][starting_cell + left_size]
+                    sel_kiri = self.tabel_parsing[size_kiri - 1][sel_start]
+                    sel_kanan = self.tabel_parsing[size_kanan - 1][sel_start + size_kiri]
 
                     for rule in self.grammar:
-                        left_nodes = [n for n in left_cell if n.symbol == rule[1]]
-                        if left_nodes:
-                            right_nodes = [n for n in right_cell if n.symbol == rule[2]]
-                            self.parse_table[words_to_consider - 1][starting_cell].extend(
-                                [Node(rule[0], left, right) for left in left_nodes for right in right_nodes]
+                        node_kiri = [n for n in sel_kiri if n.symbol == rule[1]]
+                        if node_kiri:
+                            node_kanan = [n for n in sel_kanan if n.symbol == rule[2]]
+                            self.tabel_parsing[words_to_consider - 1][sel_start].extend(
+                                [Node(rule[0], left, right) for left in node_kiri for right in node_kanan]
                             )
 
-    def print_tree(self, output=True):
-        """
-        Print the parse tree starting with the start symbol. Alternatively it returns the string
-        representation of the tree(s) instead of printing it.
-        """
+    def tulis_tree(self, output=True):
+        # menuliskan parse tree mulai dari start simbolnya.
         start_symbol = self.grammar[0][0]
-        final_nodes = [n for n in self.parse_table[-1][0] if n.symbol == start_symbol]
+        final_nodes = [n for n in self.tabel_parsing[-1][0] if n.symbol == start_symbol]
         # print(final_nodes)
-        trees = [generate_tree(node) for node in final_nodes]
+        trees = [membuat_tree(node) for node in final_nodes]
         print("Parse tree:")
         for tree in trees:
             print(tree)
-        print("parse table:")
-        for t in self.parse_table:
+        print("Parse table:")
+        for t in self.tabel_parsing:
             print(t)
         if final_nodes:
             if output:
-                print("The given sentence is contained in the language produced by the given grammar!")
+                print("\nAccepted")
             else:
                 return trees
-            print("\n Accepted")
         else:
-            print("The given sentence is not contained in the language produced by the given grammar!\nCompile Error!")
+            print("\nCompile Error!")
 
 
-def generate_tree(node):
-    """
-    Generates the string representation of the parse tree.
-    :param node: the root node.
-    :return: the parse tree in string form.
-    """
-    if node.child2 is None:
-        return f"[{node.symbol} '{node.child1}']"
-    return f"[{node.symbol} {generate_tree(node.child1)} {generate_tree(node.child2)}]"
+def membuat_tree(node):
+    # Membuat parse tree dengan string representasinya
+    if node.kanan2 is None:
+        return f"[{node.symbol} '{node.kanan1}']"
+    return f"[{node.symbol} {membuat_tree(node.kanan1)} {membuat_tree(node.kanan2)}]"
 
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument("grammar",
                            help="File containing the grammar or string directly representing the grammar.")
-    argparser.add_argument("sentence",
-                           help="File containing the sentence or string directly representing the sentence.")
+    argparser.add_argument("kata",
+                           help="File containing the kata or string directly representing the kata.")
     args = argparser.parse_args()
-    CYK = Parser(args.grammar, args.sentence)
+    CYK = Parser(args.grammar, args.kata)
     CYK.parse()
-    CYK.print_tree()
+    CYK.tulis_tree()
