@@ -1,0 +1,88 @@
+S -> any_non_complex_number_with_op complex_part
+S -> non_complex_number char_j
+S -> '0'
+S -> '1'
+S -> '2'
+S -> '3'
+S -> '4'
+S -> '5'
+S -> '6'
+S -> '7'
+S -> '8'
+S -> '9'
+S -> digit int
+complex_number -> any_non_complex_number_with_op complex_part
+complex_number -> non_complex_number char_j
+int_rec -> digit int
+any_op_num_plus_min -> op_num_plus_min
+complex_infix -> op_num_plus_min
+non_complex_number_with_op -> non_complex_number complex_infix
+complex_part -> non_complex_number char_j
+char_0 -> '0'
+char_1 -> '1'
+char_2 -> '2'
+char_3 -> '3'
+char_4 -> '4'
+char_5 -> '5'
+char_6 -> '6'
+char_7 -> '7'
+char_8 -> '8'
+char_9 -> '9'
+char_j -> 'j'
+number -> any_non_complex_number_with_op complex_part
+number -> digit int
+number -> non_complex_number char_j
+number -> '0'
+number -> '1'
+number -> '2'
+number -> '3'
+number -> '4'
+number -> '5'
+number -> '6'
+number -> '7'
+number -> '8'
+number -> '9'
+digit -> '0'
+digit -> '1'
+digit -> '2'
+digit -> '3'
+digit -> '4'
+digit -> '5'
+digit -> '6'
+digit -> '7'
+digit -> '8'
+digit -> '9'
+int -> digit int
+int -> '0'
+int -> '1'
+int -> '2'
+int -> '3'
+int -> '4'
+int -> '5'
+int -> '6'
+int -> '7'
+int -> '8'
+int -> '9'
+any_non_complex_number_with_op -> non_complex_number complex_infix
+any_int -> '0'
+any_int -> '1'
+any_int -> '2'
+any_int -> '3'
+any_int -> '4'
+any_int -> '5'
+any_int -> '6'
+any_int -> '7'
+any_int -> '8'
+any_int -> '9'
+any_int -> digit int
+non_complex_number -> '0'
+non_complex_number -> '1'
+non_complex_number -> '2'
+non_complex_number -> '3'
+non_complex_number -> '4'
+non_complex_number -> '5'
+non_complex_number -> '6'
+non_complex_number -> '7'
+non_complex_number -> '8'
+non_complex_number -> '9'
+non_complex_number -> digit int
