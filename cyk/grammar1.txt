@@ -1,0 +1,4096 @@
+S -> any_blanks A251
+S -> any_tabs statement_elmt
+S -> statement_single statement
+S -> any_comment newline
+S -> any_blanks A241
+S -> newline_only maybe_empty_line
+S -> simple_stmt A281
+S -> if_only A311
+S -> char_while A321
+S -> char_for A331
+S -> char_with A371
+S -> char_def A521
+S -> char_class A291
+A02 -> any_element
+A51 -> any_element close_curly_bracket
+A51 -> any_blanks char_125
+A51 -> '}'
+A61 -> any_element close_square_bracket
+A61 -> any_blanks char_93
+A61 -> ']'
+A71 -> any_element close_bracket
+A71 -> any_blanks char_41
+A71 -> ')'
+A32 -> any_dict_element
+A81 -> any_dict_element close_curly_bracket
+A81 -> any_blanks char_125
+A81 -> '}'
+float -> any_int A91
+float -> int A101
+float -> char_46 int
+A101 -> char_46 any_int
+A101 -> '.'
+A112 -> any_op_num_plus_min int
+A112 -> '0'
+A112 -> '1'
+A112 -> '2'
+A112 -> '3'
+A112 -> '4'
+A112 -> '5'
+A112 -> '6'
+A112 -> '7'
+A112 -> '8'
+A112 -> '9'
+A112 -> digit int
+complex_number -> any_non_complex_number_with_op complex_part
+complex_number -> non_complex_number char_j
+A141 -> any_alphanumeric
+A151 -> any_alphanumeric
+alphanumeric_underscore -> alphanumeric_underscore_new any_alphanumeric_underscore
+alphanumeric_underscore -> letter A141
+alphanumeric_underscore -> digit A151
+alphanumeric_underscore -> '_'
+string_body_without_single_quote_01 -> letter string_body_without_single_quote
+string_body_without_single_quote_01 -> 'a'
+string_body_without_single_quote_01 -> 'b'
+string_body_without_single_quote_01 -> 'c'
+string_body_without_single_quote_01 -> 'd'
+string_body_without_single_quote_01 -> 'e'
+string_body_without_single_quote_01 -> 'f'
+string_body_without_single_quote_01 -> 'g'
+string_body_without_single_quote_01 -> 'h'
+string_body_without_single_quote_01 -> 'i'
+string_body_without_single_quote_01 -> 'j'
+string_body_without_single_quote_01 -> 'k'
+string_body_without_single_quote_01 -> 'l'
+string_body_without_single_quote_01 -> 'm'
+string_body_without_single_quote_01 -> 'n'
+string_body_without_single_quote_01 -> 'o'
+string_body_without_single_quote_01 -> 'p'
+string_body_without_single_quote_01 -> 'q'
+string_body_without_single_quote_01 -> 'r'
+string_body_without_single_quote_01 -> 's'
+string_body_without_single_quote_01 -> 't'
+string_body_without_single_quote_01 -> 'u'
+string_body_without_single_quote_01 -> 'v'
+string_body_without_single_quote_01 -> 'w'
+string_body_without_single_quote_01 -> 'x'
+string_body_without_single_quote_01 -> 'y'
+string_body_without_single_quote_01 -> 'z'
+string_body_without_single_quote_01 -> 'A'
+string_body_without_single_quote_01 -> 'B'
+string_body_without_single_quote_01 -> 'C'
+string_body_without_single_quote_01 -> 'D'
+string_body_without_single_quote_01 -> 'E'
+string_body_without_single_quote_01 -> 'F'
+string_body_without_single_quote_01 -> 'G'
+string_body_without_single_quote_01 -> 'H'
+string_body_without_single_quote_01 -> 'I'
+string_body_without_single_quote_01 -> 'J'
+string_body_without_single_quote_01 -> 'K'
+string_body_without_single_quote_01 -> 'L'
+string_body_without_single_quote_01 -> 'M'
+string_body_without_single_quote_01 -> 'N'
+string_body_without_single_quote_01 -> 'O'
+string_body_without_single_quote_01 -> 'P'
+string_body_without_single_quote_01 -> 'Q'
+string_body_without_single_quote_01 -> 'R'
+string_body_without_single_quote_01 -> 'S'
+string_body_without_single_quote_01 -> 'T'
+string_body_without_single_quote_01 -> 'U'
+string_body_without_single_quote_01 -> 'V'
+string_body_without_single_quote_01 -> 'W'
+string_body_without_single_quote_01 -> 'X'
+string_body_without_single_quote_01 -> 'Y'
+string_body_without_single_quote_01 -> 'Z'
+string_body_without_single_quote_02 -> digit string_body_without_single_quote
+string_body_without_single_quote_02 -> '0'
+string_body_without_single_quote_02 -> '1'
+string_body_without_single_quote_02 -> '2'
+string_body_without_single_quote_02 -> '3'
+string_body_without_single_quote_02 -> '4'
+string_body_without_single_quote_02 -> '5'
+string_body_without_single_quote_02 -> '6'
+string_body_without_single_quote_02 -> '7'
+string_body_without_single_quote_02 -> '8'
+string_body_without_single_quote_02 -> '9'
+string_body_without_single_quote_03 -> symbol_without_single_quote string_body_without_single_quote
+string_body_without_single_quote_03 -> '`'
+string_body_without_single_quote_03 -> '!'
+string_body_without_single_quote_03 -> '"'
+string_body_without_single_quote_03 -> '#'
+string_body_without_single_quote_03 -> '$'
+string_body_without_single_quote_03 -> '%'
+string_body_without_single_quote_03 -> '&'
+string_body_without_single_quote_03 -> '('
+string_body_without_single_quote_03 -> ')'
+string_body_without_single_quote_03 -> '*'
+string_body_without_single_quote_03 -> '+'
+string_body_without_single_quote_03 -> ','
+string_body_without_single_quote_03 -> '-'
+string_body_without_single_quote_03 -> '.'
+string_body_without_single_quote_03 -> '/'
+string_body_without_single_quote_03 -> ':'
+string_body_without_single_quote_03 -> ';'
+string_body_without_single_quote_03 -> '<'
+string_body_without_single_quote_03 -> '='
+string_body_without_single_quote_03 -> '>'
+string_body_without_single_quote_03 -> '?'
+string_body_without_single_quote_03 -> '@'
+string_body_without_single_quote_03 -> '['
+string_body_without_single_quote_03 -> '\'
+string_body_without_single_quote_03 -> ']'
+string_body_without_single_quote_03 -> '^'
+string_body_without_single_quote_03 -> '_'
+string_body_without_single_quote_03 -> '`'
+string_body_without_single_quote_03 -> '{'
+string_body_without_single_quote_03 -> ';'
+string_body_without_single_quote_03 -> '}'
+string_body_without_single_quote_03 -> '~'
+string_body_without_single_quote_03 -> char_92 single_quote
+string_body_without_single_quote_03 -> '_'
+string_body_without_single_quote_03 -> '\t'
+A201 -> string_body_without_single_quote single_quote
+A201 -> '''
+string_body_without_double_quote_01 -> letter string_body_without_double_quote
+string_body_without_double_quote_01 -> 'a'
+string_body_without_double_quote_01 -> 'b'
+string_body_without_double_quote_01 -> 'c'
+string_body_without_double_quote_01 -> 'd'
+string_body_without_double_quote_01 -> 'e'
+string_body_without_double_quote_01 -> 'f'
+string_body_without_double_quote_01 -> 'g'
+string_body_without_double_quote_01 -> 'h'
+string_body_without_double_quote_01 -> 'i'
+string_body_without_double_quote_01 -> 'j'
+string_body_without_double_quote_01 -> 'k'
+string_body_without_double_quote_01 -> 'l'
+string_body_without_double_quote_01 -> 'm'
+string_body_without_double_quote_01 -> 'n'
+string_body_without_double_quote_01 -> 'o'
+string_body_without_double_quote_01 -> 'p'
+string_body_without_double_quote_01 -> 'q'
+string_body_without_double_quote_01 -> 'r'
+string_body_without_double_quote_01 -> 's'
+string_body_without_double_quote_01 -> 't'
+string_body_without_double_quote_01 -> 'u'
+string_body_without_double_quote_01 -> 'v'
+string_body_without_double_quote_01 -> 'w'
+string_body_without_double_quote_01 -> 'x'
+string_body_without_double_quote_01 -> 'y'
+string_body_without_double_quote_01 -> 'z'
+string_body_without_double_quote_01 -> 'A'
+string_body_without_double_quote_01 -> 'B'
+string_body_without_double_quote_01 -> 'C'
+string_body_without_double_quote_01 -> 'D'
+string_body_without_double_quote_01 -> 'E'
+string_body_without_double_quote_01 -> 'F'
+string_body_without_double_quote_01 -> 'G'
+string_body_without_double_quote_01 -> 'H'
+string_body_without_double_quote_01 -> 'I'
+string_body_without_double_quote_01 -> 'J'
+string_body_without_double_quote_01 -> 'K'
+string_body_without_double_quote_01 -> 'L'
+string_body_without_double_quote_01 -> 'M'
+string_body_without_double_quote_01 -> 'N'
+string_body_without_double_quote_01 -> 'O'
+string_body_without_double_quote_01 -> 'P'
+string_body_without_double_quote_01 -> 'Q'
+string_body_without_double_quote_01 -> 'R'
+string_body_without_double_quote_01 -> 'S'
+string_body_without_double_quote_01 -> 'T'
+string_body_without_double_quote_01 -> 'U'
+string_body_without_double_quote_01 -> 'V'
+string_body_without_double_quote_01 -> 'W'
+string_body_without_double_quote_01 -> 'X'
+string_body_without_double_quote_01 -> 'Y'
+string_body_without_double_quote_01 -> 'Z'
+string_body_without_double_quote_02 -> digit string_body_without_double_quote
+string_body_without_double_quote_02 -> '0'
+string_body_without_double_quote_02 -> '1'
+string_body_without_double_quote_02 -> '2'
+string_body_without_double_quote_02 -> '3'
+string_body_without_double_quote_02 -> '4'
+string_body_without_double_quote_02 -> '5'
+string_body_without_double_quote_02 -> '6'
+string_body_without_double_quote_02 -> '7'
+string_body_without_double_quote_02 -> '8'
+string_body_without_double_quote_02 -> '9'
+string_body_without_double_quote_03 -> symbol_without_double_quote string_body_without_double_quote
+string_body_without_double_quote_03 -> '`'
+string_body_without_double_quote_03 -> '!'
+string_body_without_double_quote_03 -> '#'
+string_body_without_double_quote_03 -> '$'
+string_body_without_double_quote_03 -> '%'
+string_body_without_double_quote_03 -> '&'
+string_body_without_double_quote_03 -> '''
+string_body_without_double_quote_03 -> '('
+string_body_without_double_quote_03 -> ')'
+string_body_without_double_quote_03 -> '*'
+string_body_without_double_quote_03 -> '+'
+string_body_without_double_quote_03 -> ','
+string_body_without_double_quote_03 -> '-'
+string_body_without_double_quote_03 -> '.'
+string_body_without_double_quote_03 -> '/'
+string_body_without_double_quote_03 -> ':'
+string_body_without_double_quote_03 -> ';'
+string_body_without_double_quote_03 -> '<'
+string_body_without_double_quote_03 -> '='
+string_body_without_double_quote_03 -> '>'
+string_body_without_double_quote_03 -> '?'
+string_body_without_double_quote_03 -> '@'
+string_body_without_double_quote_03 -> '['
+string_body_without_double_quote_03 -> '\'
+string_body_without_double_quote_03 -> ']'
+string_body_without_double_quote_03 -> '^'
+string_body_without_double_quote_03 -> '_'
+string_body_without_double_quote_03 -> '`'
+string_body_without_double_quote_03 -> '{'
+string_body_without_double_quote_03 -> ';'
+string_body_without_double_quote_03 -> '}'
+string_body_without_double_quote_03 -> '~'
+string_body_without_double_quote_03 -> char_92 double_quote
+string_body_without_double_quote_03 -> '_'
+string_body_without_double_quote_03 -> '\t'
+A211 -> string_body_without_double_quote double_quote
+A211 -> '"'
+string_body_multi_body_without_double_quote_01 -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote
+string_body_multi_body_without_double_quote_01 -> '`'
+string_body_multi_body_without_double_quote_01 -> '!'
+string_body_multi_body_without_double_quote_01 -> '#'
+string_body_multi_body_without_double_quote_01 -> '$'
+string_body_multi_body_without_double_quote_01 -> '%'
+string_body_multi_body_without_double_quote_01 -> '&'
+string_body_multi_body_without_double_quote_01 -> '''
+string_body_multi_body_without_double_quote_01 -> '('
+string_body_multi_body_without_double_quote_01 -> ')'
+string_body_multi_body_without_double_quote_01 -> '*'
+string_body_multi_body_without_double_quote_01 -> '+'
+string_body_multi_body_without_double_quote_01 -> ','
+string_body_multi_body_without_double_quote_01 -> '-'
+string_body_multi_body_without_double_quote_01 -> '.'
+string_body_multi_body_without_double_quote_01 -> '/'
+string_body_multi_body_without_double_quote_01 -> ':'
+string_body_multi_body_without_double_quote_01 -> ';'
+string_body_multi_body_without_double_quote_01 -> '<'
+string_body_multi_body_without_double_quote_01 -> '='
+string_body_multi_body_without_double_quote_01 -> '>'
+string_body_multi_body_without_double_quote_01 -> '?'
+string_body_multi_body_without_double_quote_01 -> '@'
+string_body_multi_body_without_double_quote_01 -> '['
+string_body_multi_body_without_double_quote_01 -> '\'
+string_body_multi_body_without_double_quote_01 -> ']'
+string_body_multi_body_without_double_quote_01 -> '^'
+string_body_multi_body_without_double_quote_01 -> '_'
+string_body_multi_body_without_double_quote_01 -> '`'
+string_body_multi_body_without_double_quote_01 -> '{'
+string_body_multi_body_without_double_quote_01 -> ';'
+string_body_multi_body_without_double_quote_01 -> '}'
+string_body_multi_body_without_double_quote_01 -> '~'
+string_body_multi_body_without_double_quote_01 -> char_92 double_quote
+string_body_multi_body_without_double_quote_01 -> '0'
+string_body_multi_body_without_double_quote_01 -> '1'
+string_body_multi_body_without_double_quote_01 -> '2'
+string_body_multi_body_without_double_quote_01 -> '3'
+string_body_multi_body_without_double_quote_01 -> '4'
+string_body_multi_body_without_double_quote_01 -> '5'
+string_body_multi_body_without_double_quote_01 -> '6'
+string_body_multi_body_without_double_quote_01 -> '7'
+string_body_multi_body_without_double_quote_01 -> '8'
+string_body_multi_body_without_double_quote_01 -> '9'
+string_body_multi_body_without_double_quote_01 -> '\n'
+string_body_multi_body_without_double_quote_01 -> '_'
+string_body_multi_body_without_double_quote_01 -> '\t'
+string_body_multi_body_without_double_quote_01 -> 'a'
+string_body_multi_body_without_double_quote_01 -> 'b'
+string_body_multi_body_without_double_quote_01 -> 'c'
+string_body_multi_body_without_double_quote_01 -> 'd'
+string_body_multi_body_without_double_quote_01 -> 'e'
+string_body_multi_body_without_double_quote_01 -> 'f'
+string_body_multi_body_without_double_quote_01 -> 'g'
+string_body_multi_body_without_double_quote_01 -> 'h'
+string_body_multi_body_without_double_quote_01 -> 'i'
+string_body_multi_body_without_double_quote_01 -> 'j'
+string_body_multi_body_without_double_quote_01 -> 'k'
+string_body_multi_body_without_double_quote_01 -> 'l'
+string_body_multi_body_without_double_quote_01 -> 'm'
+string_body_multi_body_without_double_quote_01 -> 'n'
+string_body_multi_body_without_double_quote_01 -> 'o'
+string_body_multi_body_without_double_quote_01 -> 'p'
+string_body_multi_body_without_double_quote_01 -> 'q'
+string_body_multi_body_without_double_quote_01 -> 'r'
+string_body_multi_body_without_double_quote_01 -> 's'
+string_body_multi_body_without_double_quote_01 -> 't'
+string_body_multi_body_without_double_quote_01 -> 'u'
+string_body_multi_body_without_double_quote_01 -> 'v'
+string_body_multi_body_without_double_quote_01 -> 'w'
+string_body_multi_body_without_double_quote_01 -> 'x'
+string_body_multi_body_without_double_quote_01 -> 'y'
+string_body_multi_body_without_double_quote_01 -> 'z'
+string_body_multi_body_without_double_quote_01 -> 'A'
+string_body_multi_body_without_double_quote_01 -> 'B'
+string_body_multi_body_without_double_quote_01 -> 'C'
+string_body_multi_body_without_double_quote_01 -> 'D'
+string_body_multi_body_without_double_quote_01 -> 'E'
+string_body_multi_body_without_double_quote_01 -> 'F'
+string_body_multi_body_without_double_quote_01 -> 'G'
+string_body_multi_body_without_double_quote_01 -> 'H'
+string_body_multi_body_without_double_quote_01 -> 'I'
+string_body_multi_body_without_double_quote_01 -> 'J'
+string_body_multi_body_without_double_quote_01 -> 'K'
+string_body_multi_body_without_double_quote_01 -> 'L'
+string_body_multi_body_without_double_quote_01 -> 'M'
+string_body_multi_body_without_double_quote_01 -> 'N'
+string_body_multi_body_without_double_quote_01 -> 'O'
+string_body_multi_body_without_double_quote_01 -> 'P'
+string_body_multi_body_without_double_quote_01 -> 'Q'
+string_body_multi_body_without_double_quote_01 -> 'R'
+string_body_multi_body_without_double_quote_01 -> 'S'
+string_body_multi_body_without_double_quote_01 -> 'T'
+string_body_multi_body_without_double_quote_01 -> 'U'
+string_body_multi_body_without_double_quote_01 -> 'V'
+string_body_multi_body_without_double_quote_01 -> 'W'
+string_body_multi_body_without_double_quote_01 -> 'X'
+string_body_multi_body_without_double_quote_01 -> 'Y'
+string_body_multi_body_without_double_quote_01 -> 'Z'
+A161 -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote
+A161 -> '`'
+A161 -> '!'
+A161 -> '#'
+A161 -> '$'
+A161 -> '%'
+A161 -> '&'
+A161 -> '''
+A161 -> '('
+A161 -> ')'
+A161 -> '*'
+A161 -> '+'
+A161 -> ','
+A161 -> '-'
+A161 -> '.'
+A161 -> '/'
+A161 -> ':'
+A161 -> ';'
+A161 -> '<'
+A161 -> '='
+A161 -> '>'
+A161 -> '?'
+A161 -> '@'
+A161 -> '['
+A161 -> '\'
+A161 -> ']'
+A161 -> '^'
+A161 -> '_'
+A161 -> '`'
+A161 -> '{'
+A161 -> ';'
+A161 -> '}'
+A161 -> '~'
+A161 -> char_92 double_quote
+A161 -> '0'
+A161 -> '1'
+A161 -> '2'
+A161 -> '3'
+A161 -> '4'
+A161 -> '5'
+A161 -> '6'
+A161 -> '7'
+A161 -> '8'
+A161 -> '9'
+A161 -> '\n'
+A161 -> '_'
+A161 -> '\t'
+A161 -> 'a'
+A161 -> 'b'
+A161 -> 'c'
+A161 -> 'd'
+A161 -> 'e'
+A161 -> 'f'
+A161 -> 'g'
+A161 -> 'h'
+A161 -> 'i'
+A161 -> 'j'
+A161 -> 'k'
+A161 -> 'l'
+A161 -> 'm'
+A161 -> 'n'
+A161 -> 'o'
+A161 -> 'p'
+A161 -> 'q'
+A161 -> 'r'
+A161 -> 's'
+A161 -> 't'
+A161 -> 'u'
+A161 -> 'v'
+A161 -> 'w'
+A161 -> 'x'
+A161 -> 'y'
+A161 -> 'z'
+A161 -> 'A'
+A161 -> 'B'
+A161 -> 'C'
+A161 -> 'D'
+A161 -> 'E'
+A161 -> 'F'
+A161 -> 'G'
+A161 -> 'H'
+A161 -> 'I'
+A161 -> 'J'
+A161 -> 'K'
+A161 -> 'L'
+A161 -> 'M'
+A161 -> 'N'
+A161 -> 'O'
+A161 -> 'P'
+A161 -> 'Q'
+A161 -> 'R'
+A161 -> 'S'
+A161 -> 'T'
+A161 -> 'U'
+A161 -> 'V'
+A161 -> 'W'
+A161 -> 'X'
+A161 -> 'Y'
+A161 -> 'Z'
+A172 -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote
+A172 -> '`'
+A172 -> '!'
+A172 -> '#'
+A172 -> '$'
+A172 -> '%'
+A172 -> '&'
+A172 -> '''
+A172 -> '('
+A172 -> ')'
+A172 -> '*'
+A172 -> '+'
+A172 -> ','
+A172 -> '-'
+A172 -> '.'
+A172 -> '/'
+A172 -> ':'
+A172 -> ';'
+A172 -> '<'
+A172 -> '='
+A172 -> '>'
+A172 -> '?'
+A172 -> '@'
+A172 -> '['
+A172 -> '\'
+A172 -> ']'
+A172 -> '^'
+A172 -> '_'
+A172 -> '`'
+A172 -> '{'
+A172 -> ';'
+A172 -> '}'
+A172 -> '~'
+A172 -> char_92 double_quote
+A172 -> '0'
+A172 -> '1'
+A172 -> '2'
+A172 -> '3'
+A172 -> '4'
+A172 -> '5'
+A172 -> '6'
+A172 -> '7'
+A172 -> '8'
+A172 -> '9'
+A172 -> '\n'
+A172 -> '_'
+A172 -> '\t'
+A172 -> 'a'
+A172 -> 'b'
+A172 -> 'c'
+A172 -> 'd'
+A172 -> 'e'
+A172 -> 'f'
+A172 -> 'g'
+A172 -> 'h'
+A172 -> 'i'
+A172 -> 'j'
+A172 -> 'k'
+A172 -> 'l'
+A172 -> 'm'
+A172 -> 'n'
+A172 -> 'o'
+A172 -> 'p'
+A172 -> 'q'
+A172 -> 'r'
+A172 -> 's'
+A172 -> 't'
+A172 -> 'u'
+A172 -> 'v'
+A172 -> 'w'
+A172 -> 'x'
+A172 -> 'y'
+A172 -> 'z'
+A172 -> 'A'
+A172 -> 'B'
+A172 -> 'C'
+A172 -> 'D'
+A172 -> 'E'
+A172 -> 'F'
+A172 -> 'G'
+A172 -> 'H'
+A172 -> 'I'
+A172 -> 'J'
+A172 -> 'K'
+A172 -> 'L'
+A172 -> 'M'
+A172 -> 'N'
+A172 -> 'O'
+A172 -> 'P'
+A172 -> 'Q'
+A172 -> 'R'
+A172 -> 'S'
+A172 -> 'T'
+A172 -> 'U'
+A172 -> 'V'
+A172 -> 'W'
+A172 -> 'X'
+A172 -> 'Y'
+A172 -> 'Z'
+A223 -> string_body_multi_body_without_double_quote A224
+A223 -> double_quote A225
+string_body_multi_body_without_single_quote_01 -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote
+string_body_multi_body_without_single_quote_01 -> '`'
+string_body_multi_body_without_single_quote_01 -> '!'
+string_body_multi_body_without_single_quote_01 -> '"'
+string_body_multi_body_without_single_quote_01 -> '#'
+string_body_multi_body_without_single_quote_01 -> '$'
+string_body_multi_body_without_single_quote_01 -> '%'
+string_body_multi_body_without_single_quote_01 -> '&'
+string_body_multi_body_without_single_quote_01 -> '('
+string_body_multi_body_without_single_quote_01 -> ')'
+string_body_multi_body_without_single_quote_01 -> '*'
+string_body_multi_body_without_single_quote_01 -> '+'
+string_body_multi_body_without_single_quote_01 -> ','
+string_body_multi_body_without_single_quote_01 -> '-'
+string_body_multi_body_without_single_quote_01 -> '.'
+string_body_multi_body_without_single_quote_01 -> '/'
+string_body_multi_body_without_single_quote_01 -> ':'
+string_body_multi_body_without_single_quote_01 -> ';'
+string_body_multi_body_without_single_quote_01 -> '<'
+string_body_multi_body_without_single_quote_01 -> '='
+string_body_multi_body_without_single_quote_01 -> '>'
+string_body_multi_body_without_single_quote_01 -> '?'
+string_body_multi_body_without_single_quote_01 -> '@'
+string_body_multi_body_without_single_quote_01 -> '['
+string_body_multi_body_without_single_quote_01 -> '\'
+string_body_multi_body_without_single_quote_01 -> ']'
+string_body_multi_body_without_single_quote_01 -> '^'
+string_body_multi_body_without_single_quote_01 -> '_'
+string_body_multi_body_without_single_quote_01 -> '`'
+string_body_multi_body_without_single_quote_01 -> '{'
+string_body_multi_body_without_single_quote_01 -> ';'
+string_body_multi_body_without_single_quote_01 -> '}'
+string_body_multi_body_without_single_quote_01 -> '~'
+string_body_multi_body_without_single_quote_01 -> char_92 single_quote
+string_body_multi_body_without_single_quote_01 -> '0'
+string_body_multi_body_without_single_quote_01 -> '1'
+string_body_multi_body_without_single_quote_01 -> '2'
+string_body_multi_body_without_single_quote_01 -> '3'
+string_body_multi_body_without_single_quote_01 -> '4'
+string_body_multi_body_without_single_quote_01 -> '5'
+string_body_multi_body_without_single_quote_01 -> '6'
+string_body_multi_body_without_single_quote_01 -> '7'
+string_body_multi_body_without_single_quote_01 -> '8'
+string_body_multi_body_without_single_quote_01 -> '9'
+string_body_multi_body_without_single_quote_01 -> '\n'
+string_body_multi_body_without_single_quote_01 -> '_'
+string_body_multi_body_without_single_quote_01 -> '\t'
+string_body_multi_body_without_single_quote_01 -> 'a'
+string_body_multi_body_without_single_quote_01 -> 'b'
+string_body_multi_body_without_single_quote_01 -> 'c'
+string_body_multi_body_without_single_quote_01 -> 'd'
+string_body_multi_body_without_single_quote_01 -> 'e'
+string_body_multi_body_without_single_quote_01 -> 'f'
+string_body_multi_body_without_single_quote_01 -> 'g'
+string_body_multi_body_without_single_quote_01 -> 'h'
+string_body_multi_body_without_single_quote_01 -> 'i'
+string_body_multi_body_without_single_quote_01 -> 'j'
+string_body_multi_body_without_single_quote_01 -> 'k'
+string_body_multi_body_without_single_quote_01 -> 'l'
+string_body_multi_body_without_single_quote_01 -> 'm'
+string_body_multi_body_without_single_quote_01 -> 'n'
+string_body_multi_body_without_single_quote_01 -> 'o'
+string_body_multi_body_without_single_quote_01 -> 'p'
+string_body_multi_body_without_single_quote_01 -> 'q'
+string_body_multi_body_without_single_quote_01 -> 'r'
+string_body_multi_body_without_single_quote_01 -> 's'
+string_body_multi_body_without_single_quote_01 -> 't'
+string_body_multi_body_without_single_quote_01 -> 'u'
+string_body_multi_body_without_single_quote_01 -> 'v'
+string_body_multi_body_without_single_quote_01 -> 'w'
+string_body_multi_body_without_single_quote_01 -> 'x'
+string_body_multi_body_without_single_quote_01 -> 'y'
+string_body_multi_body_without_single_quote_01 -> 'z'
+string_body_multi_body_without_single_quote_01 -> 'A'
+string_body_multi_body_without_single_quote_01 -> 'B'
+string_body_multi_body_without_single_quote_01 -> 'C'
+string_body_multi_body_without_single_quote_01 -> 'D'
+string_body_multi_body_without_single_quote_01 -> 'E'
+string_body_multi_body_without_single_quote_01 -> 'F'
+string_body_multi_body_without_single_quote_01 -> 'G'
+string_body_multi_body_without_single_quote_01 -> 'H'
+string_body_multi_body_without_single_quote_01 -> 'I'
+string_body_multi_body_without_single_quote_01 -> 'J'
+string_body_multi_body_without_single_quote_01 -> 'K'
+string_body_multi_body_without_single_quote_01 -> 'L'
+string_body_multi_body_without_single_quote_01 -> 'M'
+string_body_multi_body_without_single_quote_01 -> 'N'
+string_body_multi_body_without_single_quote_01 -> 'O'
+string_body_multi_body_without_single_quote_01 -> 'P'
+string_body_multi_body_without_single_quote_01 -> 'Q'
+string_body_multi_body_without_single_quote_01 -> 'R'
+string_body_multi_body_without_single_quote_01 -> 'S'
+string_body_multi_body_without_single_quote_01 -> 'T'
+string_body_multi_body_without_single_quote_01 -> 'U'
+string_body_multi_body_without_single_quote_01 -> 'V'
+string_body_multi_body_without_single_quote_01 -> 'W'
+string_body_multi_body_without_single_quote_01 -> 'X'
+string_body_multi_body_without_single_quote_01 -> 'Y'
+string_body_multi_body_without_single_quote_01 -> 'Z'
+A181 -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote
+A181 -> '`'
+A181 -> '!'
+A181 -> '"'
+A181 -> '#'
+A181 -> '$'
+A181 -> '%'
+A181 -> '&'
+A181 -> '('
+A181 -> ')'
+A181 -> '*'
+A181 -> '+'
+A181 -> ','
+A181 -> '-'
+A181 -> '.'
+A181 -> '/'
+A181 -> ':'
+A181 -> ';'
+A181 -> '<'
+A181 -> '='
+A181 -> '>'
+A181 -> '?'
+A181 -> '@'
+A181 -> '['
+A181 -> '\'
+A181 -> ']'
+A181 -> '^'
+A181 -> '_'
+A181 -> '`'
+A181 -> '{'
+A181 -> ';'
+A181 -> '}'
+A181 -> '~'
+A181 -> char_92 single_quote
+A181 -> '0'
+A181 -> '1'
+A181 -> '2'
+A181 -> '3'
+A181 -> '4'
+A181 -> '5'
+A181 -> '6'
+A181 -> '7'
+A181 -> '8'
+A181 -> '9'
+A181 -> '\n'
+A181 -> '_'
+A181 -> '\t'
+A181 -> 'a'
+A181 -> 'b'
+A181 -> 'c'
+A181 -> 'd'
+A181 -> 'e'
+A181 -> 'f'
+A181 -> 'g'
+A181 -> 'h'
+A181 -> 'i'
+A181 -> 'j'
+A181 -> 'k'
+A181 -> 'l'
+A181 -> 'm'
+A181 -> 'n'
+A181 -> 'o'
+A181 -> 'p'
+A181 -> 'q'
+A181 -> 'r'
+A181 -> 's'
+A181 -> 't'
+A181 -> 'u'
+A181 -> 'v'
+A181 -> 'w'
+A181 -> 'x'
+A181 -> 'y'
+A181 -> 'z'
+A181 -> 'A'
+A181 -> 'B'
+A181 -> 'C'
+A181 -> 'D'
+A181 -> 'E'
+A181 -> 'F'
+A181 -> 'G'
+A181 -> 'H'
+A181 -> 'I'
+A181 -> 'J'
+A181 -> 'K'
+A181 -> 'L'
+A181 -> 'M'
+A181 -> 'N'
+A181 -> 'O'
+A181 -> 'P'
+A181 -> 'Q'
+A181 -> 'R'
+A181 -> 'S'
+A181 -> 'T'
+A181 -> 'U'
+A181 -> 'V'
+A181 -> 'W'
+A181 -> 'X'
+A181 -> 'Y'
+A181 -> 'Z'
+A192 -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote
+A192 -> '`'
+A192 -> '!'
+A192 -> '"'
+A192 -> '#'
+A192 -> '$'
+A192 -> '%'
+A192 -> '&'
+A192 -> '('
+A192 -> ')'
+A192 -> '*'
+A192 -> '+'
+A192 -> ','
+A192 -> '-'
+A192 -> '.'
+A192 -> '/'
+A192 -> ':'
+A192 -> ';'
+A192 -> '<'
+A192 -> '='
+A192 -> '>'
+A192 -> '?'
+A192 -> '@'
+A192 -> '['
+A192 -> '\'
+A192 -> ']'
+A192 -> '^'
+A192 -> '_'
+A192 -> '`'
+A192 -> '{'
+A192 -> ';'
+A192 -> '}'
+A192 -> '~'
+A192 -> char_92 single_quote
+A192 -> '0'
+A192 -> '1'
+A192 -> '2'
+A192 -> '3'
+A192 -> '4'
+A192 -> '5'
+A192 -> '6'
+A192 -> '7'
+A192 -> '8'
+A192 -> '9'
+A192 -> '\n'
+A192 -> '_'
+A192 -> '\t'
+A192 -> 'a'
+A192 -> 'b'
+A192 -> 'c'
+A192 -> 'd'
+A192 -> 'e'
+A192 -> 'f'
+A192 -> 'g'
+A192 -> 'h'
+A192 -> 'i'
+A192 -> 'j'
+A192 -> 'k'
+A192 -> 'l'
+A192 -> 'm'
+A192 -> 'n'
+A192 -> 'o'
+A192 -> 'p'
+A192 -> 'q'
+A192 -> 'r'
+A192 -> 's'
+A192 -> 't'
+A192 -> 'u'
+A192 -> 'v'
+A192 -> 'w'
+A192 -> 'x'
+A192 -> 'y'
+A192 -> 'z'
+A192 -> 'A'
+A192 -> 'B'
+A192 -> 'C'
+A192 -> 'D'
+A192 -> 'E'
+A192 -> 'F'
+A192 -> 'G'
+A192 -> 'H'
+A192 -> 'I'
+A192 -> 'J'
+A192 -> 'K'
+A192 -> 'L'
+A192 -> 'M'
+A192 -> 'N'
+A192 -> 'O'
+A192 -> 'P'
+A192 -> 'Q'
+A192 -> 'R'
+A192 -> 'S'
+A192 -> 'T'
+A192 -> 'U'
+A192 -> 'V'
+A192 -> 'W'
+A192 -> 'X'
+A192 -> 'Y'
+A192 -> 'Z'
+A233 -> string_body_multi_body_without_single_quote A234
+A233 -> single_quote A235
+any_element -> any_blanks A11
+any_element -> element A12
+A12 -> any_blanks
+any_dict_element -> any_blanks A41
+any_dict_element -> dict_element A42
+A42 -> any_blanks
+complex_infix -> any_blanks A121
+complex_infix -> op_num_plus_min any_blanks
+complex_infix -> '+'
+complex_infix -> '-'
+A121 -> op_num_plus_min any_blanks
+A121 -> '+'
+A121 -> '-'
+newline -> any_blanks A241
+newline -> newline_only maybe_empty_line
+empty_line -> any_blanks A251
+empty_line -> any_comment newline
+empty_line -> any_blanks A241
+empty_line -> newline_only maybe_empty_line
+colon -> any_blanks A261
+colon -> char_58 any_blanks
+colon -> ':'
+A261 -> char_58 any_blanks
+A261 -> ':'
+open_bracket -> char_40 any_blanks
+open_bracket -> '('
+close_bracket -> any_blanks char_41
+close_bracket -> ')'
+open_square_bracket -> char_91 any_blanks
+open_square_bracket -> '['
+close_square_bracket -> any_blanks char_93
+close_square_bracket -> ']'
+open_curly_bracket -> char_123 any_blanks
+open_curly_bracket -> '{'
+close_curly_bracket -> any_blanks char_125
+close_curly_bracket -> '}'
+separator -> any_blanks A271
+separator -> comma any_blanks
+separator -> ','
+A271 -> comma any_blanks
+A271 -> ','
+inline_statement -> any_blanks statement_elmt
+inline_statement -> simple_stmt A281
+inline_statement -> if_only A311
+inline_statement -> char_while A321
+inline_statement -> char_for A331
+inline_statement -> char_with A371
+inline_statement -> char_def A521
+inline_statement -> char_class A291
+A293 -> any_blanks A294
+A293 -> any_args block
+A293 -> colon block_statement
+A351 -> any_blanks A352
+A351 -> char_as A353
+A353 -> any_blanks expr
+A353 -> maybe_expr_before A441
+A353 -> expr_01 A442
+A353 -> expr_02 A443
+A371 -> any_blanks A372
+A371 -> with_items block
+A421 -> any_blanks expr_prefix
+A421 -> op_prefix A421
+A421 -> '\t'
+A421 -> tab blanks
+A421 -> '`'
+A421 -> blank blanks
+expr_op_infix -> any_blanks A431
+expr_op_infix -> op_infix any_blanks
+expr_op_infix -> blank A131
+expr_op_infix -> '*'
+expr_op_infix -> '%'
+expr_op_infix -> '/'
+expr_op_infix -> '+'
+expr_op_infix -> '-'
+expr_op_infix -> char_42 char_42
+expr_op_infix -> char_47 char_47
+expr_op_infix -> '>'
+expr_op_infix -> '<'
+expr_op_infix -> char_61 char_61
+expr_op_infix -> char_33 char_61
+expr_op_infix -> char_62 char_61
+expr_op_infix -> char_60 char_61
+expr_op_infix -> '&'
+expr_op_infix -> ';'
+expr_op_infix -> '^'
+expr_op_infix -> '~'
+expr_op_infix -> char_60 char_60
+expr_op_infix -> char_62 char_62
+expr_op_infix -> char_a char_nd
+expr_op_infix -> char_o char_r
+expr_op_infix -> char_n char_ot
+A431 -> op_infix any_blanks
+A431 -> blank A131
+A431 -> char_42 char_42
+A431 -> char_47 char_47
+A431 -> '>'
+A431 -> '<'
+A431 -> char_61 char_61
+A431 -> char_33 char_61
+A431 -> char_62 char_61
+A431 -> char_60 char_61
+A431 -> char_60 char_60
+A431 -> char_62 char_62
+A431 -> char_a char_nd
+A431 -> char_o char_r
+A431 -> char_n char_ot
+A431 -> '+'
+A431 -> '-'
+A431 -> '*'
+A431 -> '%'
+A431 -> '/'
+A431 -> '&'
+A431 -> ';'
+A431 -> '^'
+A431 -> '~'
+A481 -> any_blanks A482
+A481 -> op_assignment A483
+A483 -> any_blanks exprs
+A483 -> exprs_without_comma A471
+A483 -> expr A461
+A483 -> maybe_expr_before A441
+A483 -> expr_01 A442
+A483 -> expr_02 A443
+A491 -> any_blanks A492
+A491 -> op_assignment_single A493
+A493 -> any_blanks assign_without_op_01
+A493 -> exprs_without_comma A471
+A493 -> expr A461
+A493 -> variable_names A491
+A493 -> maybe_expr_before A441
+A493 -> expr_01 A442
+A493 -> expr_02 A443
+A501 -> any_blanks args
+A501 -> open_bracket A391
+maybe_return_var -> any_blanks A511
+maybe_return_var -> char_45 A512
+A513 -> any_blanks A514
+A513 -> expr
+return_body -> any_blanks return_body_01
+return_body -> maybe_expr_before A441
+return_body -> expr_01 A442
+return_body -> expr_02 A443
+return_body -> '\t'
+return_body -> tab blanks
+return_body -> '`'
+return_body -> blank blanks
+from_expr_body -> any_blanks expr
+from_expr_body -> maybe_expr_before A441
+from_expr_body -> expr_01 A442
+from_expr_body -> expr_02 A443
+A531 -> any_blanks maybe_from_expr
+A531 -> char_from from_expr_body
+A531 -> '\t'
+A531 -> tab blanks
+A531 -> '`'
+A531 -> blank blanks
+raise_body -> any_blanks any_raise_elmt
+raise_body -> expr A531
+raise_body -> '\t'
+raise_body -> tab blanks
+raise_body -> '`'
+raise_body -> blank blanks
+end_of_variable_char -> any_blanks end_of_variable_char_01
+end_of_variable_char -> '!'
+end_of_variable_char -> '"'
+end_of_variable_char -> '#'
+end_of_variable_char -> '$'
+end_of_variable_char -> '%'
+end_of_variable_char -> '&'
+end_of_variable_char -> '''
+end_of_variable_char -> '('
+end_of_variable_char -> ')'
+end_of_variable_char -> '*'
+end_of_variable_char -> '+'
+end_of_variable_char -> ','
+end_of_variable_char -> '-'
+end_of_variable_char -> '.'
+end_of_variable_char -> '/'
+end_of_variable_char -> ':'
+end_of_variable_char -> ';'
+end_of_variable_char -> '<'
+end_of_variable_char -> '='
+end_of_variable_char -> '>'
+end_of_variable_char -> '?'
+end_of_variable_char -> '@'
+end_of_variable_char -> '['
+end_of_variable_char -> '\'
+end_of_variable_char -> ']'
+end_of_variable_char -> '^'
+end_of_variable_char -> '`'
+end_of_variable_char -> '{'
+end_of_variable_char -> ';'
+end_of_variable_char -> '}'
+end_of_variable_char -> '~'
+end_of_variable_char -> '*'
+end_of_variable_char -> '%'
+end_of_variable_char -> '/'
+end_of_variable_char -> '+'
+end_of_variable_char -> '-'
+end_of_variable_char -> char_42 char_42
+end_of_variable_char -> char_47 char_47
+end_of_variable_char -> '>'
+end_of_variable_char -> '<'
+end_of_variable_char -> char_61 char_61
+end_of_variable_char -> char_33 char_61
+end_of_variable_char -> char_62 char_61
+end_of_variable_char -> char_60 char_61
+end_of_variable_char -> '='
+end_of_variable_char -> char_43 char_61
+end_of_variable_char -> char_45 char_61
+end_of_variable_char -> char_42 char_61
+end_of_variable_char -> char_47 char_61
+end_of_variable_char -> char_47 char_4761
+end_of_variable_char -> char_37 char_61
+end_of_variable_char -> char_42 char_4261
+end_of_variable_char -> char_60 char_6061
+end_of_variable_char -> char_62 char_6261
+end_of_variable_char -> '&'
+end_of_variable_char -> ';'
+end_of_variable_char -> '^'
+end_of_variable_char -> '~'
+end_of_variable_char -> char_60 char_60
+end_of_variable_char -> char_62 char_62
+end_of_variable_char -> char_a char_nd
+end_of_variable_char -> char_o char_r
+end_of_variable_char -> char_n char_ot
+end_of_variable_char -> char_i char_n
+end_of_variable_char -> char_n char_ot96in
+end_of_variable_char -> char_i char_s
+end_of_variable_char -> char_i char_s96not
+A611 -> any_blanks access_array
+A611 -> open_square_bracket A601
+A611 -> access_array_single A611
+A712 -> any_blanks A713
+A712 -> any_args any_access_array
+A712 -> open_bracket A391
+A712 -> open_square_bracket A601
+A712 -> access_array_single A611
+statement_single_01 -> any_tabs statement_elmt
+statement_single_01 -> simple_stmt A281
+statement_single_01 -> if_only A311
+statement_single_01 -> char_while A321
+statement_single_01 -> char_for A331
+statement_single_01 -> char_with A371
+statement_single_01 -> char_def A521
+statement_single_01 -> char_class A291
+A311 -> any_elif maybe_else
+A311 -> elif_only any_elif
+A311 -> char_el if_only
+A311 -> char_else block
+A323 -> block maybe_else
+A323 -> colon block_statement
+A343 -> block maybe_else
+A343 -> colon block_statement
+elif -> elif_only any_elif
+elif -> char_el if_only
+A391 -> any_args_ins close_bracket
+A391 -> any_blanks char_41
+A391 -> ')'
+A294 -> any_args block
+A294 -> colon block_statement
+A713 -> any_args any_access_array
+A713 -> open_square_bracket A601
+A713 -> access_array_single A611
+A713 -> open_bracket A391
+A401 -> any_comment_body eps
+A401 -> eps
+newline_only -> any_comment enter
+newline_only -> '\n'
+A251 -> any_comment newline
+A251 -> any_blanks A241
+A251 -> newline_only maybe_empty_line
+expr_body -> expr_prefix expr_body_02
+expr_body -> variable_prefix A711
+expr_body -> variable_name A501
+expr_body -> expr_elmt A411
+expr_body -> any_non_complex_number_with_op complex_part
+expr_body -> non_complex_number A111
+expr_body -> char_T char_rue
+expr_body -> char_F char_alse
+expr_body -> any_int A91
+expr_body -> int A101
+expr_body -> char_46 int
+expr_body -> digit int
+expr_body -> non_complex_number char_j
+expr_body -> single_quote A201
+expr_body -> double_quote A211
+expr_body -> double_quote A221
+expr_body -> single_quote A231
+expr_body -> open_curly_bracket A81
+expr_body -> open_square_bracket A61
+expr_body -> open_curly_bracket A51
+expr_body -> open_bracket A71
+expr_body -> char_N char_one
+expr_body -> '0'
+expr_body -> '1'
+expr_body -> '2'
+expr_body -> '3'
+expr_body -> '4'
+expr_body -> '5'
+expr_body -> '6'
+expr_body -> '7'
+expr_body -> '8'
+expr_body -> '9'
+variable_body_no_bracket -> expr_prefix variable_body_no_bracket_01
+variable_body_no_bracket -> variable_elmt A681
+variable_body_no_bracket -> open_bracket A671
+variable_body_no_bracket -> variable_single A661
+variable_body_no_bracket -> first_char_var any_other_char_var
+variable_body_no_bracket -> '_'
+variable_body_no_bracket -> 'a'
+variable_body_no_bracket -> 'b'
+variable_body_no_bracket -> 'c'
+variable_body_no_bracket -> 'd'
+variable_body_no_bracket -> 'e'
+variable_body_no_bracket -> 'f'
+variable_body_no_bracket -> 'g'
+variable_body_no_bracket -> 'h'
+variable_body_no_bracket -> 'i'
+variable_body_no_bracket -> 'j'
+variable_body_no_bracket -> 'k'
+variable_body_no_bracket -> 'l'
+variable_body_no_bracket -> 'm'
+variable_body_no_bracket -> 'n'
+variable_body_no_bracket -> 'o'
+variable_body_no_bracket -> 'p'
+variable_body_no_bracket -> 'q'
+variable_body_no_bracket -> 'r'
+variable_body_no_bracket -> 's'
+variable_body_no_bracket -> 't'
+variable_body_no_bracket -> 'u'
+variable_body_no_bracket -> 'v'
+variable_body_no_bracket -> 'w'
+variable_body_no_bracket -> 'x'
+variable_body_no_bracket -> 'y'
+variable_body_no_bracket -> 'z'
+variable_body_no_bracket -> 'A'
+variable_body_no_bracket -> 'B'
+variable_body_no_bracket -> 'C'
+variable_body_no_bracket -> 'D'
+variable_body_no_bracket -> 'E'
+variable_body_no_bracket -> 'F'
+variable_body_no_bracket -> 'G'
+variable_body_no_bracket -> 'H'
+variable_body_no_bracket -> 'I'
+variable_body_no_bracket -> 'J'
+variable_body_no_bracket -> 'K'
+variable_body_no_bracket -> 'L'
+variable_body_no_bracket -> 'M'
+variable_body_no_bracket -> 'N'
+variable_body_no_bracket -> 'O'
+variable_body_no_bracket -> 'P'
+variable_body_no_bracket -> 'Q'
+variable_body_no_bracket -> 'R'
+variable_body_no_bracket -> 'S'
+variable_body_no_bracket -> 'T'
+variable_body_no_bracket -> 'U'
+variable_body_no_bracket -> 'V'
+variable_body_no_bracket -> 'W'
+variable_body_no_bracket -> 'X'
+variable_body_no_bracket -> 'Y'
+variable_body_no_bracket -> 'Z'
+A443 -> expr_body maybe_expr_after
+A443 -> expr_prefix expr_body_02
+A443 -> expr_elmt A411
+A443 -> variable_prefix A711
+A443 -> variable_name A501
+A443 -> open_curly_bracket A81
+A443 -> open_square_bracket A61
+A443 -> open_curly_bracket A51
+A443 -> open_bracket A71
+A443 -> char_T char_rue
+A443 -> char_F char_alse
+A443 -> any_int A91
+A443 -> int A101
+A443 -> any_non_complex_number_with_op complex_part
+A443 -> non_complex_number char_j
+A443 -> non_complex_number A111
+A443 -> single_quote A201
+A443 -> double_quote A211
+A443 -> double_quote A221
+A443 -> single_quote A231
+A443 -> char_N char_one
+A443 -> char_46 int
+A443 -> '0'
+A443 -> '1'
+A443 -> '2'
+A443 -> '3'
+A443 -> '4'
+A443 -> '5'
+A443 -> '6'
+A443 -> '7'
+A443 -> '8'
+A443 -> '9'
+A443 -> digit int
+expr -> maybe_expr_before A441
+expr -> expr_01 A442
+expr -> expr_02 A443
+A441 -> expr_01 A442
+A441 -> expr_02 A443
+funcdef_elmt -> function maybe_return_var
+funcdef_elmt -> variable_name A501
+A561 -> maybe_parameter_only A562
+A561 -> param_01 A563
+A561 -> param_02 A564
+A561 -> param_03 close_bracket
+A561 -> any_blanks char_41
+A561 -> ')'
+A562 -> param_01 A563
+A562 -> param_02 A564
+A562 -> param_03 close_bracket
+A562 -> any_blanks char_41
+A562 -> ')'
+A563 -> param_02 A564
+A563 -> param_03 close_bracket
+A563 -> any_blanks char_41
+A563 -> ')'
+A564 -> param_03 close_bracket
+A564 -> any_blanks char_41
+A564 -> ')'
+variable_name -> first_char_var any_other_char_var
+variable_name -> '_'
+variable_name -> 'a'
+variable_name -> 'b'
+variable_name -> 'c'
+variable_name -> 'd'
+variable_name -> 'e'
+variable_name -> 'f'
+variable_name -> 'g'
+variable_name -> 'h'
+variable_name -> 'i'
+variable_name -> 'j'
+variable_name -> 'k'
+variable_name -> 'l'
+variable_name -> 'm'
+variable_name -> 'n'
+variable_name -> 'o'
+variable_name -> 'p'
+variable_name -> 'q'
+variable_name -> 'r'
+variable_name -> 's'
+variable_name -> 't'
+variable_name -> 'u'
+variable_name -> 'v'
+variable_name -> 'w'
+variable_name -> 'x'
+variable_name -> 'y'
+variable_name -> 'z'
+variable_name -> 'A'
+variable_name -> 'B'
+variable_name -> 'C'
+variable_name -> 'D'
+variable_name -> 'E'
+variable_name -> 'F'
+variable_name -> 'G'
+variable_name -> 'H'
+variable_name -> 'I'
+variable_name -> 'J'
+variable_name -> 'K'
+variable_name -> 'L'
+variable_name -> 'M'
+variable_name -> 'N'
+variable_name -> 'O'
+variable_name -> 'P'
+variable_name -> 'Q'
+variable_name -> 'R'
+variable_name -> 'S'
+variable_name -> 'T'
+variable_name -> 'U'
+variable_name -> 'V'
+variable_name -> 'W'
+variable_name -> 'X'
+variable_name -> 'Y'
+variable_name -> 'Z'
+variable_names -> variable_names_without_comma maybe_comma
+variable_names -> first_char_var any_other_char_var
+variable_names -> variable_name A651
+variable_names -> '_'
+variable_names -> 'a'
+variable_names -> 'b'
+variable_names -> 'c'
+variable_names -> 'd'
+variable_names -> 'e'
+variable_names -> 'f'
+variable_names -> 'g'
+variable_names -> 'h'
+variable_names -> 'i'
+variable_names -> 'j'
+variable_names -> 'k'
+variable_names -> 'l'
+variable_names -> 'm'
+variable_names -> 'n'
+variable_names -> 'o'
+variable_names -> 'p'
+variable_names -> 'q'
+variable_names -> 'r'
+variable_names -> 's'
+variable_names -> 't'
+variable_names -> 'u'
+variable_names -> 'v'
+variable_names -> 'w'
+variable_names -> 'x'
+variable_names -> 'y'
+variable_names -> 'z'
+variable_names -> 'A'
+variable_names -> 'B'
+variable_names -> 'C'
+variable_names -> 'D'
+variable_names -> 'E'
+variable_names -> 'F'
+variable_names -> 'G'
+variable_names -> 'H'
+variable_names -> 'I'
+variable_names -> 'J'
+variable_names -> 'K'
+variable_names -> 'L'
+variable_names -> 'M'
+variable_names -> 'N'
+variable_names -> 'O'
+variable_names -> 'P'
+variable_names -> 'Q'
+variable_names -> 'R'
+variable_names -> 'S'
+variable_names -> 'T'
+variable_names -> 'U'
+variable_names -> 'V'
+variable_names -> 'W'
+variable_names -> 'X'
+variable_names -> 'Y'
+variable_names -> 'Z'
+variables -> variables_without_comma maybe_comma
+variables -> variable_prefix A711
+variables -> variable A721
+variable_prefix -> variable_prefix_01 variable_prefix_02
+variable_prefix -> op_prefix A421
+variable_prefix -> tab blanks
+variable_prefix -> '\t'
+variable_prefix -> blank blanks
+variable_prefix -> '`'
+element -> expr A01
+element -> maybe_expr_before A441
+element -> expr_01 A442
+element -> expr_02 A443
+A01 -> separator A02
+A11 -> element A12
+dict_element_single -> expr A21
+A21 -> colon expr
+dict_element -> dict_element_single A31
+dict_element -> expr A21
+A31 -> separator A32
+A41 -> dict_element A42
+set -> open_curly_bracket A51
+list -> open_square_bracket A61
+tuple -> open_bracket A71
+dict -> open_curly_bracket A81
+int_rec -> digit int
+A91 -> char_46 int
+scientific -> non_complex_number A111
+A111 -> power_symbol A112
+non_complex_number_with_op -> non_complex_number complex_infix
+complex_part -> non_complex_number char_j
+op_compare_single -> '>'
+op_compare_single -> '<'
+op_infix -> blank A131
+op_infix -> '*'
+op_infix -> '%'
+op_infix -> '/'
+op_infix -> char_42 char_42
+op_infix -> char_47 char_47
+op_infix -> '>'
+op_infix -> '<'
+op_infix -> char_61 char_61
+op_infix -> char_33 char_61
+op_infix -> char_62 char_61
+op_infix -> char_60 char_61
+op_infix -> '&'
+op_infix -> ';'
+op_infix -> '^'
+op_infix -> '~'
+op_infix -> char_60 char_60
+op_infix -> char_62 char_62
+op_infix -> char_a char_nd
+op_infix -> char_o char_r
+op_infix -> char_n char_ot
+op_infix -> '+'
+op_infix -> '-'
+A131 -> op_new A132
+A132 -> blank
+escaped_single_quote -> char_92 single_quote
+escaped_double_quote -> char_92 double_quote
+alphanumeric -> letter A141
+alphanumeric -> digit A151
+string_body_multi_body_without_double_quote_02 -> double_quote A161
+string_body_multi_body_without_double_quote_03 -> double_quote A171
+A171 -> double_quote A172
+string_body_multi_body_without_single_quote_02 -> single_quote A181
+string_body_multi_body_without_single_quote_03 -> single_quote A191
+A191 -> single_quote A192
+string_01 -> single_quote A201
+string_02 -> double_quote A211
+string_03 -> double_quote A221
+A221 -> double_quote A222
+A222 -> double_quote A223
+A224 -> double_quote A225
+A225 -> double_quote double_quote
+string_04 -> single_quote A231
+A231 -> single_quote A232
+A232 -> single_quote A233
+A234 -> single_quote A235
+A235 -> single_quote single_quote
+tab_rec -> tab blanks
+blank_rec -> blank blanks
+tab_only_rec -> tab tabs
+underscores_rec -> underscore underscores
+A241 -> newline_only maybe_empty_line
+block -> colon block_statement
+statement_rec -> statement_single statement
+indented_statement -> newline statement
+statement_elmt -> simple_stmt A281
+statement_elmt -> if_only A311
+statement_elmt -> char_while A321
+statement_elmt -> char_for A331
+statement_elmt -> char_with A371
+statement_elmt -> char_def A521
+statement_elmt -> char_class A291
+A281 -> newline
+classdef -> char_class A291
+A291 -> blanks A292
+A292 -> variable_name A293
+if_only -> char_if A301
+A301 -> blanks A302
+A302 -> expr block
+elif_only -> char_el if_only
+else -> char_else block
+if -> if_only A311
+while -> char_while A321
+A321 -> blanks A322
+A322 -> expr A323
+for -> char_for A331
+A331 -> blanks A332
+A332 -> variable A333
+A333 -> blanks in
+in -> char_in A341
+A341 -> blanks A342
+A342 -> expr A343
+with_item -> expr A351
+A352 -> char_as A353
+with_items_01 -> with_item A361
+A361 -> separator with_items
+with -> char_with A371
+A372 -> with_items block
+args_ins_01 -> args_element A381
+A381 -> separator args_ins
+args -> open_bracket A391
+comment_body_01 -> comment_elmt comment_body
+comment -> char_35 A401
+expr_body_01 -> expr_elmt A411
+A411 -> expr_op_infix expr_body
+prefix_multi -> op_prefix A421
+maybe_expr_after_01 -> expr_op_infix expr_body
+maybe_expr_before_01 -> expr_body expr_op_infix
+A442 -> expr_02 A443
+expr_01 -> char_not A451
+A451 -> blank
+exprs_without_comma -> expr A461
+exprs_without_comma -> maybe_expr_before A441
+exprs_without_comma -> expr_01 A442
+exprs_without_comma -> expr_02 A443
+A461 -> separator A462
+A462 -> exprs_without_comma
+exprs -> exprs_without_comma A471
+exprs -> expr A461
+exprs -> maybe_expr_before A441
+exprs -> expr_01 A442
+exprs -> expr_02 A443
+A471 -> separator
+assign_with_op -> variable_names A481
+A482 -> op_assignment A483
+assign_without_op -> variable_names A491
+A492 -> op_assignment_single A493
+function -> variable_name A501
+A511 -> char_45 A512
+A512 -> char_62 A513
+A514 -> expr
+funcdef_body -> blanks funcdef_elmt
+funcdef -> char_def A521
+A521 -> funcdef_body block
+return -> char_return return_body
+from_expr -> char_from from_expr_body
+raise_elmt -> expr A531
+raise -> char_raise raise_body
+import_only_body -> blanks variables
+import_only -> char_import import_only_body
+import_all_body -> blanks char_42
+import_all -> char_import import_all_body
+as -> char_as import_only_body
+import_alias_body -> blanks as
+import_alias -> import_only import_alias_body
+import_with_from_body -> blanks import_with_from_elmt
+import_with_from_body_full -> import_only_body import_with_from_body
+import_with_from -> char_from import_with_from_body_full
+parameter_only -> parameter_element A541
+parameter_only -> variable_prefix A711
+A541 -> separator A542
+A542 -> parameter_only
+parameter_only_default -> parameter_default A551
+parameter_only_default -> variable_names A491
+A551 -> separator A552
+A552 -> parameter_default
+parameter_args -> char_42 variable
+parameter_kwargs -> char_4242 variable
+param -> open_bracket A561
+param_01 -> separator A571
+param_01 -> parameter_default A551
+param_01 -> variable_names A491
+A571 -> parameter_only_default
+param_02 -> separator A581
+param_02 -> char_42 variable
+A581 -> parameter_args
+param_03 -> separator A591
+param_03 -> char_4242 variable
+A591 -> parameter_kwargs
+access_array_single -> open_square_bracket A601
+A601 -> expr close_square_bracket
+access_array_01 -> access_array_single A611
+hint -> colon expr
+other_char_var -> letter A621
+other_char_var -> digit A631
+other_char_var -> underscore A641
+other_char_var -> 'a'
+other_char_var -> 'b'
+other_char_var -> 'c'
+other_char_var -> 'd'
+other_char_var -> 'e'
+other_char_var -> 'f'
+other_char_var -> 'g'
+other_char_var -> 'h'
+other_char_var -> 'i'
+other_char_var -> 'j'
+other_char_var -> 'k'
+other_char_var -> 'l'
+other_char_var -> 'm'
+other_char_var -> 'n'
+other_char_var -> 'o'
+other_char_var -> 'p'
+other_char_var -> 'q'
+other_char_var -> 'r'
+other_char_var -> 's'
+other_char_var -> 't'
+other_char_var -> 'u'
+other_char_var -> 'v'
+other_char_var -> 'w'
+other_char_var -> 'x'
+other_char_var -> 'y'
+other_char_var -> 'z'
+other_char_var -> 'A'
+other_char_var -> 'B'
+other_char_var -> 'C'
+other_char_var -> 'D'
+other_char_var -> 'E'
+other_char_var -> 'F'
+other_char_var -> 'G'
+other_char_var -> 'H'
+other_char_var -> 'I'
+other_char_var -> 'J'
+other_char_var -> 'K'
+other_char_var -> 'L'
+other_char_var -> 'M'
+other_char_var -> 'N'
+other_char_var -> 'O'
+other_char_var -> 'P'
+other_char_var -> 'Q'
+other_char_var -> 'R'
+other_char_var -> 'S'
+other_char_var -> 'T'
+other_char_var -> 'U'
+other_char_var -> 'V'
+other_char_var -> 'W'
+other_char_var -> 'X'
+other_char_var -> 'Y'
+other_char_var -> 'Z'
+other_char_var -> '0'
+other_char_var -> '1'
+other_char_var -> '2'
+other_char_var -> '3'
+other_char_var -> '4'
+other_char_var -> '5'
+other_char_var -> '6'
+other_char_var -> '7'
+other_char_var -> '8'
+other_char_var -> '9'
+other_char_var -> '_'
+A621 -> other_char_var
+A631 -> other_char_var
+A641 -> other_char_var
+variable_names_without_comma_rec -> variable_name A651
+A651 -> separator variable_names_without_comma
+variable_only_no_bracket -> variable_single A661
+variable_only_no_bracket -> first_char_var any_other_char_var
+variable_only_no_bracket -> '_'
+variable_only_no_bracket -> 'a'
+variable_only_no_bracket -> 'b'
+variable_only_no_bracket -> 'c'
+variable_only_no_bracket -> 'd'
+variable_only_no_bracket -> 'e'
+variable_only_no_bracket -> 'f'
+variable_only_no_bracket -> 'g'
+variable_only_no_bracket -> 'h'
+variable_only_no_bracket -> 'i'
+variable_only_no_bracket -> 'j'
+variable_only_no_bracket -> 'k'
+variable_only_no_bracket -> 'l'
+variable_only_no_bracket -> 'm'
+variable_only_no_bracket -> 'n'
+variable_only_no_bracket -> 'o'
+variable_only_no_bracket -> 'p'
+variable_only_no_bracket -> 'q'
+variable_only_no_bracket -> 'r'
+variable_only_no_bracket -> 's'
+variable_only_no_bracket -> 't'
+variable_only_no_bracket -> 'u'
+variable_only_no_bracket -> 'v'
+variable_only_no_bracket -> 'w'
+variable_only_no_bracket -> 'x'
+variable_only_no_bracket -> 'y'
+variable_only_no_bracket -> 'z'
+variable_only_no_bracket -> 'A'
+variable_only_no_bracket -> 'B'
+variable_only_no_bracket -> 'C'
+variable_only_no_bracket -> 'D'
+variable_only_no_bracket -> 'E'
+variable_only_no_bracket -> 'F'
+variable_only_no_bracket -> 'G'
+variable_only_no_bracket -> 'H'
+variable_only_no_bracket -> 'I'
+variable_only_no_bracket -> 'J'
+variable_only_no_bracket -> 'K'
+variable_only_no_bracket -> 'L'
+variable_only_no_bracket -> 'M'
+variable_only_no_bracket -> 'N'
+variable_only_no_bracket -> 'O'
+variable_only_no_bracket -> 'P'
+variable_only_no_bracket -> 'Q'
+variable_only_no_bracket -> 'R'
+variable_only_no_bracket -> 'S'
+variable_only_no_bracket -> 'T'
+variable_only_no_bracket -> 'U'
+variable_only_no_bracket -> 'V'
+variable_only_no_bracket -> 'W'
+variable_only_no_bracket -> 'X'
+variable_only_no_bracket -> 'Y'
+variable_only_no_bracket -> 'Z'
+A661 -> dot A662
+A662 -> variable
+variable_only -> open_bracket A671
+variable_only -> variable_single A661
+variable_only -> first_char_var any_other_char_var
+variable_only -> '_'
+variable_only -> 'a'
+variable_only -> 'b'
+variable_only -> 'c'
+variable_only -> 'd'
+variable_only -> 'e'
+variable_only -> 'f'
+variable_only -> 'g'
+variable_only -> 'h'
+variable_only -> 'i'
+variable_only -> 'j'
+variable_only -> 'k'
+variable_only -> 'l'
+variable_only -> 'm'
+variable_only -> 'n'
+variable_only -> 'o'
+variable_only -> 'p'
+variable_only -> 'q'
+variable_only -> 'r'
+variable_only -> 's'
+variable_only -> 't'
+variable_only -> 'u'
+variable_only -> 'v'
+variable_only -> 'w'
+variable_only -> 'x'
+variable_only -> 'y'
+variable_only -> 'z'
+variable_only -> 'A'
+variable_only -> 'B'
+variable_only -> 'C'
+variable_only -> 'D'
+variable_only -> 'E'
+variable_only -> 'F'
+variable_only -> 'G'
+variable_only -> 'H'
+variable_only -> 'I'
+variable_only -> 'J'
+variable_only -> 'K'
+variable_only -> 'L'
+variable_only -> 'M'
+variable_only -> 'N'
+variable_only -> 'O'
+variable_only -> 'P'
+variable_only -> 'Q'
+variable_only -> 'R'
+variable_only -> 'S'
+variable_only -> 'T'
+variable_only -> 'U'
+variable_only -> 'V'
+variable_only -> 'W'
+variable_only -> 'X'
+variable_only -> 'Y'
+variable_only -> 'Z'
+A671 -> variable_only_no_bracket A672
+A672 -> close_bracket
+variable_body_no_bracket_01 -> variable_elmt A681
+variable_body_no_bracket_01 -> open_bracket A671
+variable_body_no_bracket_01 -> variable_single A661
+variable_body_no_bracket_01 -> first_char_var any_other_char_var
+variable_body_no_bracket_01 -> '_'
+variable_body_no_bracket_01 -> 'a'
+variable_body_no_bracket_01 -> 'b'
+variable_body_no_bracket_01 -> 'c'
+variable_body_no_bracket_01 -> 'd'
+variable_body_no_bracket_01 -> 'e'
+variable_body_no_bracket_01 -> 'f'
+variable_body_no_bracket_01 -> 'g'
+variable_body_no_bracket_01 -> 'h'
+variable_body_no_bracket_01 -> 'i'
+variable_body_no_bracket_01 -> 'j'
+variable_body_no_bracket_01 -> 'k'
+variable_body_no_bracket_01 -> 'l'
+variable_body_no_bracket_01 -> 'm'
+variable_body_no_bracket_01 -> 'n'
+variable_body_no_bracket_01 -> 'o'
+variable_body_no_bracket_01 -> 'p'
+variable_body_no_bracket_01 -> 'q'
+variable_body_no_bracket_01 -> 'r'
+variable_body_no_bracket_01 -> 's'
+variable_body_no_bracket_01 -> 't'
+variable_body_no_bracket_01 -> 'u'
+variable_body_no_bracket_01 -> 'v'
+variable_body_no_bracket_01 -> 'w'
+variable_body_no_bracket_01 -> 'x'
+variable_body_no_bracket_01 -> 'y'
+variable_body_no_bracket_01 -> 'z'
+variable_body_no_bracket_01 -> 'A'
+variable_body_no_bracket_01 -> 'B'
+variable_body_no_bracket_01 -> 'C'
+variable_body_no_bracket_01 -> 'D'
+variable_body_no_bracket_01 -> 'E'
+variable_body_no_bracket_01 -> 'F'
+variable_body_no_bracket_01 -> 'G'
+variable_body_no_bracket_01 -> 'H'
+variable_body_no_bracket_01 -> 'I'
+variable_body_no_bracket_01 -> 'J'
+variable_body_no_bracket_01 -> 'K'
+variable_body_no_bracket_01 -> 'L'
+variable_body_no_bracket_01 -> 'M'
+variable_body_no_bracket_01 -> 'N'
+variable_body_no_bracket_01 -> 'O'
+variable_body_no_bracket_01 -> 'P'
+variable_body_no_bracket_01 -> 'Q'
+variable_body_no_bracket_01 -> 'R'
+variable_body_no_bracket_01 -> 'S'
+variable_body_no_bracket_01 -> 'T'
+variable_body_no_bracket_01 -> 'U'
+variable_body_no_bracket_01 -> 'V'
+variable_body_no_bracket_01 -> 'W'
+variable_body_no_bracket_01 -> 'X'
+variable_body_no_bracket_01 -> 'Y'
+variable_body_no_bracket_01 -> 'Z'
+A681 -> expr_op_infix A682
+A682 -> variable_body
+variable_body -> open_bracket A691
+variable_body -> expr_prefix variable_body_no_bracket_01
+variable_body -> variable_elmt A681
+variable_body -> open_bracket A671
+variable_body -> variable_single A661
+variable_body -> first_char_var any_other_char_var
+variable_body -> '_'
+variable_body -> 'a'
+variable_body -> 'b'
+variable_body -> 'c'
+variable_body -> 'd'
+variable_body -> 'e'
+variable_body -> 'f'
+variable_body -> 'g'
+variable_body -> 'h'
+variable_body -> 'i'
+variable_body -> 'j'
+variable_body -> 'k'
+variable_body -> 'l'
+variable_body -> 'm'
+variable_body -> 'n'
+variable_body -> 'o'
+variable_body -> 'p'
+variable_body -> 'q'
+variable_body -> 'r'
+variable_body -> 's'
+variable_body -> 't'
+variable_body -> 'u'
+variable_body -> 'v'
+variable_body -> 'w'
+variable_body -> 'x'
+variable_body -> 'y'
+variable_body -> 'z'
+variable_body -> 'A'
+variable_body -> 'B'
+variable_body -> 'C'
+variable_body -> 'D'
+variable_body -> 'E'
+variable_body -> 'F'
+variable_body -> 'G'
+variable_body -> 'H'
+variable_body -> 'I'
+variable_body -> 'J'
+variable_body -> 'K'
+variable_body -> 'L'
+variable_body -> 'M'
+variable_body -> 'N'
+variable_body -> 'O'
+variable_body -> 'P'
+variable_body -> 'Q'
+variable_body -> 'R'
+variable_body -> 'S'
+variable_body -> 'T'
+variable_body -> 'U'
+variable_body -> 'V'
+variable_body -> 'W'
+variable_body -> 'X'
+variable_body -> 'Y'
+variable_body -> 'Z'
+A691 -> variable_body_no_bracket A692
+A692 -> close_bracket
+variable_prefix_01 -> char_not A701
+A701 -> blank
+variable -> variable_prefix A711
+A711 -> variable_body A712
+variables_rec -> variable A721
+A721 -> separator variables_without_comma
+char_False -> char_F char_alse
+char_alse -> char_a char_lse
+char_lse -> char_l char_se
+char_se -> char_s char_e
+char_class -> char_c char_lass
+char_lass -> char_l char_ass
+char_ass -> char_a char_ss
+char_ss -> char_s char_s
+char_finally -> char_f char_inally
+char_inally -> char_i char_nally
+char_nally -> char_n char_ally
+char_ally -> char_a char_lly
+char_lly -> char_l char_ly
+char_ly -> char_l char_y
+char_is -> char_i char_s
+char_return -> char_r char_eturn
+char_eturn -> char_e char_turn
+char_turn -> char_t char_urn
+char_urn -> char_u char_rn
+char_rn -> char_r char_n
+char_None -> char_N char_one
+char_one -> char_o char_ne
+char_ne -> char_n char_e
+char_continue -> char_c char_ontinue
+char_ontinue -> char_o char_ntinue
+char_ntinue -> char_n char_tinue
+char_tinue -> char_t char_inue
+char_inue -> char_i char_nue
+char_nue -> char_n char_ue
+char_ue -> char_u char_e
+char_for -> char_f char_or
+char_or -> char_o char_r
+char_lambda -> char_l char_ambda
+char_ambda -> char_a char_mbda
+char_mbda -> char_m char_bda
+char_bda -> char_b char_da
+char_da -> char_d char_a
+char_try -> char_t char_ry
+char_ry -> char_r char_y
+char_True -> char_T char_rue
+char_rue -> char_r char_ue
+char_def -> char_d char_ef
+char_ef -> char_e char_f
+char_from -> char_f char_rom
+char_rom -> char_r char_om
+char_om -> char_o char_m
+char_nonlocal -> char_n char_onlocal
+char_onlocal -> char_o char_nlocal
+char_nlocal -> char_n char_local
+char_local -> char_l char_ocal
+char_ocal -> char_o char_cal
+char_cal -> char_c char_al
+char_al -> char_a char_l
+char_while -> char_w char_hile
+char_hile -> char_h char_ile
+char_ile -> char_i char_le
+char_le -> char_l char_e
+char_and -> char_a char_nd
+char_nd -> char_n char_d
+char_del -> char_d char_el
+char_el -> char_e char_l
+char_global -> char_g char_lobal
+char_lobal -> char_l char_obal
+char_obal -> char_o char_bal
+char_bal -> char_b char_al
+char_not -> char_n char_ot
+char_ot -> char_o char_t
+char_with -> char_w char_ith
+char_ith -> char_i char_th
+char_th -> char_t char_h
+char_as -> char_a char_s
+char_elif -> char_e char_lif
+char_lif -> char_l char_if
+char_if -> char_i char_f
+char_yield -> char_y char_ield
+char_ield -> char_i char_eld
+char_eld -> char_e char_ld
+char_ld -> char_l char_d
+char_assert -> char_a char_ssert
+char_ssert -> char_s char_sert
+char_sert -> char_s char_ert
+char_ert -> char_e char_rt
+char_rt -> char_r char_t
+char_else -> char_e char_lse
+char_import -> char_i char_mport
+char_mport -> char_m char_port
+char_port -> char_p char_ort
+char_ort -> char_o char_rt
+char_pass -> char_p char_ass
+char_break -> char_b char_reak
+char_reak -> char_r char_eak
+char_eak -> char_e char_ak
+char_ak -> char_a char_k
+char_except -> char_e char_xcept
+char_xcept -> char_x char_cept
+char_cept -> char_c char_ept
+char_ept -> char_e char_pt
+char_pt -> char_p char_t
+char_in -> char_i char_n
+char_raise -> char_r char_aise
+char_aise -> char_a char_ise
+char_ise -> char_i char_se
+char_not96in -> char_n char_ot96in
+char_ot96in -> char_o char_t96in
+char_t96in -> char_t char_96in
+char_96in -> char_96 char_in
+char_is96not -> char_i char_s96not
+char_s96not -> char_s char_96not
+char_96not -> char_96 char_not
+char_6060 -> char_60 char_60
+char_4361 -> char_43 char_61
+char_4561 -> char_45 char_61
+char_4261 -> char_42 char_61
+char_474761 -> char_47 char_4761
+char_4761 -> char_47 char_61
+char_3761 -> char_37 char_61
+char_424261 -> char_42 char_4261
+char_606061 -> char_60 char_6061
+char_626261 -> char_62 char_6261
+char_6161 -> char_61 char_61
+char_3361 -> char_33 char_61
+char_6261 -> char_62 char_61
+char_6061 -> char_60 char_61
+char_4242 -> char_42 char_42
+char_4747 -> char_47 char_47
+char_6262 -> char_62 char_62
+char_32 -> '`'
+char_33 -> '!'
+char_34 -> '"'
+char_35 -> '#'
+char_36 -> '$'
+char_37 -> '%'
+char_38 -> '&'
+char_39 -> '''
+char_40 -> '('
+char_41 -> ')'
+char_42 -> '*'
+char_43 -> '+'
+char_44 -> ','
+char_45 -> '-'
+char_46 -> '.'
+char_47 -> '/'
+char_0 -> '0'
+char_1 -> '1'
+char_2 -> '2'
+char_3 -> '3'
+char_4 -> '4'
+char_5 -> '5'
+char_6 -> '6'
+char_7 -> '7'
+char_8 -> '8'
+char_9 -> '9'
+char_10 -> '\n'
+char_58 -> ':'
+char_59 -> ';'
+char_60 -> '<'
+char_61 -> '='
+char_62 -> '>'
+char_63 -> '?'
+char_64 -> '@'
+char_A -> 'A'
+char_B -> 'B'
+char_C -> 'C'
+char_D -> 'D'
+char_E -> 'E'
+char_F -> 'F'
+char_G -> 'G'
+char_H -> 'H'
+char_I -> 'I'
+char_J -> 'J'
+char_K -> 'K'
+char_L -> 'L'
+char_M -> 'M'
+char_N -> 'N'
+char_O -> 'O'
+char_P -> 'P'
+char_Q -> 'Q'
+char_R -> 'R'
+char_S -> 'S'
+char_T -> 'T'
+char_U -> 'U'
+char_V -> 'V'
+char_W -> 'W'
+char_X -> 'X'
+char_Y -> 'Y'
+char_Z -> 'Z'
+char_91 -> '['
+char_92 -> '\'
+char_93 -> ']'
+char_94 -> '^'
+char_95 -> '_'
+char_96 -> '`'
+char_a -> 'a'
+char_b -> 'b'
+char_c -> 'c'
+char_d -> 'd'
+char_e -> 'e'
+char_f -> 'f'
+char_g -> 'g'
+char_h -> 'h'
+char_i -> 'i'
+char_j -> 'j'
+char_k -> 'k'
+char_l -> 'l'
+char_m -> 'm'
+char_n -> 'n'
+char_o -> 'o'
+char_p -> 'p'
+char_q -> 'q'
+char_r -> 'r'
+char_s -> 's'
+char_t -> 't'
+char_u -> 'u'
+char_v -> 'v'
+char_w -> 'w'
+char_x -> 'x'
+char_y -> 'y'
+char_z -> 'z'
+char_123 -> '{'
+char_124 -> ';'
+char_125 -> '}'
+char_126 -> '~'
+char_tab -> '\t'
+datatype -> open_curly_bracket A81
+datatype -> open_square_bracket A61
+datatype -> open_curly_bracket A51
+datatype -> open_bracket A71
+datatype -> char_T char_rue
+datatype -> char_F char_alse
+datatype -> any_int A91
+datatype -> int A101
+datatype -> any_non_complex_number_with_op complex_part
+datatype -> non_complex_number char_j
+datatype -> non_complex_number A111
+datatype -> single_quote A201
+datatype -> double_quote A211
+datatype -> double_quote A221
+datatype -> single_quote A231
+datatype -> char_N char_one
+datatype -> char_46 int
+datatype -> '0'
+datatype -> '1'
+datatype -> '2'
+datatype -> '3'
+datatype -> '4'
+datatype -> '5'
+datatype -> '6'
+datatype -> '7'
+datatype -> '8'
+datatype -> '9'
+datatype -> digit int
+none -> char_N char_one
+number -> any_non_complex_number_with_op complex_part
+number -> non_complex_number A111
+number -> char_T char_rue
+number -> char_F char_alse
+number -> any_int A91
+number -> int A101
+number -> char_46 int
+number -> digit int
+number -> non_complex_number char_j
+number -> '0'
+number -> '1'
+number -> '2'
+number -> '3'
+number -> '4'
+number -> '5'
+number -> '6'
+number -> '7'
+number -> '8'
+number -> '9'
+digit -> '0'
+digit -> '1'
+digit -> '2'
+digit -> '3'
+digit -> '4'
+digit -> '5'
+digit -> '6'
+digit -> '7'
+digit -> '8'
+digit -> '9'
+int -> digit int
+int -> '0'
+int -> '1'
+int -> '2'
+int -> '3'
+int -> '4'
+int -> '5'
+int -> '6'
+int -> '7'
+int -> '8'
+int -> '9'
+boolean -> char_T char_rue
+boolean -> char_F char_alse
+non_complex_number -> any_int A91
+non_complex_number -> int A101
+non_complex_number -> char_46 int
+non_complex_number -> '0'
+non_complex_number -> '1'
+non_complex_number -> '2'
+non_complex_number -> '3'
+non_complex_number -> '4'
+non_complex_number -> '5'
+non_complex_number -> '6'
+non_complex_number -> '7'
+non_complex_number -> '8'
+non_complex_number -> '9'
+non_complex_number -> digit int
+power_symbol -> 'e'
+power_symbol -> 'E'
+any_non_complex_number_with_op -> non_complex_number complex_infix
+op_num_plus_min -> '+'
+op_num_plus_min -> '-'
+op_num_single -> '*'
+op_num_single -> '%'
+op_num_single -> '/'
+op_num_single -> '+'
+op_num_single -> '-'
+op_num -> char_42 char_42
+op_num -> char_47 char_47
+op_num -> '+'
+op_num -> '-'
+op_num -> '*'
+op_num -> '%'
+op_num -> '/'
+op_compare -> '>'
+op_compare -> '<'
+op_compare -> char_61 char_61
+op_compare -> char_33 char_61
+op_compare -> char_62 char_61
+op_compare -> char_60 char_61
+op_assignment_single -> '='
+op_assignment -> char_43 char_61
+op_assignment -> char_45 char_61
+op_assignment -> char_42 char_61
+op_assignment -> char_47 char_61
+op_assignment -> char_47 char_4761
+op_assignment -> char_37 char_61
+op_assignment -> char_42 char_4261
+op_assignment -> char_60 char_6061
+op_assignment -> char_62 char_6261
+op_assignment -> '='
+op_bitwise_single -> '&'
+op_bitwise_single -> ';'
+op_bitwise_single -> '^'
+op_bitwise_single -> '~'
+op_bitwise -> char_60 char_60
+op_bitwise -> char_62 char_62
+op_bitwise -> '&'
+op_bitwise -> ';'
+op_bitwise -> '^'
+op_bitwise -> '~'
+op_logical -> char_a char_nd
+op_logical -> char_o char_r
+op_logical -> char_n char_ot
+op_membership -> char_i char_n
+op_membership -> char_n char_ot96in
+op_identity -> char_i char_s
+op_identity -> char_i char_s96not
+op_prefix -> '~'
+op_prefix -> '+'
+op_prefix -> '-'
+op_single -> '>'
+op_single -> '<'
+op_single -> '&'
+op_single -> ';'
+op_single -> '^'
+op_single -> '~'
+op_single -> '='
+op_single -> '+'
+op_single -> '-'
+op_single -> '*'
+op_single -> '%'
+op_single -> '/'
+lowercase -> 'a'
+lowercase -> 'b'
+lowercase -> 'c'
+lowercase -> 'd'
+lowercase -> 'e'
+lowercase -> 'f'
+lowercase -> 'g'
+lowercase -> 'h'
+lowercase -> 'i'
+lowercase -> 'j'
+lowercase -> 'k'
+lowercase -> 'l'
+lowercase -> 'm'
+lowercase -> 'n'
+lowercase -> 'o'
+lowercase -> 'p'
+lowercase -> 'q'
+lowercase -> 'r'
+lowercase -> 's'
+lowercase -> 't'
+lowercase -> 'u'
+lowercase -> 'v'
+lowercase -> 'w'
+lowercase -> 'x'
+lowercase -> 'y'
+lowercase -> 'z'
+uppercase -> 'A'
+uppercase -> 'B'
+uppercase -> 'C'
+uppercase -> 'D'
+uppercase -> 'E'
+uppercase -> 'F'
+uppercase -> 'G'
+uppercase -> 'H'
+uppercase -> 'I'
+uppercase -> 'J'
+uppercase -> 'K'
+uppercase -> 'L'
+uppercase -> 'M'
+uppercase -> 'N'
+uppercase -> 'O'
+uppercase -> 'P'
+uppercase -> 'Q'
+uppercase -> 'R'
+uppercase -> 'S'
+uppercase -> 'T'
+uppercase -> 'U'
+uppercase -> 'V'
+uppercase -> 'W'
+uppercase -> 'X'
+uppercase -> 'Y'
+uppercase -> 'Z'
+symbol_without_underscore_and_blank -> '!'
+symbol_without_underscore_and_blank -> '"'
+symbol_without_underscore_and_blank -> '#'
+symbol_without_underscore_and_blank -> '$'
+symbol_without_underscore_and_blank -> '%'
+symbol_without_underscore_and_blank -> '&'
+symbol_without_underscore_and_blank -> '''
+symbol_without_underscore_and_blank -> '('
+symbol_without_underscore_and_blank -> ')'
+symbol_without_underscore_and_blank -> '*'
+symbol_without_underscore_and_blank -> '+'
+symbol_without_underscore_and_blank -> ','
+symbol_without_underscore_and_blank -> '-'
+symbol_without_underscore_and_blank -> '.'
+symbol_without_underscore_and_blank -> '/'
+symbol_without_underscore_and_blank -> ':'
+symbol_without_underscore_and_blank -> ';'
+symbol_without_underscore_and_blank -> '<'
+symbol_without_underscore_and_blank -> '='
+symbol_without_underscore_and_blank -> '>'
+symbol_without_underscore_and_blank -> '?'
+symbol_without_underscore_and_blank -> '@'
+symbol_without_underscore_and_blank -> '['
+symbol_without_underscore_and_blank -> '\'
+symbol_without_underscore_and_blank -> ']'
+symbol_without_underscore_and_blank -> '^'
+symbol_without_underscore_and_blank -> '`'
+symbol_without_underscore_and_blank -> '{'
+symbol_without_underscore_and_blank -> ';'
+symbol_without_underscore_and_blank -> '}'
+symbol_without_underscore_and_blank -> '~'
+symbol_without_underscore -> '`'
+symbol_without_underscore -> '!'
+symbol_without_underscore -> '"'
+symbol_without_underscore -> '#'
+symbol_without_underscore -> '$'
+symbol_without_underscore -> '%'
+symbol_without_underscore -> '&'
+symbol_without_underscore -> '''
+symbol_without_underscore -> '('
+symbol_without_underscore -> ')'
+symbol_without_underscore -> '*'
+symbol_without_underscore -> '+'
+symbol_without_underscore -> ','
+symbol_without_underscore -> '-'
+symbol_without_underscore -> '.'
+symbol_without_underscore -> '/'
+symbol_without_underscore -> ':'
+symbol_without_underscore -> ';'
+symbol_without_underscore -> '<'
+symbol_without_underscore -> '='
+symbol_without_underscore -> '>'
+symbol_without_underscore -> '?'
+symbol_without_underscore -> '@'
+symbol_without_underscore -> '['
+symbol_without_underscore -> '\'
+symbol_without_underscore -> ']'
+symbol_without_underscore -> '^'
+symbol_without_underscore -> '`'
+symbol_without_underscore -> '{'
+symbol_without_underscore -> ';'
+symbol_without_underscore -> '}'
+symbol_without_underscore -> '~'
+symbol_without_single_quote -> '`'
+symbol_without_single_quote -> '!'
+symbol_without_single_quote -> '"'
+symbol_without_single_quote -> '#'
+symbol_without_single_quote -> '$'
+symbol_without_single_quote -> '%'
+symbol_without_single_quote -> '&'
+symbol_without_single_quote -> '('
+symbol_without_single_quote -> ')'
+symbol_without_single_quote -> '*'
+symbol_without_single_quote -> '+'
+symbol_without_single_quote -> ','
+symbol_without_single_quote -> '-'
+symbol_without_single_quote -> '.'
+symbol_without_single_quote -> '/'
+symbol_without_single_quote -> ':'
+symbol_without_single_quote -> ';'
+symbol_without_single_quote -> '<'
+symbol_without_single_quote -> '='
+symbol_without_single_quote -> '>'
+symbol_without_single_quote -> '?'
+symbol_without_single_quote -> '@'
+symbol_without_single_quote -> '['
+symbol_without_single_quote -> '\'
+symbol_without_single_quote -> ']'
+symbol_without_single_quote -> '^'
+symbol_without_single_quote -> '_'
+symbol_without_single_quote -> '`'
+symbol_without_single_quote -> '{'
+symbol_without_single_quote -> ';'
+symbol_without_single_quote -> '}'
+symbol_without_single_quote -> '~'
+symbol_without_single_quote -> char_92 single_quote
+symbol_without_single_quote -> '_'
+symbol_without_single_quote -> '\t'
+symbol_without_double_quote -> '`'
+symbol_without_double_quote -> '!'
+symbol_without_double_quote -> '#'
+symbol_without_double_quote -> '$'
+symbol_without_double_quote -> '%'
+symbol_without_double_quote -> '&'
+symbol_without_double_quote -> '''
+symbol_without_double_quote -> '('
+symbol_without_double_quote -> ')'
+symbol_without_double_quote -> '*'
+symbol_without_double_quote -> '+'
+symbol_without_double_quote -> ','
+symbol_without_double_quote -> '-'
+symbol_without_double_quote -> '.'
+symbol_without_double_quote -> '/'
+symbol_without_double_quote -> ':'
+symbol_without_double_quote -> ';'
+symbol_without_double_quote -> '<'
+symbol_without_double_quote -> '='
+symbol_without_double_quote -> '>'
+symbol_without_double_quote -> '?'
+symbol_without_double_quote -> '@'
+symbol_without_double_quote -> '['
+symbol_without_double_quote -> '\'
+symbol_without_double_quote -> ']'
+symbol_without_double_quote -> '^'
+symbol_without_double_quote -> '_'
+symbol_without_double_quote -> '`'
+symbol_without_double_quote -> '{'
+symbol_without_double_quote -> ';'
+symbol_without_double_quote -> '}'
+symbol_without_double_quote -> '~'
+symbol_without_double_quote -> char_92 double_quote
+symbol_without_double_quote -> '_'
+symbol_without_double_quote -> '\t'
+enter -> '\n'
+single_quote -> '''
+double_quote -> '"'
+any_alphanumeric -> letter A141
+any_alphanumeric -> digit A151
+alphanumeric_underscore_new -> letter A141
+alphanumeric_underscore_new -> digit A151
+alphanumeric_underscore_new -> '_'
+any_alphanumeric_underscore -> alphanumeric_underscore_new any_alphanumeric_underscore
+any_alphanumeric_underscore -> letter A141
+any_alphanumeric_underscore -> digit A151
+any_alphanumeric_underscore -> '_'
+string_body_without_single_quote -> letter string_body_without_single_quote
+string_body_without_single_quote -> digit string_body_without_single_quote
+string_body_without_single_quote -> symbol_without_single_quote string_body_without_single_quote
+string_body_without_single_quote -> '0'
+string_body_without_single_quote -> '1'
+string_body_without_single_quote -> '2'
+string_body_without_single_quote -> '3'
+string_body_without_single_quote -> '4'
+string_body_without_single_quote -> '5'
+string_body_without_single_quote -> '6'
+string_body_without_single_quote -> '7'
+string_body_without_single_quote -> '8'
+string_body_without_single_quote -> '9'
+string_body_without_single_quote -> '`'
+string_body_without_single_quote -> '!'
+string_body_without_single_quote -> '"'
+string_body_without_single_quote -> '#'
+string_body_without_single_quote -> '$'
+string_body_without_single_quote -> '%'
+string_body_without_single_quote -> '&'
+string_body_without_single_quote -> '('
+string_body_without_single_quote -> ')'
+string_body_without_single_quote -> '*'
+string_body_without_single_quote -> '+'
+string_body_without_single_quote -> ','
+string_body_without_single_quote -> '-'
+string_body_without_single_quote -> '.'
+string_body_without_single_quote -> '/'
+string_body_without_single_quote -> ':'
+string_body_without_single_quote -> ';'
+string_body_without_single_quote -> '<'
+string_body_without_single_quote -> '='
+string_body_without_single_quote -> '>'
+string_body_without_single_quote -> '?'
+string_body_without_single_quote -> '@'
+string_body_without_single_quote -> '['
+string_body_without_single_quote -> '\'
+string_body_without_single_quote -> ']'
+string_body_without_single_quote -> '^'
+string_body_without_single_quote -> '_'
+string_body_without_single_quote -> '`'
+string_body_without_single_quote -> '{'
+string_body_without_single_quote -> ';'
+string_body_without_single_quote -> '}'
+string_body_without_single_quote -> '~'
+string_body_without_single_quote -> char_92 single_quote
+string_body_without_single_quote -> 'a'
+string_body_without_single_quote -> 'b'
+string_body_without_single_quote -> 'c'
+string_body_without_single_quote -> 'd'
+string_body_without_single_quote -> 'e'
+string_body_without_single_quote -> 'f'
+string_body_without_single_quote -> 'g'
+string_body_without_single_quote -> 'h'
+string_body_without_single_quote -> 'i'
+string_body_without_single_quote -> 'j'
+string_body_without_single_quote -> 'k'
+string_body_without_single_quote -> 'l'
+string_body_without_single_quote -> 'm'
+string_body_without_single_quote -> 'n'
+string_body_without_single_quote -> 'o'
+string_body_without_single_quote -> 'p'
+string_body_without_single_quote -> 'q'
+string_body_without_single_quote -> 'r'
+string_body_without_single_quote -> 's'
+string_body_without_single_quote -> 't'
+string_body_without_single_quote -> 'u'
+string_body_without_single_quote -> 'v'
+string_body_without_single_quote -> 'w'
+string_body_without_single_quote -> 'x'
+string_body_without_single_quote -> 'y'
+string_body_without_single_quote -> 'z'
+string_body_without_single_quote -> 'A'
+string_body_without_single_quote -> 'B'
+string_body_without_single_quote -> 'C'
+string_body_without_single_quote -> 'D'
+string_body_without_single_quote -> 'E'
+string_body_without_single_quote -> 'F'
+string_body_without_single_quote -> 'G'
+string_body_without_single_quote -> 'H'
+string_body_without_single_quote -> 'I'
+string_body_without_single_quote -> 'J'
+string_body_without_single_quote -> 'K'
+string_body_without_single_quote -> 'L'
+string_body_without_single_quote -> 'M'
+string_body_without_single_quote -> 'N'
+string_body_without_single_quote -> 'O'
+string_body_without_single_quote -> 'P'
+string_body_without_single_quote -> 'Q'
+string_body_without_single_quote -> 'R'
+string_body_without_single_quote -> 'S'
+string_body_without_single_quote -> 'T'
+string_body_without_single_quote -> 'U'
+string_body_without_single_quote -> 'V'
+string_body_without_single_quote -> 'W'
+string_body_without_single_quote -> 'X'
+string_body_without_single_quote -> 'Y'
+string_body_without_single_quote -> 'Z'
+string_body_without_single_quote -> '_'
+string_body_without_single_quote -> '\t'
+string_body_without_double_quote -> letter string_body_without_double_quote
+string_body_without_double_quote -> digit string_body_without_double_quote
+string_body_without_double_quote -> symbol_without_double_quote string_body_without_double_quote
+string_body_without_double_quote -> '0'
+string_body_without_double_quote -> '1'
+string_body_without_double_quote -> '2'
+string_body_without_double_quote -> '3'
+string_body_without_double_quote -> '4'
+string_body_without_double_quote -> '5'
+string_body_without_double_quote -> '6'
+string_body_without_double_quote -> '7'
+string_body_without_double_quote -> '8'
+string_body_without_double_quote -> '9'
+string_body_without_double_quote -> '`'
+string_body_without_double_quote -> '!'
+string_body_without_double_quote -> '#'
+string_body_without_double_quote -> '$'
+string_body_without_double_quote -> '%'
+string_body_without_double_quote -> '&'
+string_body_without_double_quote -> '''
+string_body_without_double_quote -> '('
+string_body_without_double_quote -> ')'
+string_body_without_double_quote -> '*'
+string_body_without_double_quote -> '+'
+string_body_without_double_quote -> ','
+string_body_without_double_quote -> '-'
+string_body_without_double_quote -> '.'
+string_body_without_double_quote -> '/'
+string_body_without_double_quote -> ':'
+string_body_without_double_quote -> ';'
+string_body_without_double_quote -> '<'
+string_body_without_double_quote -> '='
+string_body_without_double_quote -> '>'
+string_body_without_double_quote -> '?'
+string_body_without_double_quote -> '@'
+string_body_without_double_quote -> '['
+string_body_without_double_quote -> '\'
+string_body_without_double_quote -> ']'
+string_body_without_double_quote -> '^'
+string_body_without_double_quote -> '_'
+string_body_without_double_quote -> '`'
+string_body_without_double_quote -> '{'
+string_body_without_double_quote -> ';'
+string_body_without_double_quote -> '}'
+string_body_without_double_quote -> '~'
+string_body_without_double_quote -> char_92 double_quote
+string_body_without_double_quote -> 'a'
+string_body_without_double_quote -> 'b'
+string_body_without_double_quote -> 'c'
+string_body_without_double_quote -> 'd'
+string_body_without_double_quote -> 'e'
+string_body_without_double_quote -> 'f'
+string_body_without_double_quote -> 'g'
+string_body_without_double_quote -> 'h'
+string_body_without_double_quote -> 'i'
+string_body_without_double_quote -> 'j'
+string_body_without_double_quote -> 'k'
+string_body_without_double_quote -> 'l'
+string_body_without_double_quote -> 'm'
+string_body_without_double_quote -> 'n'
+string_body_without_double_quote -> 'o'
+string_body_without_double_quote -> 'p'
+string_body_without_double_quote -> 'q'
+string_body_without_double_quote -> 'r'
+string_body_without_double_quote -> 's'
+string_body_without_double_quote -> 't'
+string_body_without_double_quote -> 'u'
+string_body_without_double_quote -> 'v'
+string_body_without_double_quote -> 'w'
+string_body_without_double_quote -> 'x'
+string_body_without_double_quote -> 'y'
+string_body_without_double_quote -> 'z'
+string_body_without_double_quote -> 'A'
+string_body_without_double_quote -> 'B'
+string_body_without_double_quote -> 'C'
+string_body_without_double_quote -> 'D'
+string_body_without_double_quote -> 'E'
+string_body_without_double_quote -> 'F'
+string_body_without_double_quote -> 'G'
+string_body_without_double_quote -> 'H'
+string_body_without_double_quote -> 'I'
+string_body_without_double_quote -> 'J'
+string_body_without_double_quote -> 'K'
+string_body_without_double_quote -> 'L'
+string_body_without_double_quote -> 'M'
+string_body_without_double_quote -> 'N'
+string_body_without_double_quote -> 'O'
+string_body_without_double_quote -> 'P'
+string_body_without_double_quote -> 'Q'
+string_body_without_double_quote -> 'R'
+string_body_without_double_quote -> 'S'
+string_body_without_double_quote -> 'T'
+string_body_without_double_quote -> 'U'
+string_body_without_double_quote -> 'V'
+string_body_without_double_quote -> 'W'
+string_body_without_double_quote -> 'X'
+string_body_without_double_quote -> 'Y'
+string_body_without_double_quote -> 'Z'
+string_body_without_double_quote -> '_'
+string_body_without_double_quote -> '\t'
+string_body_multi_body_without_double_quote -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote
+string_body_multi_body_without_double_quote -> double_quote A161
+string_body_multi_body_without_double_quote -> double_quote A171
+string_body_multi_body_without_double_quote -> '`'
+string_body_multi_body_without_double_quote -> '!'
+string_body_multi_body_without_double_quote -> '#'
+string_body_multi_body_without_double_quote -> '$'
+string_body_multi_body_without_double_quote -> '%'
+string_body_multi_body_without_double_quote -> '&'
+string_body_multi_body_without_double_quote -> '''
+string_body_multi_body_without_double_quote -> '('
+string_body_multi_body_without_double_quote -> ')'
+string_body_multi_body_without_double_quote -> '*'
+string_body_multi_body_without_double_quote -> '+'
+string_body_multi_body_without_double_quote -> ','
+string_body_multi_body_without_double_quote -> '-'
+string_body_multi_body_without_double_quote -> '.'
+string_body_multi_body_without_double_quote -> '/'
+string_body_multi_body_without_double_quote -> ':'
+string_body_multi_body_without_double_quote -> ';'
+string_body_multi_body_without_double_quote -> '<'
+string_body_multi_body_without_double_quote -> '='
+string_body_multi_body_without_double_quote -> '>'
+string_body_multi_body_without_double_quote -> '?'
+string_body_multi_body_without_double_quote -> '@'
+string_body_multi_body_without_double_quote -> '['
+string_body_multi_body_without_double_quote -> '\'
+string_body_multi_body_without_double_quote -> ']'
+string_body_multi_body_without_double_quote -> '^'
+string_body_multi_body_without_double_quote -> '_'
+string_body_multi_body_without_double_quote -> '`'
+string_body_multi_body_without_double_quote -> '{'
+string_body_multi_body_without_double_quote -> ';'
+string_body_multi_body_without_double_quote -> '}'
+string_body_multi_body_without_double_quote -> '~'
+string_body_multi_body_without_double_quote -> char_92 double_quote
+string_body_multi_body_without_double_quote -> '_'
+string_body_multi_body_without_double_quote -> '\t'
+string_body_multi_body_without_double_quote -> '0'
+string_body_multi_body_without_double_quote -> '1'
+string_body_multi_body_without_double_quote -> '2'
+string_body_multi_body_without_double_quote -> '3'
+string_body_multi_body_without_double_quote -> '4'
+string_body_multi_body_without_double_quote -> '5'
+string_body_multi_body_without_double_quote -> '6'
+string_body_multi_body_without_double_quote -> '7'
+string_body_multi_body_without_double_quote -> '8'
+string_body_multi_body_without_double_quote -> '9'
+string_body_multi_body_without_double_quote -> 'a'
+string_body_multi_body_without_double_quote -> 'b'
+string_body_multi_body_without_double_quote -> 'c'
+string_body_multi_body_without_double_quote -> 'd'
+string_body_multi_body_without_double_quote -> 'e'
+string_body_multi_body_without_double_quote -> 'f'
+string_body_multi_body_without_double_quote -> 'g'
+string_body_multi_body_without_double_quote -> 'h'
+string_body_multi_body_without_double_quote -> 'i'
+string_body_multi_body_without_double_quote -> 'j'
+string_body_multi_body_without_double_quote -> 'k'
+string_body_multi_body_without_double_quote -> 'l'
+string_body_multi_body_without_double_quote -> 'm'
+string_body_multi_body_without_double_quote -> 'n'
+string_body_multi_body_without_double_quote -> 'o'
+string_body_multi_body_without_double_quote -> 'p'
+string_body_multi_body_without_double_quote -> 'q'
+string_body_multi_body_without_double_quote -> 'r'
+string_body_multi_body_without_double_quote -> 's'
+string_body_multi_body_without_double_quote -> 't'
+string_body_multi_body_without_double_quote -> 'u'
+string_body_multi_body_without_double_quote -> 'v'
+string_body_multi_body_without_double_quote -> 'w'
+string_body_multi_body_without_double_quote -> 'x'
+string_body_multi_body_without_double_quote -> 'y'
+string_body_multi_body_without_double_quote -> 'z'
+string_body_multi_body_without_double_quote -> 'A'
+string_body_multi_body_without_double_quote -> 'B'
+string_body_multi_body_without_double_quote -> 'C'
+string_body_multi_body_without_double_quote -> 'D'
+string_body_multi_body_without_double_quote -> 'E'
+string_body_multi_body_without_double_quote -> 'F'
+string_body_multi_body_without_double_quote -> 'G'
+string_body_multi_body_without_double_quote -> 'H'
+string_body_multi_body_without_double_quote -> 'I'
+string_body_multi_body_without_double_quote -> 'J'
+string_body_multi_body_without_double_quote -> 'K'
+string_body_multi_body_without_double_quote -> 'L'
+string_body_multi_body_without_double_quote -> 'M'
+string_body_multi_body_without_double_quote -> 'N'
+string_body_multi_body_without_double_quote -> 'O'
+string_body_multi_body_without_double_quote -> 'P'
+string_body_multi_body_without_double_quote -> 'Q'
+string_body_multi_body_without_double_quote -> 'R'
+string_body_multi_body_without_double_quote -> 'S'
+string_body_multi_body_without_double_quote -> 'T'
+string_body_multi_body_without_double_quote -> 'U'
+string_body_multi_body_without_double_quote -> 'V'
+string_body_multi_body_without_double_quote -> 'W'
+string_body_multi_body_without_double_quote -> 'X'
+string_body_multi_body_without_double_quote -> 'Y'
+string_body_multi_body_without_double_quote -> 'Z'
+string_body_multi_body_without_double_quote -> '\n'
+string_body_multi_body_without_single_quote -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote
+string_body_multi_body_without_single_quote -> single_quote A181
+string_body_multi_body_without_single_quote -> single_quote A191
+string_body_multi_body_without_single_quote -> '`'
+string_body_multi_body_without_single_quote -> '!'
+string_body_multi_body_without_single_quote -> '"'
+string_body_multi_body_without_single_quote -> '#'
+string_body_multi_body_without_single_quote -> '$'
+string_body_multi_body_without_single_quote -> '%'
+string_body_multi_body_without_single_quote -> '&'
+string_body_multi_body_without_single_quote -> '('
+string_body_multi_body_without_single_quote -> ')'
+string_body_multi_body_without_single_quote -> '*'
+string_body_multi_body_without_single_quote -> '+'
+string_body_multi_body_without_single_quote -> ','
+string_body_multi_body_without_single_quote -> '-'
+string_body_multi_body_without_single_quote -> '.'
+string_body_multi_body_without_single_quote -> '/'
+string_body_multi_body_without_single_quote -> ':'
+string_body_multi_body_without_single_quote -> ';'
+string_body_multi_body_without_single_quote -> '<'
+string_body_multi_body_without_single_quote -> '='
+string_body_multi_body_without_single_quote -> '>'
+string_body_multi_body_without_single_quote -> '?'
+string_body_multi_body_without_single_quote -> '@'
+string_body_multi_body_without_single_quote -> '['
+string_body_multi_body_without_single_quote -> '\'
+string_body_multi_body_without_single_quote -> ']'
+string_body_multi_body_without_single_quote -> '^'
+string_body_multi_body_without_single_quote -> '_'
+string_body_multi_body_without_single_quote -> '`'
+string_body_multi_body_without_single_quote -> '{'
+string_body_multi_body_without_single_quote -> ';'
+string_body_multi_body_without_single_quote -> '}'
+string_body_multi_body_without_single_quote -> '~'
+string_body_multi_body_without_single_quote -> char_92 single_quote
+string_body_multi_body_without_single_quote -> '_'
+string_body_multi_body_without_single_quote -> '\t'
+string_body_multi_body_without_single_quote -> '0'
+string_body_multi_body_without_single_quote -> '1'
+string_body_multi_body_without_single_quote -> '2'
+string_body_multi_body_without_single_quote -> '3'
+string_body_multi_body_without_single_quote -> '4'
+string_body_multi_body_without_single_quote -> '5'
+string_body_multi_body_without_single_quote -> '6'
+string_body_multi_body_without_single_quote -> '7'
+string_body_multi_body_without_single_quote -> '8'
+string_body_multi_body_without_single_quote -> '9'
+string_body_multi_body_without_single_quote -> 'a'
+string_body_multi_body_without_single_quote -> 'b'
+string_body_multi_body_without_single_quote -> 'c'
+string_body_multi_body_without_single_quote -> 'd'
+string_body_multi_body_without_single_quote -> 'e'
+string_body_multi_body_without_single_quote -> 'f'
+string_body_multi_body_without_single_quote -> 'g'
+string_body_multi_body_without_single_quote -> 'h'
+string_body_multi_body_without_single_quote -> 'i'
+string_body_multi_body_without_single_quote -> 'j'
+string_body_multi_body_without_single_quote -> 'k'
+string_body_multi_body_without_single_quote -> 'l'
+string_body_multi_body_without_single_quote -> 'm'
+string_body_multi_body_without_single_quote -> 'n'
+string_body_multi_body_without_single_quote -> 'o'
+string_body_multi_body_without_single_quote -> 'p'
+string_body_multi_body_without_single_quote -> 'q'
+string_body_multi_body_without_single_quote -> 'r'
+string_body_multi_body_without_single_quote -> 's'
+string_body_multi_body_without_single_quote -> 't'
+string_body_multi_body_without_single_quote -> 'u'
+string_body_multi_body_without_single_quote -> 'v'
+string_body_multi_body_without_single_quote -> 'w'
+string_body_multi_body_without_single_quote -> 'x'
+string_body_multi_body_without_single_quote -> 'y'
+string_body_multi_body_without_single_quote -> 'z'
+string_body_multi_body_without_single_quote -> 'A'
+string_body_multi_body_without_single_quote -> 'B'
+string_body_multi_body_without_single_quote -> 'C'
+string_body_multi_body_without_single_quote -> 'D'
+string_body_multi_body_without_single_quote -> 'E'
+string_body_multi_body_without_single_quote -> 'F'
+string_body_multi_body_without_single_quote -> 'G'
+string_body_multi_body_without_single_quote -> 'H'
+string_body_multi_body_without_single_quote -> 'I'
+string_body_multi_body_without_single_quote -> 'J'
+string_body_multi_body_without_single_quote -> 'K'
+string_body_multi_body_without_single_quote -> 'L'
+string_body_multi_body_without_single_quote -> 'M'
+string_body_multi_body_without_single_quote -> 'N'
+string_body_multi_body_without_single_quote -> 'O'
+string_body_multi_body_without_single_quote -> 'P'
+string_body_multi_body_without_single_quote -> 'Q'
+string_body_multi_body_without_single_quote -> 'R'
+string_body_multi_body_without_single_quote -> 'S'
+string_body_multi_body_without_single_quote -> 'T'
+string_body_multi_body_without_single_quote -> 'U'
+string_body_multi_body_without_single_quote -> 'V'
+string_body_multi_body_without_single_quote -> 'W'
+string_body_multi_body_without_single_quote -> 'X'
+string_body_multi_body_without_single_quote -> 'Y'
+string_body_multi_body_without_single_quote -> 'Z'
+string_body_multi_body_without_single_quote -> '\n'
+string -> single_quote A201
+string -> double_quote A211
+string -> double_quote A221
+string -> single_quote A231
+blank -> '`'
+tab -> '\t'
+blanks_tab -> tab blanks
+blanks_tab -> '\t'
+blanks_blank -> blank blanks
+blanks_blank -> '`'
+tabs -> tab tabs
+tabs -> '\t'
+underscore -> '_'
+underscores -> underscore underscores
+underscores -> '_'
+maybe_empty_line -> any_blanks A251
+maybe_empty_line -> tab tabs
+maybe_empty_line -> any_comment newline
+maybe_empty_line -> any_blanks A241
+maybe_empty_line -> '\t'
+maybe_empty_line -> newline_only maybe_empty_line
+comma -> ','
+dot -> '.'
+keywords -> char_F char_alse
+keywords -> char_c char_lass
+keywords -> char_f char_inally
+keywords -> char_i char_s
+keywords -> char_r char_eturn
+keywords -> char_N char_one
+keywords -> char_c char_ontinue
+keywords -> char_f char_or
+keywords -> char_l char_ambda
+keywords -> char_t char_ry
+keywords -> char_T char_rue
+keywords -> char_d char_ef
+keywords -> char_f char_rom
+keywords -> char_n char_onlocal
+keywords -> char_w char_hile
+keywords -> char_a char_nd
+keywords -> char_d char_el
+keywords -> char_g char_lobal
+keywords -> char_n char_ot
+keywords -> char_w char_ith
+keywords -> char_a char_s
+keywords -> char_e char_lif
+keywords -> char_i char_f
+keywords -> char_o char_r
+keywords -> char_y char_ield
+keywords -> char_a char_ssert
+keywords -> char_e char_lse
+keywords -> char_i char_mport
+keywords -> char_p char_ass
+keywords -> char_b char_reak
+keywords -> char_e char_xcept
+keywords -> char_i char_n
+keywords -> char_r char_aise
+statement -> statement_single statement
+statement -> any_blanks A251
+statement -> any_comment newline
+statement -> any_tabs statement_elmt
+statement -> simple_stmt A281
+statement -> any_blanks A241
+statement -> newline_only maybe_empty_line
+statement -> if_only A311
+statement -> char_while A321
+statement -> char_for A331
+statement -> char_with A371
+statement -> char_def A521
+statement -> char_class A291
+block_statement -> any_blanks statement_elmt
+block_statement -> newline statement
+block_statement -> simple_stmt A281
+block_statement -> if_only A311
+block_statement -> char_while A321
+block_statement -> char_for A331
+block_statement -> char_with A371
+block_statement -> char_def A521
+block_statement -> char_class A291
+compound_stmt -> if_only A311
+compound_stmt -> char_while A321
+compound_stmt -> char_for A331
+compound_stmt -> char_with A371
+compound_stmt -> char_def A521
+compound_stmt -> char_class A291
+simple_stmt -> char_return return_body
+simple_stmt -> maybe_expr_before A441
+simple_stmt -> import_only import_alias_body
+simple_stmt -> char_import import_only_body
+simple_stmt -> char_from import_with_from_body_full
+simple_stmt -> char_p char_ass
+simple_stmt -> char_b char_reak
+simple_stmt -> char_c char_ontinue
+simple_stmt -> variable_names A491
+simple_stmt -> variable_names A481
+simple_stmt -> expr_01 A442
+simple_stmt -> expr_02 A443
+statement_single -> any_blanks A251
+statement_single -> any_tabs statement_elmt
+statement_single -> any_comment newline
+statement_single -> any_blanks A241
+statement_single -> simple_stmt A281
+statement_single -> newline_only maybe_empty_line
+statement_single -> if_only A311
+statement_single -> char_while A321
+statement_single -> char_for A331
+statement_single -> char_with A371
+statement_single -> char_def A521
+statement_single -> char_class A291
+maybe_else -> char_else block
+any_elif -> elif_only any_elif
+any_elif -> char_el if_only
+pass -> char_p char_ass
+break -> char_b char_reak
+continue -> char_c char_ontinue
+with_items -> expr A351
+with_items -> with_item A361
+args_element -> variable_prefix A711
+args_element -> maybe_expr_before A441
+args_element -> variable_names A491
+args_element -> expr_01 A442
+args_element -> expr_02 A443
+args_ins -> args_element A381
+args_ins -> variable_prefix A711
+args_ins -> maybe_expr_before A441
+args_ins -> expr_01 A442
+args_ins -> variable_names A491
+args_ins -> expr_02 A443
+any_args -> open_bracket A391
+comment_body -> comment_elmt comment_body
+comment_body -> '0'
+comment_body -> '1'
+comment_body -> '2'
+comment_body -> '3'
+comment_body -> '4'
+comment_body -> '5'
+comment_body -> '6'
+comment_body -> '7'
+comment_body -> '8'
+comment_body -> '9'
+comment_body -> '\t'
+comment_body -> 'a'
+comment_body -> 'b'
+comment_body -> 'c'
+comment_body -> 'd'
+comment_body -> 'e'
+comment_body -> 'f'
+comment_body -> 'g'
+comment_body -> 'h'
+comment_body -> 'i'
+comment_body -> 'j'
+comment_body -> 'k'
+comment_body -> 'l'
+comment_body -> 'm'
+comment_body -> 'n'
+comment_body -> 'o'
+comment_body -> 'p'
+comment_body -> 'q'
+comment_body -> 'r'
+comment_body -> 's'
+comment_body -> 't'
+comment_body -> 'u'
+comment_body -> 'v'
+comment_body -> 'w'
+comment_body -> 'x'
+comment_body -> 'y'
+comment_body -> 'z'
+comment_body -> 'A'
+comment_body -> 'B'
+comment_body -> 'C'
+comment_body -> 'D'
+comment_body -> 'E'
+comment_body -> 'F'
+comment_body -> 'G'
+comment_body -> 'H'
+comment_body -> 'I'
+comment_body -> 'J'
+comment_body -> 'K'
+comment_body -> 'L'
+comment_body -> 'M'
+comment_body -> 'N'
+comment_body -> 'O'
+comment_body -> 'P'
+comment_body -> 'Q'
+comment_body -> 'R'
+comment_body -> 'S'
+comment_body -> 'T'
+comment_body -> 'U'
+comment_body -> 'V'
+comment_body -> 'W'
+comment_body -> 'X'
+comment_body -> 'Y'
+comment_body -> 'Z'
+comment_body -> '!'
+comment_body -> '"'
+comment_body -> '#'
+comment_body -> '$'
+comment_body -> '%'
+comment_body -> '&'
+comment_body -> '''
+comment_body -> '('
+comment_body -> ')'
+comment_body -> '*'
+comment_body -> '+'
+comment_body -> ','
+comment_body -> '-'
+comment_body -> '.'
+comment_body -> '/'
+comment_body -> ':'
+comment_body -> ';'
+comment_body -> '<'
+comment_body -> '='
+comment_body -> '>'
+comment_body -> '?'
+comment_body -> '@'
+comment_body -> '['
+comment_body -> '\'
+comment_body -> ']'
+comment_body -> '^'
+comment_body -> '`'
+comment_body -> '{'
+comment_body -> ';'
+comment_body -> '}'
+comment_body -> '~'
+comment_body -> '`'
+comment_body -> '_'
+any_comment -> char_35 A401
+expr_elmt -> variable_prefix A711
+expr_elmt -> variable_name A501
+expr_elmt -> any_non_complex_number_with_op complex_part
+expr_elmt -> non_complex_number A111
+expr_elmt -> single_quote A201
+expr_elmt -> double_quote A211
+expr_elmt -> double_quote A221
+expr_elmt -> single_quote A231
+expr_elmt -> open_curly_bracket A81
+expr_elmt -> open_square_bracket A61
+expr_elmt -> open_curly_bracket A51
+expr_elmt -> open_bracket A71
+expr_elmt -> char_N char_one
+expr_elmt -> char_T char_rue
+expr_elmt -> char_F char_alse
+expr_elmt -> any_int A91
+expr_elmt -> int A101
+expr_elmt -> char_46 int
+expr_elmt -> digit int
+expr_elmt -> '0'
+expr_elmt -> '1'
+expr_elmt -> '2'
+expr_elmt -> '3'
+expr_elmt -> '4'
+expr_elmt -> '5'
+expr_elmt -> '6'
+expr_elmt -> '7'
+expr_elmt -> '8'
+expr_elmt -> '9'
+expr_elmt -> non_complex_number char_j
+expr_body_02 -> expr_elmt A411
+expr_body_02 -> variable_prefix A711
+expr_body_02 -> variable_name A501
+expr_body_02 -> open_curly_bracket A81
+expr_body_02 -> open_square_bracket A61
+expr_body_02 -> open_curly_bracket A51
+expr_body_02 -> open_bracket A71
+expr_body_02 -> char_T char_rue
+expr_body_02 -> char_F char_alse
+expr_body_02 -> any_int A91
+expr_body_02 -> int A101
+expr_body_02 -> char_46 int
+expr_body_02 -> '0'
+expr_body_02 -> '1'
+expr_body_02 -> '2'
+expr_body_02 -> '3'
+expr_body_02 -> '4'
+expr_body_02 -> '5'
+expr_body_02 -> '6'
+expr_body_02 -> '7'
+expr_body_02 -> '8'
+expr_body_02 -> '9'
+expr_body_02 -> digit int
+expr_body_02 -> any_non_complex_number_with_op complex_part
+expr_body_02 -> non_complex_number char_j
+expr_body_02 -> non_complex_number A111
+expr_body_02 -> single_quote A201
+expr_body_02 -> double_quote A211
+expr_body_02 -> double_quote A221
+expr_body_02 -> single_quote A231
+expr_body_02 -> char_N char_one
+expr_prefix -> op_prefix A421
+maybe_expr_after -> expr_op_infix expr_body
+maybe_expr_before -> expr_body expr_op_infix
+expr_02 -> op_prefix A421
+expr_02 -> '\t'
+expr_02 -> tab blanks
+expr_02 -> '`'
+expr_02 -> blank blanks
+assign_without_op_01 -> exprs_without_comma A471
+assign_without_op_01 -> variable_names A491
+assign_without_op_01 -> expr A461
+assign_without_op_01 -> maybe_expr_before A441
+assign_without_op_01 -> expr_01 A442
+assign_without_op_01 -> expr_02 A443
+assign -> variable_names A491
+assign -> variable_names A481
+return_body_01 -> maybe_expr_before A441
+return_body_01 -> expr_01 A442
+return_body_01 -> expr_02 A443
+maybe_from_expr -> char_from from_expr_body
+any_raise_elmt -> expr A531
+import_with_from_elmt -> char_import import_all_body
+import_with_from_elmt -> import_only import_alias_body
+import_with_from_elmt -> char_import import_only_body
+import_without_from -> import_only import_alias_body
+import_without_from -> char_import import_only_body
+import -> char_from import_with_from_body_full
+import -> import_only import_alias_body
+import -> char_import import_only_body
+parameter_element -> variable_prefix A711
+parameter_default -> variable_names A491
+maybe_parameter_only -> parameter_element A541
+maybe_parameter_only -> variable_prefix A711
+access_array -> open_square_bracket A601
+access_array -> access_array_single A611
+any_hint -> colon expr
+any_other_char_var -> letter A621
+any_other_char_var -> digit A631
+any_other_char_var -> underscore A641
+any_other_char_var -> '0'
+any_other_char_var -> '1'
+any_other_char_var -> '2'
+any_other_char_var -> '3'
+any_other_char_var -> '4'
+any_other_char_var -> '5'
+any_other_char_var -> '6'
+any_other_char_var -> '7'
+any_other_char_var -> '8'
+any_other_char_var -> '9'
+any_other_char_var -> '_'
+any_other_char_var -> 'a'
+any_other_char_var -> 'b'
+any_other_char_var -> 'c'
+any_other_char_var -> 'd'
+any_other_char_var -> 'e'
+any_other_char_var -> 'f'
+any_other_char_var -> 'g'
+any_other_char_var -> 'h'
+any_other_char_var -> 'i'
+any_other_char_var -> 'j'
+any_other_char_var -> 'k'
+any_other_char_var -> 'l'
+any_other_char_var -> 'm'
+any_other_char_var -> 'n'
+any_other_char_var -> 'o'
+any_other_char_var -> 'p'
+any_other_char_var -> 'q'
+any_other_char_var -> 'r'
+any_other_char_var -> 's'
+any_other_char_var -> 't'
+any_other_char_var -> 'u'
+any_other_char_var -> 'v'
+any_other_char_var -> 'w'
+any_other_char_var -> 'x'
+any_other_char_var -> 'y'
+any_other_char_var -> 'z'
+any_other_char_var -> 'A'
+any_other_char_var -> 'B'
+any_other_char_var -> 'C'
+any_other_char_var -> 'D'
+any_other_char_var -> 'E'
+any_other_char_var -> 'F'
+any_other_char_var -> 'G'
+any_other_char_var -> 'H'
+any_other_char_var -> 'I'
+any_other_char_var -> 'J'
+any_other_char_var -> 'K'
+any_other_char_var -> 'L'
+any_other_char_var -> 'M'
+any_other_char_var -> 'N'
+any_other_char_var -> 'O'
+any_other_char_var -> 'P'
+any_other_char_var -> 'Q'
+any_other_char_var -> 'R'
+any_other_char_var -> 'S'
+any_other_char_var -> 'T'
+any_other_char_var -> 'U'
+any_other_char_var -> 'V'
+any_other_char_var -> 'W'
+any_other_char_var -> 'X'
+any_other_char_var -> 'Y'
+any_other_char_var -> 'Z'
+variable_single -> first_char_var any_other_char_var
+variable_single -> '_'
+variable_single -> 'a'
+variable_single -> 'b'
+variable_single -> 'c'
+variable_single -> 'd'
+variable_single -> 'e'
+variable_single -> 'f'
+variable_single -> 'g'
+variable_single -> 'h'
+variable_single -> 'i'
+variable_single -> 'j'
+variable_single -> 'k'
+variable_single -> 'l'
+variable_single -> 'm'
+variable_single -> 'n'
+variable_single -> 'o'
+variable_single -> 'p'
+variable_single -> 'q'
+variable_single -> 'r'
+variable_single -> 's'
+variable_single -> 't'
+variable_single -> 'u'
+variable_single -> 'v'
+variable_single -> 'w'
+variable_single -> 'x'
+variable_single -> 'y'
+variable_single -> 'z'
+variable_single -> 'A'
+variable_single -> 'B'
+variable_single -> 'C'
+variable_single -> 'D'
+variable_single -> 'E'
+variable_single -> 'F'
+variable_single -> 'G'
+variable_single -> 'H'
+variable_single -> 'I'
+variable_single -> 'J'
+variable_single -> 'K'
+variable_single -> 'L'
+variable_single -> 'M'
+variable_single -> 'N'
+variable_single -> 'O'
+variable_single -> 'P'
+variable_single -> 'Q'
+variable_single -> 'R'
+variable_single -> 'S'
+variable_single -> 'T'
+variable_single -> 'U'
+variable_single -> 'V'
+variable_single -> 'W'
+variable_single -> 'X'
+variable_single -> 'Y'
+variable_single -> 'Z'
+variable_names_without_comma -> first_char_var any_other_char_var
+variable_names_without_comma -> variable_name A651
+variable_names_without_comma -> '_'
+variable_names_without_comma -> 'a'
+variable_names_without_comma -> 'b'
+variable_names_without_comma -> 'c'
+variable_names_without_comma -> 'd'
+variable_names_without_comma -> 'e'
+variable_names_without_comma -> 'f'
+variable_names_without_comma -> 'g'
+variable_names_without_comma -> 'h'
+variable_names_without_comma -> 'i'
+variable_names_without_comma -> 'j'
+variable_names_without_comma -> 'k'
+variable_names_without_comma -> 'l'
+variable_names_without_comma -> 'm'
+variable_names_without_comma -> 'n'
+variable_names_without_comma -> 'o'
+variable_names_without_comma -> 'p'
+variable_names_without_comma -> 'q'
+variable_names_without_comma -> 'r'
+variable_names_without_comma -> 's'
+variable_names_without_comma -> 't'
+variable_names_without_comma -> 'u'
+variable_names_without_comma -> 'v'
+variable_names_without_comma -> 'w'
+variable_names_without_comma -> 'x'
+variable_names_without_comma -> 'y'
+variable_names_without_comma -> 'z'
+variable_names_without_comma -> 'A'
+variable_names_without_comma -> 'B'
+variable_names_without_comma -> 'C'
+variable_names_without_comma -> 'D'
+variable_names_without_comma -> 'E'
+variable_names_without_comma -> 'F'
+variable_names_without_comma -> 'G'
+variable_names_without_comma -> 'H'
+variable_names_without_comma -> 'I'
+variable_names_without_comma -> 'J'
+variable_names_without_comma -> 'K'
+variable_names_without_comma -> 'L'
+variable_names_without_comma -> 'M'
+variable_names_without_comma -> 'N'
+variable_names_without_comma -> 'O'
+variable_names_without_comma -> 'P'
+variable_names_without_comma -> 'Q'
+variable_names_without_comma -> 'R'
+variable_names_without_comma -> 'S'
+variable_names_without_comma -> 'T'
+variable_names_without_comma -> 'U'
+variable_names_without_comma -> 'V'
+variable_names_without_comma -> 'W'
+variable_names_without_comma -> 'X'
+variable_names_without_comma -> 'Y'
+variable_names_without_comma -> 'Z'
+maybe_comma -> any_blanks A271
+maybe_comma -> comma any_blanks
+maybe_comma -> ','
+variable_elmt -> open_bracket A671
+variable_elmt -> variable_single A661
+variable_elmt -> first_char_var any_other_char_var
+variable_elmt -> '_'
+variable_elmt -> 'a'
+variable_elmt -> 'b'
+variable_elmt -> 'c'
+variable_elmt -> 'd'
+variable_elmt -> 'e'
+variable_elmt -> 'f'
+variable_elmt -> 'g'
+variable_elmt -> 'h'
+variable_elmt -> 'i'
+variable_elmt -> 'j'
+variable_elmt -> 'k'
+variable_elmt -> 'l'
+variable_elmt -> 'm'
+variable_elmt -> 'n'
+variable_elmt -> 'o'
+variable_elmt -> 'p'
+variable_elmt -> 'q'
+variable_elmt -> 'r'
+variable_elmt -> 's'
+variable_elmt -> 't'
+variable_elmt -> 'u'
+variable_elmt -> 'v'
+variable_elmt -> 'w'
+variable_elmt -> 'x'
+variable_elmt -> 'y'
+variable_elmt -> 'z'
+variable_elmt -> 'A'
+variable_elmt -> 'B'
+variable_elmt -> 'C'
+variable_elmt -> 'D'
+variable_elmt -> 'E'
+variable_elmt -> 'F'
+variable_elmt -> 'G'
+variable_elmt -> 'H'
+variable_elmt -> 'I'
+variable_elmt -> 'J'
+variable_elmt -> 'K'
+variable_elmt -> 'L'
+variable_elmt -> 'M'
+variable_elmt -> 'N'
+variable_elmt -> 'O'
+variable_elmt -> 'P'
+variable_elmt -> 'Q'
+variable_elmt -> 'R'
+variable_elmt -> 'S'
+variable_elmt -> 'T'
+variable_elmt -> 'U'
+variable_elmt -> 'V'
+variable_elmt -> 'W'
+variable_elmt -> 'X'
+variable_elmt -> 'Y'
+variable_elmt -> 'Z'
+variable_prefix_02 -> op_prefix A421
+variable_prefix_02 -> '\t'
+variable_prefix_02 -> tab blanks
+variable_prefix_02 -> '`'
+variable_prefix_02 -> blank blanks
+variables_without_comma -> variable_prefix A711
+variables_without_comma -> variable A721
+any_int -> '0'
+any_int -> '1'
+any_int -> '2'
+any_int -> '3'
+any_int -> '4'
+any_int -> '5'
+any_int -> '6'
+any_int -> '7'
+any_int -> '8'
+any_int -> '9'
+any_int -> digit int
+any_op_num_plus_min -> '+'
+any_op_num_plus_min -> '-'
+op_new -> char_i char_n
+op_new -> char_n char_ot96in
+op_new -> char_i char_s
+op_new -> char_i char_s96not
+op -> '*'
+op -> '%'
+op -> '/'
+op -> char_42 char_42
+op -> char_47 char_47
+op -> '>'
+op -> '<'
+op -> char_61 char_61
+op -> char_33 char_61
+op -> char_62 char_61
+op -> char_60 char_61
+op -> '='
+op -> char_43 char_61
+op -> char_45 char_61
+op -> char_42 char_61
+op -> char_47 char_61
+op -> char_47 char_4761
+op -> char_37 char_61
+op -> char_42 char_4261
+op -> char_60 char_6061
+op -> char_62 char_6261
+op -> '&'
+op -> ';'
+op -> '^'
+op -> '~'
+op -> char_60 char_60
+op -> char_62 char_62
+op -> char_a char_nd
+op -> char_o char_r
+op -> char_n char_ot
+op -> char_i char_n
+op -> char_n char_ot96in
+op -> char_i char_s
+op -> char_i char_s96not
+op -> '+'
+op -> '-'
+letter -> 'a'
+letter -> 'b'
+letter -> 'c'
+letter -> 'd'
+letter -> 'e'
+letter -> 'f'
+letter -> 'g'
+letter -> 'h'
+letter -> 'i'
+letter -> 'j'
+letter -> 'k'
+letter -> 'l'
+letter -> 'm'
+letter -> 'n'
+letter -> 'o'
+letter -> 'p'
+letter -> 'q'
+letter -> 'r'
+letter -> 's'
+letter -> 't'
+letter -> 'u'
+letter -> 'v'
+letter -> 'w'
+letter -> 'x'
+letter -> 'y'
+letter -> 'z'
+letter -> 'A'
+letter -> 'B'
+letter -> 'C'
+letter -> 'D'
+letter -> 'E'
+letter -> 'F'
+letter -> 'G'
+letter -> 'H'
+letter -> 'I'
+letter -> 'J'
+letter -> 'K'
+letter -> 'L'
+letter -> 'M'
+letter -> 'N'
+letter -> 'O'
+letter -> 'P'
+letter -> 'Q'
+letter -> 'R'
+letter -> 'S'
+letter -> 'T'
+letter -> 'U'
+letter -> 'V'
+letter -> 'W'
+letter -> 'X'
+letter -> 'Y'
+letter -> 'Z'
+symbol -> '!'
+symbol -> '"'
+symbol -> '#'
+symbol -> '$'
+symbol -> '%'
+symbol -> '&'
+symbol -> '''
+symbol -> '('
+symbol -> ')'
+symbol -> '*'
+symbol -> '+'
+symbol -> ','
+symbol -> '-'
+symbol -> '.'
+symbol -> '/'
+symbol -> ':'
+symbol -> ';'
+symbol -> '<'
+symbol -> '='
+symbol -> '>'
+symbol -> '?'
+symbol -> '@'
+symbol -> '['
+symbol -> '\'
+symbol -> ']'
+symbol -> '^'
+symbol -> '`'
+symbol -> '{'
+symbol -> ';'
+symbol -> '}'
+symbol -> '~'
+symbol -> '`'
+symbol -> '_'
+string_multi_body_without_double_quote -> '`'
+string_multi_body_without_double_quote -> '!'
+string_multi_body_without_double_quote -> '#'
+string_multi_body_without_double_quote -> '$'
+string_multi_body_without_double_quote -> '%'
+string_multi_body_without_double_quote -> '&'
+string_multi_body_without_double_quote -> '''
+string_multi_body_without_double_quote -> '('
+string_multi_body_without_double_quote -> ')'
+string_multi_body_without_double_quote -> '*'
+string_multi_body_without_double_quote -> '+'
+string_multi_body_without_double_quote -> ','
+string_multi_body_without_double_quote -> '-'
+string_multi_body_without_double_quote -> '.'
+string_multi_body_without_double_quote -> '/'
+string_multi_body_without_double_quote -> ':'
+string_multi_body_without_double_quote -> ';'
+string_multi_body_without_double_quote -> '<'
+string_multi_body_without_double_quote -> '='
+string_multi_body_without_double_quote -> '>'
+string_multi_body_without_double_quote -> '?'
+string_multi_body_without_double_quote -> '@'
+string_multi_body_without_double_quote -> '['
+string_multi_body_without_double_quote -> '\'
+string_multi_body_without_double_quote -> ']'
+string_multi_body_without_double_quote -> '^'
+string_multi_body_without_double_quote -> '_'
+string_multi_body_without_double_quote -> '`'
+string_multi_body_without_double_quote -> '{'
+string_multi_body_without_double_quote -> ';'
+string_multi_body_without_double_quote -> '}'
+string_multi_body_without_double_quote -> '~'
+string_multi_body_without_double_quote -> char_92 double_quote
+string_multi_body_without_double_quote -> '_'
+string_multi_body_without_double_quote -> '\t'
+string_multi_body_without_double_quote -> '0'
+string_multi_body_without_double_quote -> '1'
+string_multi_body_without_double_quote -> '2'
+string_multi_body_without_double_quote -> '3'
+string_multi_body_without_double_quote -> '4'
+string_multi_body_without_double_quote -> '5'
+string_multi_body_without_double_quote -> '6'
+string_multi_body_without_double_quote -> '7'
+string_multi_body_without_double_quote -> '8'
+string_multi_body_without_double_quote -> '9'
+string_multi_body_without_double_quote -> 'a'
+string_multi_body_without_double_quote -> 'b'
+string_multi_body_without_double_quote -> 'c'
+string_multi_body_without_double_quote -> 'd'
+string_multi_body_without_double_quote -> 'e'
+string_multi_body_without_double_quote -> 'f'
+string_multi_body_without_double_quote -> 'g'
+string_multi_body_without_double_quote -> 'h'
+string_multi_body_without_double_quote -> 'i'
+string_multi_body_without_double_quote -> 'j'
+string_multi_body_without_double_quote -> 'k'
+string_multi_body_without_double_quote -> 'l'
+string_multi_body_without_double_quote -> 'm'
+string_multi_body_without_double_quote -> 'n'
+string_multi_body_without_double_quote -> 'o'
+string_multi_body_without_double_quote -> 'p'
+string_multi_body_without_double_quote -> 'q'
+string_multi_body_without_double_quote -> 'r'
+string_multi_body_without_double_quote -> 's'
+string_multi_body_without_double_quote -> 't'
+string_multi_body_without_double_quote -> 'u'
+string_multi_body_without_double_quote -> 'v'
+string_multi_body_without_double_quote -> 'w'
+string_multi_body_without_double_quote -> 'x'
+string_multi_body_without_double_quote -> 'y'
+string_multi_body_without_double_quote -> 'z'
+string_multi_body_without_double_quote -> 'A'
+string_multi_body_without_double_quote -> 'B'
+string_multi_body_without_double_quote -> 'C'
+string_multi_body_without_double_quote -> 'D'
+string_multi_body_without_double_quote -> 'E'
+string_multi_body_without_double_quote -> 'F'
+string_multi_body_without_double_quote -> 'G'
+string_multi_body_without_double_quote -> 'H'
+string_multi_body_without_double_quote -> 'I'
+string_multi_body_without_double_quote -> 'J'
+string_multi_body_without_double_quote -> 'K'
+string_multi_body_without_double_quote -> 'L'
+string_multi_body_without_double_quote -> 'M'
+string_multi_body_without_double_quote -> 'N'
+string_multi_body_without_double_quote -> 'O'
+string_multi_body_without_double_quote -> 'P'
+string_multi_body_without_double_quote -> 'Q'
+string_multi_body_without_double_quote -> 'R'
+string_multi_body_without_double_quote -> 'S'
+string_multi_body_without_double_quote -> 'T'
+string_multi_body_without_double_quote -> 'U'
+string_multi_body_without_double_quote -> 'V'
+string_multi_body_without_double_quote -> 'W'
+string_multi_body_without_double_quote -> 'X'
+string_multi_body_without_double_quote -> 'Y'
+string_multi_body_without_double_quote -> 'Z'
+string_multi_body_without_double_quote -> '\n'
+string_multi_body_without_single_quote -> '`'
+string_multi_body_without_single_quote -> '!'
+string_multi_body_without_single_quote -> '"'
+string_multi_body_without_single_quote -> '#'
+string_multi_body_without_single_quote -> '$'
+string_multi_body_without_single_quote -> '%'
+string_multi_body_without_single_quote -> '&'
+string_multi_body_without_single_quote -> '('
+string_multi_body_without_single_quote -> ')'
+string_multi_body_without_single_quote -> '*'
+string_multi_body_without_single_quote -> '+'
+string_multi_body_without_single_quote -> ','
+string_multi_body_without_single_quote -> '-'
+string_multi_body_without_single_quote -> '.'
+string_multi_body_without_single_quote -> '/'
+string_multi_body_without_single_quote -> ':'
+string_multi_body_without_single_quote -> ';'
+string_multi_body_without_single_quote -> '<'
+string_multi_body_without_single_quote -> '='
+string_multi_body_without_single_quote -> '>'
+string_multi_body_without_single_quote -> '?'
+string_multi_body_without_single_quote -> '@'
+string_multi_body_without_single_quote -> '['
+string_multi_body_without_single_quote -> '\'
+string_multi_body_without_single_quote -> ']'
+string_multi_body_without_single_quote -> '^'
+string_multi_body_without_single_quote -> '_'
+string_multi_body_without_single_quote -> '`'
+string_multi_body_without_single_quote -> '{'
+string_multi_body_without_single_quote -> ';'
+string_multi_body_without_single_quote -> '}'
+string_multi_body_without_single_quote -> '~'
+string_multi_body_without_single_quote -> char_92 single_quote
+string_multi_body_without_single_quote -> '_'
+string_multi_body_without_single_quote -> '\t'
+string_multi_body_without_single_quote -> '0'
+string_multi_body_without_single_quote -> '1'
+string_multi_body_without_single_quote -> '2'
+string_multi_body_without_single_quote -> '3'
+string_multi_body_without_single_quote -> '4'
+string_multi_body_without_single_quote -> '5'
+string_multi_body_without_single_quote -> '6'
+string_multi_body_without_single_quote -> '7'
+string_multi_body_without_single_quote -> '8'
+string_multi_body_without_single_quote -> '9'
+string_multi_body_without_single_quote -> 'a'
+string_multi_body_without_single_quote -> 'b'
+string_multi_body_without_single_quote -> 'c'
+string_multi_body_without_single_quote -> 'd'
+string_multi_body_without_single_quote -> 'e'
+string_multi_body_without_single_quote -> 'f'
+string_multi_body_without_single_quote -> 'g'
+string_multi_body_without_single_quote -> 'h'
+string_multi_body_without_single_quote -> 'i'
+string_multi_body_without_single_quote -> 'j'
+string_multi_body_without_single_quote -> 'k'
+string_multi_body_without_single_quote -> 'l'
+string_multi_body_without_single_quote -> 'm'
+string_multi_body_without_single_quote -> 'n'
+string_multi_body_without_single_quote -> 'o'
+string_multi_body_without_single_quote -> 'p'
+string_multi_body_without_single_quote -> 'q'
+string_multi_body_without_single_quote -> 'r'
+string_multi_body_without_single_quote -> 's'
+string_multi_body_without_single_quote -> 't'
+string_multi_body_without_single_quote -> 'u'
+string_multi_body_without_single_quote -> 'v'
+string_multi_body_without_single_quote -> 'w'
+string_multi_body_without_single_quote -> 'x'
+string_multi_body_without_single_quote -> 'y'
+string_multi_body_without_single_quote -> 'z'
+string_multi_body_without_single_quote -> 'A'
+string_multi_body_without_single_quote -> 'B'
+string_multi_body_without_single_quote -> 'C'
+string_multi_body_without_single_quote -> 'D'
+string_multi_body_without_single_quote -> 'E'
+string_multi_body_without_single_quote -> 'F'
+string_multi_body_without_single_quote -> 'G'
+string_multi_body_without_single_quote -> 'H'
+string_multi_body_without_single_quote -> 'I'
+string_multi_body_without_single_quote -> 'J'
+string_multi_body_without_single_quote -> 'K'
+string_multi_body_without_single_quote -> 'L'
+string_multi_body_without_single_quote -> 'M'
+string_multi_body_without_single_quote -> 'N'
+string_multi_body_without_single_quote -> 'O'
+string_multi_body_without_single_quote -> 'P'
+string_multi_body_without_single_quote -> 'Q'
+string_multi_body_without_single_quote -> 'R'
+string_multi_body_without_single_quote -> 'S'
+string_multi_body_without_single_quote -> 'T'
+string_multi_body_without_single_quote -> 'U'
+string_multi_body_without_single_quote -> 'V'
+string_multi_body_without_single_quote -> 'W'
+string_multi_body_without_single_quote -> 'X'
+string_multi_body_without_single_quote -> 'Y'
+string_multi_body_without_single_quote -> 'Z'
+string_multi_body_without_single_quote -> '\n'
+blanks -> '\t'
+blanks -> tab blanks
+blanks -> '`'
+blanks -> blank blanks
+any_blanks -> tab blanks
+any_blanks -> blank blanks
+any_blanks -> '\t'
+any_blanks -> '`'
+any_tabs -> '\t'
+any_tabs -> tab tabs
+any_underscore -> '_'
+any_underscore -> underscore underscores
+any_args_ins -> variable_prefix A711
+any_args_ins -> maybe_expr_before A441
+any_args_ins -> variable_names A491
+any_args_ins -> args_element A381
+any_args_ins -> expr_01 A442
+any_args_ins -> expr_02 A443
+comment_elmt -> 'a'
+comment_elmt -> 'b'
+comment_elmt -> 'c'
+comment_elmt -> 'd'
+comment_elmt -> 'e'
+comment_elmt -> 'f'
+comment_elmt -> 'g'
+comment_elmt -> 'h'
+comment_elmt -> 'i'
+comment_elmt -> 'j'
+comment_elmt -> 'k'
+comment_elmt -> 'l'
+comment_elmt -> 'm'
+comment_elmt -> 'n'
+comment_elmt -> 'o'
+comment_elmt -> 'p'
+comment_elmt -> 'q'
+comment_elmt -> 'r'
+comment_elmt -> 's'
+comment_elmt -> 't'
+comment_elmt -> 'u'
+comment_elmt -> 'v'
+comment_elmt -> 'w'
+comment_elmt -> 'x'
+comment_elmt -> 'y'
+comment_elmt -> 'z'
+comment_elmt -> 'A'
+comment_elmt -> 'B'
+comment_elmt -> 'C'
+comment_elmt -> 'D'
+comment_elmt -> 'E'
+comment_elmt -> 'F'
+comment_elmt -> 'G'
+comment_elmt -> 'H'
+comment_elmt -> 'I'
+comment_elmt -> 'J'
+comment_elmt -> 'K'
+comment_elmt -> 'L'
+comment_elmt -> 'M'
+comment_elmt -> 'N'
+comment_elmt -> 'O'
+comment_elmt -> 'P'
+comment_elmt -> 'Q'
+comment_elmt -> 'R'
+comment_elmt -> 'S'
+comment_elmt -> 'T'
+comment_elmt -> 'U'
+comment_elmt -> 'V'
+comment_elmt -> 'W'
+comment_elmt -> 'X'
+comment_elmt -> 'Y'
+comment_elmt -> 'Z'
+comment_elmt -> '0'
+comment_elmt -> '1'
+comment_elmt -> '2'
+comment_elmt -> '3'
+comment_elmt -> '4'
+comment_elmt -> '5'
+comment_elmt -> '6'
+comment_elmt -> '7'
+comment_elmt -> '8'
+comment_elmt -> '9'
+comment_elmt -> '`'
+comment_elmt -> '_'
+comment_elmt -> '\t'
+comment_elmt -> '!'
+comment_elmt -> '"'
+comment_elmt -> '#'
+comment_elmt -> '$'
+comment_elmt -> '%'
+comment_elmt -> '&'
+comment_elmt -> '''
+comment_elmt -> '('
+comment_elmt -> ')'
+comment_elmt -> '*'
+comment_elmt -> '+'
+comment_elmt -> ','
+comment_elmt -> '-'
+comment_elmt -> '.'
+comment_elmt -> '/'
+comment_elmt -> ':'
+comment_elmt -> ';'
+comment_elmt -> '<'
+comment_elmt -> '='
+comment_elmt -> '>'
+comment_elmt -> '?'
+comment_elmt -> '@'
+comment_elmt -> '['
+comment_elmt -> '\'
+comment_elmt -> ']'
+comment_elmt -> '^'
+comment_elmt -> '`'
+comment_elmt -> '{'
+comment_elmt -> ';'
+comment_elmt -> '}'
+comment_elmt -> '~'
+any_comment_body -> comment_elmt comment_body
+any_comment_body -> 'a'
+any_comment_body -> 'b'
+any_comment_body -> 'c'
+any_comment_body -> 'd'
+any_comment_body -> 'e'
+any_comment_body -> 'f'
+any_comment_body -> 'g'
+any_comment_body -> 'h'
+any_comment_body -> 'i'
+any_comment_body -> 'j'
+any_comment_body -> 'k'
+any_comment_body -> 'l'
+any_comment_body -> 'm'
+any_comment_body -> 'n'
+any_comment_body -> 'o'
+any_comment_body -> 'p'
+any_comment_body -> 'q'
+any_comment_body -> 'r'
+any_comment_body -> 's'
+any_comment_body -> 't'
+any_comment_body -> 'u'
+any_comment_body -> 'v'
+any_comment_body -> 'w'
+any_comment_body -> 'x'
+any_comment_body -> 'y'
+any_comment_body -> 'z'
+any_comment_body -> 'A'
+any_comment_body -> 'B'
+any_comment_body -> 'C'
+any_comment_body -> 'D'
+any_comment_body -> 'E'
+any_comment_body -> 'F'
+any_comment_body -> 'G'
+any_comment_body -> 'H'
+any_comment_body -> 'I'
+any_comment_body -> 'J'
+any_comment_body -> 'K'
+any_comment_body -> 'L'
+any_comment_body -> 'M'
+any_comment_body -> 'N'
+any_comment_body -> 'O'
+any_comment_body -> 'P'
+any_comment_body -> 'Q'
+any_comment_body -> 'R'
+any_comment_body -> 'S'
+any_comment_body -> 'T'
+any_comment_body -> 'U'
+any_comment_body -> 'V'
+any_comment_body -> 'W'
+any_comment_body -> 'X'
+any_comment_body -> 'Y'
+any_comment_body -> 'Z'
+any_comment_body -> '0'
+any_comment_body -> '1'
+any_comment_body -> '2'
+any_comment_body -> '3'
+any_comment_body -> '4'
+any_comment_body -> '5'
+any_comment_body -> '6'
+any_comment_body -> '7'
+any_comment_body -> '8'
+any_comment_body -> '9'
+any_comment_body -> '`'
+any_comment_body -> '!'
+any_comment_body -> '"'
+any_comment_body -> '#'
+any_comment_body -> '$'
+any_comment_body -> '%'
+any_comment_body -> '&'
+any_comment_body -> '''
+any_comment_body -> '('
+any_comment_body -> ')'
+any_comment_body -> '*'
+any_comment_body -> '+'
+any_comment_body -> ','
+any_comment_body -> '-'
+any_comment_body -> '.'
+any_comment_body -> '/'
+any_comment_body -> ':'
+any_comment_body -> ';'
+any_comment_body -> '<'
+any_comment_body -> '='
+any_comment_body -> '>'
+any_comment_body -> '?'
+any_comment_body -> '@'
+any_comment_body -> '['
+any_comment_body -> '\'
+any_comment_body -> ']'
+any_comment_body -> '^'
+any_comment_body -> '`'
+any_comment_body -> '{'
+any_comment_body -> ';'
+any_comment_body -> '}'
+any_comment_body -> '~'
+any_comment_body -> '_'
+any_comment_body -> '\t'
+end_of_variable_char_01 -> char_42 char_42
+end_of_variable_char_01 -> char_47 char_47
+end_of_variable_char_01 -> '>'
+end_of_variable_char_01 -> '<'
+end_of_variable_char_01 -> char_61 char_61
+end_of_variable_char_01 -> char_33 char_61
+end_of_variable_char_01 -> char_62 char_61
+end_of_variable_char_01 -> char_60 char_61
+end_of_variable_char_01 -> char_43 char_61
+end_of_variable_char_01 -> char_45 char_61
+end_of_variable_char_01 -> char_42 char_61
+end_of_variable_char_01 -> char_47 char_61
+end_of_variable_char_01 -> char_47 char_4761
+end_of_variable_char_01 -> char_37 char_61
+end_of_variable_char_01 -> char_42 char_4261
+end_of_variable_char_01 -> char_60 char_6061
+end_of_variable_char_01 -> char_62 char_6261
+end_of_variable_char_01 -> char_60 char_60
+end_of_variable_char_01 -> char_62 char_62
+end_of_variable_char_01 -> char_a char_nd
+end_of_variable_char_01 -> char_o char_r
+end_of_variable_char_01 -> char_n char_ot
+end_of_variable_char_01 -> char_i char_n
+end_of_variable_char_01 -> char_n char_ot96in
+end_of_variable_char_01 -> char_i char_s
+end_of_variable_char_01 -> char_i char_s96not
+end_of_variable_char_01 -> '!'
+end_of_variable_char_01 -> '"'
+end_of_variable_char_01 -> '#'
+end_of_variable_char_01 -> '$'
+end_of_variable_char_01 -> '%'
+end_of_variable_char_01 -> '&'
+end_of_variable_char_01 -> '''
+end_of_variable_char_01 -> '('
+end_of_variable_char_01 -> ')'
+end_of_variable_char_01 -> '*'
+end_of_variable_char_01 -> '+'
+end_of_variable_char_01 -> ','
+end_of_variable_char_01 -> '-'
+end_of_variable_char_01 -> '.'
+end_of_variable_char_01 -> '/'
+end_of_variable_char_01 -> ':'
+end_of_variable_char_01 -> ';'
+end_of_variable_char_01 -> '<'
+end_of_variable_char_01 -> '='
+end_of_variable_char_01 -> '>'
+end_of_variable_char_01 -> '?'
+end_of_variable_char_01 -> '@'
+end_of_variable_char_01 -> '['
+end_of_variable_char_01 -> '\'
+end_of_variable_char_01 -> ']'
+end_of_variable_char_01 -> '^'
+end_of_variable_char_01 -> '`'
+end_of_variable_char_01 -> '{'
+end_of_variable_char_01 -> ';'
+end_of_variable_char_01 -> '}'
+end_of_variable_char_01 -> '~'
+end_of_variable_char_01 -> '+'
+end_of_variable_char_01 -> '-'
+end_of_variable_char_01 -> '*'
+end_of_variable_char_01 -> '%'
+end_of_variable_char_01 -> '/'
+end_of_variable_char_01 -> '='
+end_of_variable_char_01 -> '&'
+end_of_variable_char_01 -> ';'
+end_of_variable_char_01 -> '^'
+end_of_variable_char_01 -> '~'
+any_access_array -> open_square_bracket A601
+any_access_array -> access_array_single A611
+first_char_var -> '_'
+first_char_var -> 'a'
+first_char_var -> 'b'
+first_char_var -> 'c'
+first_char_var -> 'd'
+first_char_var -> 'e'
+first_char_var -> 'f'
+first_char_var -> 'g'
+first_char_var -> 'h'
+first_char_var -> 'i'
+first_char_var -> 'j'
+first_char_var -> 'k'
+first_char_var -> 'l'
+first_char_var -> 'm'
+first_char_var -> 'n'
+first_char_var -> 'o'
+first_char_var -> 'p'
+first_char_var -> 'q'
+first_char_var -> 'r'
+first_char_var -> 's'
+first_char_var -> 't'
+first_char_var -> 'u'
+first_char_var -> 'v'
+first_char_var -> 'w'
+first_char_var -> 'x'
+first_char_var -> 'y'
+first_char_var -> 'z'
+first_char_var -> 'A'
+first_char_var -> 'B'
+first_char_var -> 'C'
+first_char_var -> 'D'
+first_char_var -> 'E'
+first_char_var -> 'F'
+first_char_var -> 'G'
+first_char_var -> 'H'
+first_char_var -> 'I'
+first_char_var -> 'J'
+first_char_var -> 'K'
+first_char_var -> 'L'
+first_char_var -> 'M'
+first_char_var -> 'N'
+first_char_var -> 'O'
+first_char_var -> 'P'
+first_char_var -> 'Q'
+first_char_var -> 'R'
+first_char_var -> 'S'
+first_char_var -> 'T'
+first_char_var -> 'U'
+first_char_var -> 'V'
+first_char_var -> 'W'
+first_char_var -> 'X'
+first_char_var -> 'Y'
+first_char_var -> 'Z'
