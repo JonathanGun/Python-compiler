@@ -1,11 +1,16 @@
-s -> statement
+Terminals:
+'`' '!' '\'' '#' '$' '%' '&' ''' '(' ')' '*' '+' ',' '-' '.' '/' '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' '\n' ':' '' '<' '=' '>' '?' '@' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' '[' '\\' ']' '^' '_' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z' ';' '{' '|' '}' '~' '\t'
+Variables:
+S statement datatype none element any_element dict_element_single dict_element any_dict_element set list tuple dict number digit int_rec int any_int boolean float non_complex_number any_op_num_plus_min power_symbol scientific complex_infix non_complex_number_with_op any_non_complex_number_with_op complex_part complex_number op_num_plus_min op_num_single op_num op_compare_single op_compare op_assignment_single op_assignment op_bitwise_single op_bitwise op_logical op_membership op_identity op_infix op_prefix op_single op op_new lowercase uppercase letter symbol_without_underscore_and_blank symbol_without_underscore symbol_without_single_quote symbol_without_double_quote enter single_quote double_quote escaped_single_quote escaped_double_quote alphanumeric any_alphanumeric alphanumeric_underscore any_alphanumeric_underscore symbol string_body_without_single_quote string_body_without_double_quote string_multi_body_without_double_quote string_body_multi_body_without_double_quote string_multi_body_without_single_quote string_body_multi_body_without_single_quote string string_body_without_single_quote_01 string_body_without_single_quote_02 string_body_without_single_quote_03 string_body_without_double_quote_01 string_body_without_double_quote_02 string_body_without_double_quote_03 string_body_multi_body_without_double_quote_01 string_body_multi_body_without_double_quote_02 string_body_multi_body_without_double_quote_03 string_body_multi_body_without_single_quote_01 string_body_multi_body_without_single_quote_02 string_body_multi_body_without_single_quote_03 string_01 string_02 string_03 string_04 blank tab tab_rec blank_rec blanks_tab blanks_blank blanks any_blanks tab_only_rec tabs any_tabs underscore underscores_rec underscores any_underscore newline_only newline empty_line maybe_empty_line colon open_bracket close_bracket open_square_bracket close_square_bracket open_curly_bracket close_curly_bracket comma dot separator keywords block statement_rec indented_statement inline_statement block_statement compound_stmt simple_stmt statement_elmt statement_single statement_single_01 classdef if_only elif_only else maybe_else elif any_elif if pass while for in break continue with_item with_items with with_items_01 args_element args_ins args_ins_01 any_args_ins args any_args comment_elmt comment_body comment_body_01 any_comment_body comment any_comment expr_elmt expr_body expr_body_01 expr_body_02 prefix_multi expr_prefix expr_op_infix maybe_expr_after maybe_expr_after_01 maybe_expr_before maybe_expr_before_01 expr expr_01 expr_02 exprs_without_comma exprs assign assign_01 assign_without_op assign_without_op_01 function maybe_return_var funcdef_elmt funcdef_body funcdef return_body return_body_01 return from_expr_body from_expr maybe_from_expr raise_elmt any_raise_elmt raise_body raise import_only_body import_only import_all_body import_all as import_alias_body import_alias import_with_from_elmt import_with_from_body import_with_from_body_full import_with_from import_without_from import parameter_element parameter_default parameter_only maybe_parameter_only parameter_only_default parameter_args parameter_kwargs param param_01 param_02 param_03 end_of_variable_char end_of_variable_char_01 access_array_single access_array access_array_01 any_access_array hint any_hint first_char_var other_char_var any_other_char_var variable_name variable_single maybe_comma variable_only_no_bracket variable_only variable_elmt variable_body_no_bracket variable_body_no_bracket_01 variable_body variable_prefix variable_prefix_01 variable_prefix_02 variable variables_rec variables_without_comma variables char_False char_alse char_lse char_se char_class char_lass char_ass char_ss char_finally char_inally char_nally char_ally char_lly char_ly char_is char_return char_eturn char_turn char_urn char_rn char_None char_one char_ne char_continue char_ontinue char_ntinue char_tinue char_inue char_nue char_ue char_for char_or char_lambda char_ambda char_mbda char_bda char_da char_try char_ry char_True char_rue char_def char_ef char_from char_rom char_om char_nonlocal char_onlocal char_nlocal char_local char_ocal char_cal char_al char_while char_hile char_ile char_le char_and char_nd char_del char_el char_global char_lobal char_obal char_bal char_not char_ot char_with char_ith char_th char_as char_elif char_lif char_if char_yield char_ield char_eld char_ld char_assert char_ssert char_sert char_ert char_rt char_else char_import char_mport char_port char_ort char_pass char_break char_reak char_eak char_ak char_except char_xcept char_cept char_ept char_pt char_in char_raise char_aise char_ise char_not96in char_ot96in char_t96in char_96in char_is96not char_s96not char_96not char_6060 char_4361 char_4561 char_4261 char_474761 char_4761 char_3761 char_424261 char_606061 char_626261 char_6161 char_3361 char_6261 char_6061 char_4242 char_4747 char_6262 char_32 char_33 char_34 char_35 char_36 char_37 char_38 char_39 char_40 char_41 char_42 char_43 char_44 char_45 char_46 char_47 char_0 char_1 char_2 char_3 char_4 char_5 char_6 char_7 char_8 char_9 char_10 char_58 char_59 char_60 char_61 char_62 char_63 char_64 char_A char_B char_C char_D char_E char_F char_G char_H char_I char_J char_K char_L char_M char_N char_O char_P char_Q char_R char_S char_T char_U char_V char_W char_X char_Y char_Z char_91 char_92 char_93 char_94 char_95 char_96 char_a char_b char_c char_d char_e char_f char_g char_h char_i char_j char_k char_l char_m char_n char_o char_p char_q char_r char_s char_t char_u char_v char_w char_x char_y char_z char_123 char_124 char_125 char_126 char_tab
+Productions:
+S -> statement
 datatype -> number | string | dict | list | set | tuple | none
 none -> char_None
-element -> expr | expr separator any_element 
-any_element -> eps | any_blanks element any_blanks 
+element -> expr | expr separator any_element
+any_element -> eps | element
 dict_element_single -> expr colon expr
-dict_element -> dict_element_single | dict_element_single separator any_dict_element 
-any_dict_element -> eps | any_blanks dict_element any_blanks 
+dict_element -> dict_element_single | dict_element_single separator any_dict_element
+any_dict_element -> eps | dict_element
 set -> open_curly_bracket any_element close_curly_bracket
 list -> open_square_bracket any_element close_square_bracket
 tuple -> open_bracket any_element close_bracket
@@ -16,8 +21,7 @@ int_rec -> digit int
 int -> digit | int_rec
 any_int -> eps | int
 boolean -> char_True | char_False
-float -> any_int char_46 int
-float -> int char_46 any_int
+float -> int char_46 any_int | any_int char_46 int
 non_complex_number -> float | int
 any_op_num_plus_min -> eps | op_num_plus_min
 power_symbol -> char_e | char_E
@@ -30,7 +34,7 @@ complex_number -> any_non_complex_number_with_op complex_part
 op_num_plus_min -> char_43 | char_45
 op_num_single -> op_num_plus_min | char_42 | char_37 | char_47
 op_num -> op_num_single | char_4242 | char_4747
-op_compare_single -> ">" | "<"
+op_compare_single -> '>' | '<'
 op_compare -> op_compare_single | char_6161 | char_3361 | char_6261 | char_6061
 op_assignment_single -> char_61
 op_assignment -> op_assignment_single | char_4361 | char_4561 | char_4261 | char_4761 | char_474761 | char_3761 | char_424261 | char_606061 | char_626261
@@ -39,7 +43,7 @@ op_bitwise -> op_bitwise_single | char_6060 | char_6262
 op_logical -> char_and | char_or | char_not
 op_membership -> char_in | char_not96in
 op_identity -> char_is | char_is96not
-op_infix -> op_num | op_compare | op_bitwise | op_logical | blank op_new blank 
+op_infix -> op_num | op_compare | op_bitwise | op_logical | blank op_new blank
 op_new -> op_membership | op_identity
 op_prefix -> op_num_plus_min | char_126
 op_single -> op_bitwise_single | op_assignment_single | op_compare_single | op_num_single
@@ -56,7 +60,7 @@ single_quote -> char_39
 double_quote -> char_34
 escaped_single_quote -> char_92 single_quote
 escaped_double_quote -> char_92 double_quote
-alphanumeric -> letter any_alphanumeric  | digit any_alphanumeric 
+alphanumeric -> letter any_alphanumeric | digit any_alphanumeric
 any_alphanumeric -> eps | alphanumeric
 alphanumeric_underscore -> alphanumeric_underscore_new any_alphanumeric_underscore
 alphanumeric_underscore_new -> alphanumeric | underscore
@@ -123,11 +127,11 @@ inline_statement -> any_blanks statement_elmt
 block_statement -> inline_statement | indented_statement
 compound_stmt -> if | while | for | with | funcdef | classdef
 simple_stmt -> import | return | pass | break | continue | assign | expr
-statement_elmt -> simple_stmt newline  | compound_stmt
+statement_elmt -> compound_stmt | simple_stmt
 statement_single -> empty_line | statement_single_01
-statement_single_01 -> any_tabs statement_elmt
+statement_single_01 -> any_tabs statement_elmt newline
 classdef -> char_class blanks variable_name any_blanks any_args block
-if_only -> char_if blanks expr block
+if_only -> char_if any_blanks expr block
 elif_only -> char_el if_only
 else -> char_else block
 maybe_else -> eps | else
@@ -154,7 +158,7 @@ comment_elmt -> letter | digit | symbol | tab
 comment_body -> comment_elmt | comment_body_01
 comment_body_01 -> comment_elmt comment_body
 any_comment_body -> eps | comment_body
-comment -> char_35 any_comment_body eps
+comment -> char_35 any_comment_body
 any_comment -> eps | comment
 expr_elmt -> variable | function | datatype
 expr_body -> expr_prefix expr_body_02
@@ -168,16 +172,16 @@ maybe_expr_after_01 -> expr_op_infix expr_body
 maybe_expr_before -> eps | maybe_expr_before_01
 maybe_expr_before_01 -> expr_body expr_op_infix
 expr -> maybe_expr_before expr_01 expr_02 expr_body maybe_expr_after
-expr_01 -> eps | char_not blank 
+expr_01 -> eps | char_not blank
 expr_02 -> prefix_multi | any_blanks
-exprs_without_comma -> expr | expr separator exprs_without_comma 
-exprs -> exprs_without_comma | exprs_without_comma separator 
-assign_with_op -> variable_names any_blanks op_assignment any_blanks exprs
-assign_without_op -> variable_names any_blanks op_assignment_single any_blanks assign_without_op_01
+exprs_without_comma -> expr | expr separator exprs_without_comma
+exprs -> exprs_without_comma | exprs_without_comma separator
+assign -> variables any_blanks op_assignment any_blanks assign_01
+assign_01 -> exprs | assign_without_op
+assign_without_op -> variables any_blanks op_assignment_single any_blanks assign_without_op_01
 assign_without_op_01 -> exprs | assign_without_op
-assign -> assign_without_op | assign_with_op
 function -> variable_name any_blanks args
-maybe_return_var -> eps | any_blanks char_45 char_62 any_blanks expr 
+maybe_return_var -> eps | any_blanks char_45 char_62 any_blanks expr
 funcdef_elmt -> function maybe_return_var
 funcdef_body -> blanks funcdef_elmt
 funcdef -> char_def funcdef_body block
@@ -206,15 +210,15 @@ import_without_from -> import_alias | import_only
 import -> import_without_from | import_with_from
 parameter_element -> variable
 parameter_default -> assign_without_op
-parameter_only -> parameter_element | parameter_element separator parameter_only 
+parameter_only -> parameter_element | parameter_element separator parameter_only
 maybe_parameter_only -> eps | parameter_only
-parameter_only_default -> parameter_default | parameter_default separator parameter_default 
+parameter_only_default -> parameter_default | parameter_default separator parameter_default
 parameter_args -> char_42 variable
 parameter_kwargs -> char_4242 variable
 param -> open_bracket maybe_parameter_only param_01 param_02 param_03 close_bracket
-param_01 -> eps | parameter_only_default | separator parameter_only_default 
-param_02 -> eps | parameter_args | separator parameter_args 
-param_03 -> eps | parameter_kwargs | separator parameter_kwargs 
+param_01 -> eps | parameter_only_default | separator parameter_only_default
+param_02 -> eps | parameter_args | separator parameter_args
+param_03 -> eps | parameter_kwargs | separator parameter_kwargs
 end_of_variable_char -> any_blanks end_of_variable_char_01
 end_of_variable_char_01 -> op | symbol_without_underscore_and_blank
 access_array_single -> open_square_bracket expr close_square_bracket
@@ -224,22 +228,19 @@ any_access_array -> eps | access_array
 hint -> colon expr
 any_hint -> eps | hint
 first_char_var -> underscore | letter
-other_char_var -> letter | digit | underscore | letter other_char_var  | digit other_char_var  | underscore other_char_var 
+other_char_var -> letter other_char_var | digit other_char_var | underscore other_char_var
 any_other_char_var -> eps | other_char_var
 variable_name -> first_char_var any_other_char_var
 variable_single -> variable_name
-variable_names_without_comma_rec -> variable_name separator variable_names_without_comma
-variable_names_without_comma -> variable_name | variable_names_without_comma_rec
-variable_names -> variable_names_without_comma maybe_comma
 maybe_comma -> eps | separator
-variable_only_no_bracket -> variable_single | variable_single dot variable 
-variable_only -> variable_only_no_bracket | open_bracket variable_only_no_bracket close_bracket 
+variable_only_no_bracket -> variable_single dot variable
+variable_only -> open_bracket variable_only_no_bracket close_bracket
 variable_elmt -> variable_only
 variable_body_no_bracket -> expr_prefix variable_body_no_bracket_01
-variable_body_no_bracket_01 -> variable_elmt | variable_elmt expr_op_infix variable_body 
-variable_body -> variable_body_no_bracket | open_bracket variable_body_no_bracket close_bracket 
+variable_body_no_bracket_01 -> variable_elmt | variable_elmt expr_op_infix variable_body
+variable_body -> open_bracket variable_body_no_bracket close_bracket
 variable_prefix -> variable_prefix_01 variable_prefix_02
-variable_prefix_01 -> eps | char_not blank 
+variable_prefix_01 -> eps | char_not blank
 variable_prefix_02 -> prefix_multi | any_blanks
 variable -> variable_prefix variable_body any_blanks any_args any_access_array
 variables_rec -> variable separator variables_without_comma
@@ -371,100 +372,100 @@ char_6061 -> char_60 char_61
 char_4242 -> char_42 char_42
 char_4747 -> char_47 char_47
 char_6262 -> char_62 char_62
-char_32 -> "`"
-char_33 -> "!"
-char_34 -> "\""
-char_35 -> "#"
-char_36 -> "$"
-char_37 -> "%"
-char_38 -> "&"
-char_39 -> "\""
-char_40 -> "("
-char_41 -> ")"
-char_42 -> "*"
-char_43 -> "+"
-char_44 -> ","
-char_45 -> "-"
-char_46 -> "."
-char_47 -> "/"
-char_0 -> "0"
-char_1 -> "1"
-char_2 -> "2"
-char_3 -> "3"
-char_4 -> "4"
-char_5 -> "5"
-char_6 -> "6"
-char_7 -> "7"
-char_8 -> "8"
-char_9 -> "9"
-char_10 -> "\n"
-char_58 -> ":"
-char_59 -> ";"
-char_60 -> "<"
-char_61 -> "="
-char_62 -> ">"
-char_63 -> "?"
-char_64 -> "@"
-char_A -> "A"
-char_B -> "B"
-char_C -> "C"
-char_D -> "D"
-char_E -> "E"
-char_F -> "F"
-char_G -> "G"
-char_H -> "H"
-char_I -> "I"
-char_J -> "J"
-char_K -> "K"
-char_L -> "L"
-char_M -> "M"
-char_N -> "N"
-char_O -> "O"
-char_P -> "P"
-char_Q -> "Q"
-char_R -> "R"
-char_S -> "S"
-char_T -> "T"
-char_U -> "U"
-char_V -> "V"
-char_W -> "W"
-char_X -> "X"
-char_Y -> "Y"
-char_Z -> "Z"
-char_91 -> "["
-char_92 -> "\\"
-char_93 -> "]"
-char_94 -> "^"
-char_95 -> "_"
-char_96 -> "`"
-char_a -> "a"
-char_b -> "b"
-char_c -> "c"
-char_d -> "d"
-char_e -> "e"
-char_f -> "f"
-char_g -> "g"
-char_h -> "h"
-char_i -> "i"
-char_j -> "j"
-char_k -> "k"
-char_l -> "l"
-char_m -> "m"
-char_n -> "n"
-char_o -> "o"
-char_p -> "p"
-char_q -> "q"
-char_r -> "r"
-char_s -> "s"
-char_t -> "t"
-char_u -> "u"
-char_v -> "v"
-char_w -> "w"
-char_x -> "x"
-char_y -> "y"
-char_z -> "z"
-char_123 -> "{"
-char_124 -> ";"
-char_125 -> "}"
-char_126 -> "~"
-char_tab -> "\t"
+char_32 -> '`'
+char_33 -> '!'
+char_34 -> '\"'
+char_35 -> '#'
+char_36 -> '$'
+char_37 -> '%'
+char_38 -> '&'
+char_39 -> '''
+char_40 -> '('
+char_41 -> ')'
+char_42 -> '*'
+char_43 -> '+'
+char_44 -> ','
+char_45 -> '-'
+char_46 -> '.'
+char_47 -> '/'
+char_0 -> '0'
+char_1 -> '1'
+char_2 -> '2'
+char_3 -> '3'
+char_4 -> '4'
+char_5 -> '5'
+char_6 -> '6'
+char_7 -> '7'
+char_8 -> '8'
+char_9 -> '9'
+char_10 -> '\n'
+char_58 -> ':'
+char_59 -> ';'
+char_60 -> '<'
+char_61 -> '='
+char_62 -> '>'
+char_63 -> '?'
+char_64 -> '@'
+char_A -> 'A'
+char_B -> 'B'
+char_C -> 'C'
+char_D -> 'D'
+char_E -> 'E'
+char_F -> 'F'
+char_G -> 'G'
+char_H -> 'H'
+char_I -> 'I'
+char_J -> 'J'
+char_K -> 'K'
+char_L -> 'L'
+char_M -> 'M'
+char_N -> 'N'
+char_O -> 'O'
+char_P -> 'P'
+char_Q -> 'Q'
+char_R -> 'R'
+char_S -> 'S'
+char_T -> 'T'
+char_U -> 'U'
+char_V -> 'V'
+char_W -> 'W'
+char_X -> 'X'
+char_Y -> 'Y'
+char_Z -> 'Z'
+char_91 -> '['
+char_92 -> '\\'
+char_93 -> ']'
+char_94 -> '^'
+char_95 -> '_'
+char_96 -> '`'
+char_a -> 'a'
+char_b -> 'b'
+char_c -> 'c'
+char_d -> 'd'
+char_e -> 'e'
+char_f -> 'f'
+char_g -> 'g'
+char_h -> 'h'
+char_i -> 'i'
+char_j -> 'j'
+char_k -> 'k'
+char_l -> 'l'
+char_m -> 'm'
+char_n -> 'n'
+char_o -> 'o'
+char_p -> 'p'
+char_q -> 'q'
+char_r -> 'r'
+char_s -> 's'
+char_t -> 't'
+char_u -> 'u'
+char_v -> 'v'
+char_w -> 'w'
+char_x -> 'x'
+char_y -> 'y'
+char_z -> 'z'
+char_123 -> '{'
+char_124 -> '|'
+char_125 -> '}'
+char_126 -> '~'
+char_tab -> '\t'
