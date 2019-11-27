@@ -7,7 +7,7 @@ A python "compiler" (grammar checker) by ITB Informatics Student
 
 ## Installing
 1. clone/download repo ini
-2. double klik 'cfg_semoga_fix_.pl'
+2. double klik 'cfg.pl'
 3. pilih SWI-Prolog untuk menjalankan file tersebut
 4. isi input1.txt dengan teks python yang ingin dicompile
 5. jangan lupa berikan 1 line kosong di akhir file
@@ -24,9 +24,7 @@ Syntax Error
 compile gagal, ada kesalahan sintaks
 
 ## Troubleshooting
-jika loading lama, coba jalankan yang cfg.pl
-
-jika masih lama, kemungkinan besar verdict yang akan diberikan adalah syntax error, kecuali:
+jika loading lama, kemungkinan besar verdict yang akan diberikan adalah syntax error, kecuali:
 - nested function -> a(a(a(a()))) (lebih dari 4 maka waktu yang dibutuhkan akan eksponensial)
 - karakter lain selain simbol yang ada di keyboard qwerty
 
