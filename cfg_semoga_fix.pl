@@ -1,8 +1,8 @@
 start(X) :- phrase_from_file(X, "input1.txt"), accepted.
 start(_) :- write("Ga ada yng cocok.."), error.
 cfg --> s.
-accepted :-	backtrace(20), nl,ansi_format([bold, fg(green)], "Accepted!", []), nl, !, abort.
-error :- backtrace(20), nl,ansi_format([bold, fg(red)], "Syntax Error!", []), nl, !, abort.
+accepted :- nl,ansi_format([bold, fg(green)], "Accepted!", []), nl, !, abort.
+error :- nl,ansi_format([bold, fg(red)], "Syntax Error!", []), nl, !, abort.
 s --> statement.
 eps --> [].
 datatype --> number ; string ; dict ; list ; set ; tuple ; none.
@@ -377,7 +377,7 @@ char_6061 --> char_60 , char_61.
 char_4242 --> char_42 , char_42.
 char_4747 --> char_47 , char_47.
 char_6262 --> char_62 , char_62.
-char_32 --> "`".
+char_32 --> " ".
 char_33 --> "!".
 char_34 --> "\"".
 char_35 --> "#".
