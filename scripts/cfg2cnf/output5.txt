@@ -1,0 +1,562 @@
+A01 -> separator any_element | any_blanks A231 | comma any_blanks | ','
+A31 -> any_element close_curly_bracket | any_blanks char_125 | '}'
+A41 -> any_element close_square_bracket | any_blanks char_93 | ']'
+A51 -> any_element close_bracket | any_blanks char_41 | ')'
+A21 -> separator any_dict_element | any_blanks A231 | comma any_blanks | ','
+A61 -> any_dict_element close_curly_bracket | any_blanks char_125 | '}'
+A71 -> char_46 any_int | '.'
+float -> any_int A81 | int A71 | char_46 int
+A92 -> any_op_num_plus_min int | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | digit int
+complex_number -> any_non_complex_number_with_op complex_part | non_complex_number char_j
+alphanumeric -> letter any_alphanumeric | digit any_alphanumeric | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+alphanumeric_underscore -> alphanumeric_underscore_new any_alphanumeric_underscore | alphanumeric_underscore_new
+string_body_without_single_quote_01 -> letter string_body_without_single_quote | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+string_body_without_single_quote_02 -> digit string_body_without_single_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+string_body_without_single_quote_03 -> symbol_without_single_quote string_body_without_single_quote | '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | '_' | '\t'
+A161 -> string_body_without_single_quote single_quote | '''
+string_body_without_double_quote_01 -> letter string_body_without_double_quote | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+string_body_without_double_quote_02 -> digit string_body_without_double_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+string_body_without_double_quote_03 -> symbol_without_double_quote string_body_without_double_quote | '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | '_' | '\t'
+A171 -> string_body_without_double_quote double_quote | '\"'
+string_body_multi_body_without_double_quote_01 -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote | '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '\n' | '_' | '\t' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+A121 -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote | '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '\n' | '_' | '\t' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+A132 -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote | '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '\n' | '_' | '\t' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+A183 -> string_body_multi_body_without_double_quote A184 | double_quote A185
+string_body_multi_body_without_single_quote_01 -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote | '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '\n' | '_' | '\t' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+A141 -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote | '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '\n' | '_' | '\t' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+A152 -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote | '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '\n' | '_' | '\t' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+A193 -> string_body_multi_body_without_single_quote A194 | single_quote A195
+complex_infix -> any_blanks A101 | op_num_plus_min any_blanks | '+' | '-'
+A101 -> op_num_plus_min any_blanks | '+' | '-'
+newline -> any_blanks A201 | newline_only maybe_empty_line
+empty_line -> any_blanks A211 | any_comment newline | any_blanks A201 | newline_only maybe_empty_line
+colon -> any_blanks A221 | char_58 any_blanks | ':'
+A221 -> char_58 any_blanks | ':'
+open_bracket -> char_40 any_blanks | '('
+close_bracket -> any_blanks char_41 | ')'
+open_square_bracket -> char_91 any_blanks | '['
+close_square_bracket -> any_blanks char_93 | ']'
+open_curly_bracket -> char_123 any_blanks | '{'
+close_curly_bracket -> any_blanks char_125 | '}'
+separator -> any_blanks A231 | comma any_blanks | ','
+A231 -> comma any_blanks | ','
+inline_statement -> any_blanks statement_elmt | if_only A271 | char_while A281 | char_for A291 | char_with A331 | char_def A451 | char_class A251 | char_return return_body | variables A411 | maybe_expr_before A391 | import_only import_alias_body | char_import import_only_body | char_from import_with_from_body_full | char_p char_ass | char_b char_reak | char_c char_ontinue | expr_01 A392 | expr_02 A393
+A253 -> any_blanks A254 | any_args block | colon block_statement
+A261 -> any_blanks A262 | expr block
+A311 -> any_blanks A312 | char_as A313
+A313 -> any_blanks expr | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+A331 -> any_blanks A332 | with_items block
+A371 -> any_blanks expr_prefix | op_prefix A371 | '\t' | tab blanks | '`' | blank blanks
+expr_op_infix -> any_blanks A381 | op_infix any_blanks | blank A111 | '*' | '%' | '/' | '+' | '-' | char_42 char_42 | char_47 char_47 | '>' | '<' | char_61 char_61 | char_33 char_61 | char_62 char_61 | char_60 char_61 | '&' | '|' | '^' | '~' | char_60 char_60 | char_62 char_62 | char_a char_nd | char_o char_r | char_n char_ot
+A381 -> op_infix any_blanks | blank A111 | char_42 char_42 | char_47 char_47 | '>' | '<' | char_61 char_61 | char_33 char_61 | char_62 char_61 | char_60 char_61 | char_60 char_60 | char_62 char_62 | char_a char_nd | char_o char_r | char_n char_ot | '+' | '-' | '*' | '%' | '/' | '&' | '|' | '^' | '~'
+A411 -> any_blanks A412 | op_assignment A413
+A413 -> any_blanks assign_01 | exprs_without_comma separator | expr A401 | variables A421 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+A421 -> any_blanks A422 | op_assignment_single A423
+A423 -> any_blanks assign_without_op_01 | exprs_without_comma separator | expr A401 | variables A421 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+A431 -> any_blanks args | open_bracket A351
+maybe_return_var -> any_blanks A441 | char_45 A442
+A443 -> any_blanks expr | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+return_body -> any_blanks return_body_01 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393 | '\t' | tab blanks | '`' | blank blanks
+from_expr_body -> any_blanks expr | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+A461 -> any_blanks maybe_from_expr | char_from from_expr_body | '\t' | tab blanks | '`' | blank blanks
+raise_body -> any_blanks any_raise_elmt | expr A461 | '\t' | tab blanks | '`' | blank blanks
+end_of_variable_char -> any_blanks end_of_variable_char_01 | '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~' | '*' | '%' | '/' | '+' | '-' | char_42 char_42 | char_47 char_47 | '>' | '<' | char_61 char_61 | char_33 char_61 | char_62 char_61 | char_60 char_61 | '=' | char_43 char_61 | char_45 char_61 | char_42 char_61 | char_47 char_61 | char_47 char_4761 | char_37 char_61 | char_42 char_4261 | char_60 char_6061 | char_62 char_6261 | '&' | '|' | '^' | '~' | char_60 char_60 | char_62 char_62 | char_a char_nd | char_o char_r | char_n char_ot | char_i char_n | char_n char_ot96in | char_i char_s | char_i char_s96not
+A511 -> any_blanks access_array | open_square_bracket A501 | access_array_single A511
+A562 -> any_blanks A563 | any_args any_access_array | open_bracket A351 | open_square_bracket A501 | access_array_single A511
+statement_single_01 -> any_tabs A241 | statement_elmt newline
+A271 -> any_elif maybe_else | elif_only any_elif | char_el if_only | char_else block
+A283 -> block maybe_else | colon block_statement
+A303 -> block maybe_else | colon block_statement
+elif -> elif_only any_elif | char_el if_only
+A351 -> any_args_ins close_bracket | any_blanks char_41 | ')'
+A254 -> any_args block | colon block_statement
+A563 -> any_args any_access_array | open_square_bracket A501 | access_array_single A511 | open_bracket A351
+comment -> char_35 any_comment_body | '#'
+newline_only -> any_comment enter | '\n'
+A211 -> any_comment newline | any_blanks A201 | newline_only maybe_empty_line
+expr_body -> expr_prefix expr_body_02 | variable_prefix A561 | variable_name A431 | expr_elmt A361 | any_non_complex_number_with_op complex_part | non_complex_number A91 | char_T char_rue | char_F char_alse | any_int A81 | int A71 | char_46 int | digit int | non_complex_number char_j | single_quote A161 | double_quote A171 | double_quote A181 | single_quote A191 | open_curly_bracket A61 | open_square_bracket A41 | open_curly_bracket A31 | open_bracket A51 | char_N char_one | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+variable_body_no_bracket -> expr_prefix variable_body_no_bracket_01 | variable_elmt A541 | open_bracket A531
+A393 -> expr_body maybe_expr_after | expr_prefix expr_body_02 | expr_elmt A361 | variable_prefix A561 | variable_name A431 | open_curly_bracket A61 | open_square_bracket A41 | open_curly_bracket A31 | open_bracket A51 | char_T char_rue | char_F char_alse | any_int A81 | int A71 | any_non_complex_number_with_op complex_part | non_complex_number char_j | non_complex_number A91 | single_quote A161 | double_quote A171 | double_quote A181 | single_quote A191 | char_N char_one | char_46 int | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | digit int
+expr -> maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+A391 -> expr_01 A392 | expr_02 A393
+funcdef_elmt -> function maybe_return_var | variable_name A431
+A491 -> maybe_parameter_only A492 | param_01 A493 | param_02 A494 | param_03 close_bracket | any_blanks char_41 | ')'
+A492 -> param_01 A493 | param_02 A494 | param_03 close_bracket | any_blanks char_41 | ')'
+A493 -> param_02 A494 | param_03 close_bracket | any_blanks char_41 | ')'
+A494 -> param_03 close_bracket | any_blanks char_41 | ')'
+variable_name -> first_char_var any_other_char_var | '_' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+variables -> variables_without_comma maybe_comma | variable_prefix A561 | variable A571
+variable_prefix -> variable_prefix_01 variable_prefix_02 | op_prefix A371 | tab blanks | '\t' | blank blanks | '`'
+element -> expr A01 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+dict_element_single -> expr A11
+A11 -> colon expr
+dict_element -> dict_element_single A21 | expr A11
+set -> open_curly_bracket A31
+list -> open_square_bracket A41
+tuple -> open_bracket A51
+dict -> open_curly_bracket A61
+int_rec -> digit int
+A81 -> char_46 int
+scientific -> non_complex_number A91
+A91 -> power_symbol A92
+non_complex_number_with_op -> non_complex_number complex_infix
+complex_part -> non_complex_number char_j
+op_compare_single -> '>' | '<'
+op_infix -> blank A111 | '*' | '%' | '/' | char_42 char_42 | char_47 char_47 | '>' | '<' | char_61 char_61 | char_33 char_61 | char_62 char_61 | char_60 char_61 | '&' | '|' | '^' | '~' | char_60 char_60 | char_62 char_62 | char_a char_nd | char_o char_r | char_n char_ot | '+' | '-'
+A111 -> op_new blank
+escaped_single_quote -> char_92 single_quote
+escaped_double_quote -> char_92 double_quote
+alphanumeric_underscore_new -> alphanumeric | underscore
+string_body_multi_body_without_double_quote_02 -> double_quote A121
+string_body_multi_body_without_double_quote_03 -> double_quote A131
+A131 -> double_quote A132
+string_body_multi_body_without_single_quote_02 -> single_quote A141
+string_body_multi_body_without_single_quote_03 -> single_quote A151
+A151 -> single_quote A152
+string_01 -> single_quote A161
+string_02 -> double_quote A171
+string_03 -> double_quote A181
+A181 -> double_quote A182
+A182 -> double_quote A183
+A184 -> double_quote A185
+A185 -> double_quote double_quote
+string_04 -> single_quote A191
+A191 -> single_quote A192
+A192 -> single_quote A193
+A194 -> single_quote A195
+A195 -> single_quote single_quote
+tab_rec -> tab blanks
+blank_rec -> blank blanks
+tab_only_rec -> tab tabs
+underscores_rec -> underscore underscores
+A201 -> newline_only maybe_empty_line
+block -> colon block_statement
+statement_rec -> statement_single statement
+indented_statement -> newline statement
+A241 -> statement_elmt newline
+classdef -> char_class A251
+A251 -> blanks A252
+A252 -> variable_name A253
+if_only -> char_if A261
+A262 -> expr block
+elif_only -> char_el if_only
+else -> char_else block
+if -> if_only A271
+while -> char_while A281
+A281 -> blanks A282
+A282 -> expr A283
+for -> char_for A291
+A291 -> blanks A292
+A292 -> variable A293
+A293 -> blanks in
+in -> char_in A301
+A301 -> blanks A302
+A302 -> expr A303
+with_item -> expr A311
+A312 -> char_as A313
+with_items_01 -> with_item A321
+A321 -> separator with_items
+with -> char_with A331
+A332 -> with_items block
+args_ins_01 -> args_element A341
+A341 -> separator args_ins
+args -> open_bracket A351
+comment_body_01 -> comment_elmt comment_body
+expr_body_01 -> expr_elmt A361
+A361 -> expr_op_infix expr_body
+prefix_multi -> op_prefix A371
+maybe_expr_after_01 -> expr_op_infix expr_body
+maybe_expr_before_01 -> expr_body expr_op_infix
+A392 -> expr_02 A393
+expr_01 -> char_not blank
+exprs_without_comma -> expr A401 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+A401 -> separator exprs_without_comma
+exprs -> exprs_without_comma separator | expr A401 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+assign -> variables A411
+A412 -> op_assignment A413
+assign_without_op -> variables A421
+A422 -> op_assignment_single A423
+function -> variable_name A431
+A441 -> char_45 A442
+A442 -> char_62 A443
+funcdef_body -> blanks funcdef_elmt
+funcdef -> char_def A451
+A451 -> funcdef_body block
+return -> char_return return_body
+from_expr -> char_from from_expr_body
+raise_elmt -> expr A461
+raise -> char_raise raise_body
+import_only_body -> blanks variables
+import_only -> char_import import_only_body
+import_all_body -> blanks char_42
+import_all -> char_import import_all_body
+as -> char_as import_only_body
+import_alias_body -> blanks as
+import_alias -> import_only import_alias_body
+import_with_from_body -> blanks import_with_from_elmt
+import_with_from_body_full -> import_only_body import_with_from_body
+import_with_from -> char_from import_with_from_body_full
+parameter_only -> parameter_element A471 | variable_prefix A561
+A471 -> separator parameter_only
+parameter_only_default -> parameter_default A481 | variables A421
+A481 -> separator parameter_default
+parameter_args -> char_42 variable
+parameter_kwargs -> char_4242 variable
+param -> open_bracket A491
+param_01 -> separator parameter_only_default | parameter_default A481 | variables A421
+param_02 -> separator parameter_args | char_42 variable
+param_03 -> separator parameter_kwargs | char_4242 variable
+access_array_single -> open_square_bracket A501
+A501 -> expr close_square_bracket
+access_array_01 -> access_array_single A511
+hint -> colon expr
+other_char_var -> letter other_char_var | digit other_char_var | underscore other_char_var
+variable_only_no_bracket -> variable_single A521
+A521 -> dot variable
+variable_only -> open_bracket A531
+A531 -> variable_only_no_bracket close_bracket
+variable_body_no_bracket_01 -> variable_elmt A541 | open_bracket A531
+A541 -> expr_op_infix variable_body
+variable_body -> open_bracket A551
+A551 -> variable_body_no_bracket close_bracket
+variable_prefix_01 -> char_not blank
+variable -> variable_prefix A561
+A561 -> variable_body A562
+variables_rec -> variable A571
+A571 -> separator variables_without_comma
+char_False -> char_F char_alse
+char_alse -> char_a char_lse
+char_lse -> char_l char_se
+char_se -> char_s char_e
+char_class -> char_c char_lass
+char_lass -> char_l char_ass
+char_ass -> char_a char_ss
+char_ss -> char_s char_s
+char_finally -> char_f char_inally
+char_inally -> char_i char_nally
+char_nally -> char_n char_ally
+char_ally -> char_a char_lly
+char_lly -> char_l char_ly
+char_ly -> char_l char_y
+char_is -> char_i char_s
+char_return -> char_r char_eturn
+char_eturn -> char_e char_turn
+char_turn -> char_t char_urn
+char_urn -> char_u char_rn
+char_rn -> char_r char_n
+char_None -> char_N char_one
+char_one -> char_o char_ne
+char_ne -> char_n char_e
+char_continue -> char_c char_ontinue
+char_ontinue -> char_o char_ntinue
+char_ntinue -> char_n char_tinue
+char_tinue -> char_t char_inue
+char_inue -> char_i char_nue
+char_nue -> char_n char_ue
+char_ue -> char_u char_e
+char_for -> char_f char_or
+char_or -> char_o char_r
+char_lambda -> char_l char_ambda
+char_ambda -> char_a char_mbda
+char_mbda -> char_m char_bda
+char_bda -> char_b char_da
+char_da -> char_d char_a
+char_try -> char_t char_ry
+char_ry -> char_r char_y
+char_True -> char_T char_rue
+char_rue -> char_r char_ue
+char_def -> char_d char_ef
+char_ef -> char_e char_f
+char_from -> char_f char_rom
+char_rom -> char_r char_om
+char_om -> char_o char_m
+char_nonlocal -> char_n char_onlocal
+char_onlocal -> char_o char_nlocal
+char_nlocal -> char_n char_local
+char_local -> char_l char_ocal
+char_ocal -> char_o char_cal
+char_cal -> char_c char_al
+char_al -> char_a char_l
+char_while -> char_w char_hile
+char_hile -> char_h char_ile
+char_ile -> char_i char_le
+char_le -> char_l char_e
+char_and -> char_a char_nd
+char_nd -> char_n char_d
+char_del -> char_d char_el
+char_el -> char_e char_l
+char_global -> char_g char_lobal
+char_lobal -> char_l char_obal
+char_obal -> char_o char_bal
+char_bal -> char_b char_al
+char_not -> char_n char_ot
+char_ot -> char_o char_t
+char_with -> char_w char_ith
+char_ith -> char_i char_th
+char_th -> char_t char_h
+char_as -> char_a char_s
+char_elif -> char_e char_lif
+char_lif -> char_l char_if
+char_if -> char_i char_f
+char_yield -> char_y char_ield
+char_ield -> char_i char_eld
+char_eld -> char_e char_ld
+char_ld -> char_l char_d
+char_assert -> char_a char_ssert
+char_ssert -> char_s char_sert
+char_sert -> char_s char_ert
+char_ert -> char_e char_rt
+char_rt -> char_r char_t
+char_else -> char_e char_lse
+char_import -> char_i char_mport
+char_mport -> char_m char_port
+char_port -> char_p char_ort
+char_ort -> char_o char_rt
+char_pass -> char_p char_ass
+char_break -> char_b char_reak
+char_reak -> char_r char_eak
+char_eak -> char_e char_ak
+char_ak -> char_a char_k
+char_except -> char_e char_xcept
+char_xcept -> char_x char_cept
+char_cept -> char_c char_ept
+char_ept -> char_e char_pt
+char_pt -> char_p char_t
+char_in -> char_i char_n
+char_raise -> char_r char_aise
+char_aise -> char_a char_ise
+char_ise -> char_i char_se
+char_not96in -> char_n char_ot96in
+char_ot96in -> char_o char_t96in
+char_t96in -> char_t char_96in
+char_96in -> char_96 char_in
+char_is96not -> char_i char_s96not
+char_s96not -> char_s char_96not
+char_96not -> char_96 char_not
+char_6060 -> char_60 char_60
+char_4361 -> char_43 char_61
+char_4561 -> char_45 char_61
+char_4261 -> char_42 char_61
+char_474761 -> char_47 char_4761
+char_4761 -> char_47 char_61
+char_3761 -> char_37 char_61
+char_424261 -> char_42 char_4261
+char_606061 -> char_60 char_6061
+char_626261 -> char_62 char_6261
+char_6161 -> char_61 char_61
+char_3361 -> char_33 char_61
+char_6261 -> char_62 char_61
+char_6061 -> char_60 char_61
+char_4242 -> char_42 char_42
+char_4747 -> char_47 char_47
+char_6262 -> char_62 char_62
+char_32 -> '`'
+char_33 -> '!'
+char_34 -> '\"'
+char_35 -> '#'
+char_36 -> '$'
+char_37 -> '%'
+char_38 -> '&'
+char_39 -> '''
+char_40 -> '('
+char_41 -> ')'
+char_42 -> '*'
+char_43 -> '+'
+char_44 -> ','
+char_45 -> '-'
+char_46 -> '.'
+char_47 -> '/'
+char_0 -> '0'
+char_1 -> '1'
+char_2 -> '2'
+char_3 -> '3'
+char_4 -> '4'
+char_5 -> '5'
+char_6 -> '6'
+char_7 -> '7'
+char_8 -> '8'
+char_9 -> '9'
+char_10 -> '\n'
+char_58 -> ':'
+char_59 -> ';'
+char_60 -> '<'
+char_61 -> '='
+char_62 -> '>'
+char_63 -> '?'
+char_64 -> '@'
+char_A -> 'A'
+char_B -> 'B'
+char_C -> 'C'
+char_D -> 'D'
+char_E -> 'E'
+char_F -> 'F'
+char_G -> 'G'
+char_H -> 'H'
+char_I -> 'I'
+char_J -> 'J'
+char_K -> 'K'
+char_L -> 'L'
+char_M -> 'M'
+char_N -> 'N'
+char_O -> 'O'
+char_P -> 'P'
+char_Q -> 'Q'
+char_R -> 'R'
+char_S -> 'S'
+char_T -> 'T'
+char_U -> 'U'
+char_V -> 'V'
+char_W -> 'W'
+char_X -> 'X'
+char_Y -> 'Y'
+char_Z -> 'Z'
+char_91 -> '['
+char_92 -> '\\'
+char_93 -> ']'
+char_94 -> '^'
+char_95 -> '_'
+char_96 -> '`'
+char_a -> 'a'
+char_b -> 'b'
+char_c -> 'c'
+char_d -> 'd'
+char_e -> 'e'
+char_f -> 'f'
+char_g -> 'g'
+char_h -> 'h'
+char_i -> 'i'
+char_j -> 'j'
+char_k -> 'k'
+char_l -> 'l'
+char_m -> 'm'
+char_n -> 'n'
+char_o -> 'o'
+char_p -> 'p'
+char_q -> 'q'
+char_r -> 'r'
+char_s -> 's'
+char_t -> 't'
+char_u -> 'u'
+char_v -> 'v'
+char_w -> 'w'
+char_x -> 'x'
+char_y -> 'y'
+char_z -> 'z'
+char_123 -> '{'
+char_124 -> '|'
+char_125 -> '}'
+char_126 -> '~'
+char_tab -> '\t'
+datatype -> open_curly_bracket A61 | open_square_bracket A41 | open_curly_bracket A31 | open_bracket A51 | char_T char_rue | char_F char_alse | any_int A81 | int A71 | any_non_complex_number_with_op complex_part | non_complex_number char_j | non_complex_number A91 | single_quote A161 | double_quote A171 | double_quote A181 | single_quote A191 | char_N char_one | char_46 int | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | digit int
+none -> char_N char_one
+any_element -> expr A01 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+any_dict_element -> dict_element_single A21 | expr A11
+number -> any_non_complex_number_with_op complex_part | non_complex_number A91 | char_T char_rue | char_F char_alse | any_int A81 | int A71 | char_46 int | digit int | non_complex_number char_j | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+digit -> '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+int -> digit int | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+boolean -> char_T char_rue | char_F char_alse
+non_complex_number -> any_int A81 | int A71 | char_46 int | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | digit int
+power_symbol -> 'e' | 'E'
+any_non_complex_number_with_op -> non_complex_number complex_infix
+op_num_plus_min -> '+' | '-'
+op_num_single -> '*' | '%' | '/' | '+' | '-'
+op_num -> char_42 char_42 | char_47 char_47 | '+' | '-' | '*' | '%' | '/'
+op_compare -> '>' | '<' | char_61 char_61 | char_33 char_61 | char_62 char_61 | char_60 char_61
+op_assignment_single -> '='
+op_assignment -> char_43 char_61 | char_45 char_61 | char_42 char_61 | char_47 char_61 | char_47 char_4761 | char_37 char_61 | char_42 char_4261 | char_60 char_6061 | char_62 char_6261 | '='
+op_bitwise_single -> '&' | '|' | '^' | '~'
+op_bitwise -> char_60 char_60 | char_62 char_62 | '&' | '|' | '^' | '~'
+op_logical -> char_a char_nd | char_o char_r | char_n char_ot
+op_membership -> char_i char_n | char_n char_ot96in
+op_identity -> char_i char_s | char_i char_s96not
+op_prefix -> '~' | '+' | '-'
+op_single -> '>' | '<' | '&' | '|' | '^' | '~' | '=' | '+' | '-' | '*' | '%' | '/'
+lowercase -> 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z'
+uppercase -> 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+symbol_without_underscore_and_blank -> '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~'
+symbol_without_underscore -> '`' | '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~'
+symbol_without_single_quote -> '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | '_' | '\t'
+symbol_without_double_quote -> '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | '_' | '\t'
+enter -> '\n'
+single_quote -> '''
+double_quote -> '\"'
+any_alphanumeric -> letter any_alphanumeric | digit any_alphanumeric | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+any_alphanumeric_underscore -> alphanumeric_underscore_new any_alphanumeric_underscore | alphanumeric_underscore_new
+string_body_without_single_quote -> letter string_body_without_single_quote | digit string_body_without_single_quote | symbol_without_single_quote string_body_without_single_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '_' | '\t'
+string_body_without_double_quote -> letter string_body_without_double_quote | digit string_body_without_double_quote | symbol_without_double_quote string_body_without_double_quote | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '_' | '\t'
+string_body_multi_body_without_double_quote -> string_multi_body_without_double_quote string_body_multi_body_without_double_quote | double_quote A121 | double_quote A131 | '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | '_' | '\t' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '\n'
+string_body_multi_body_without_single_quote -> string_multi_body_without_single_quote string_body_multi_body_without_single_quote | single_quote A141 | single_quote A151 | '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | '_' | '\t' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '\n'
+string -> single_quote A161 | double_quote A171 | double_quote A181 | single_quote A191
+blank -> '`'
+tab -> '\t'
+blanks_tab -> tab blanks | '\t'
+blanks_blank -> blank blanks | '`'
+tabs -> tab tabs | '\t'
+underscore -> '_'
+underscores -> underscore underscores | '_'
+maybe_empty_line -> any_blanks A211 | tab tabs | any_comment newline | any_blanks A201 | '\t' | newline_only maybe_empty_line
+comma -> ','
+dot -> '.'
+keywords -> char_F char_alse | char_c char_lass | char_f char_inally | char_i char_s | char_r char_eturn | char_N char_one | char_c char_ontinue | char_f char_or | char_l char_ambda | char_t char_ry | char_T char_rue | char_d char_ef | char_f char_rom | char_n char_onlocal | char_w char_hile | char_a char_nd | char_d char_el | char_g char_lobal | char_n char_ot | char_w char_ith | char_a char_s | char_e char_lif | char_i char_f | char_o char_r | char_y char_ield | char_a char_ssert | char_e char_lse | char_i char_mport | char_p char_ass | char_b char_reak | char_e char_xcept | char_i char_n | char_r char_aise
+statement -> statement_single statement | any_blanks A211 | any_comment newline | any_tabs A241 | statement_elmt newline | any_blanks A201 | newline_only maybe_empty_line
+block_statement -> any_blanks statement_elmt | newline statement | if_only A271 | char_while A281 | char_for A291 | char_with A331 | char_def A451 | char_class A251 | char_from import_with_from_body_full | import_only import_alias_body | char_import import_only_body | char_return return_body | char_p char_ass | char_b char_reak | char_c char_ontinue | variables A411 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+compound_stmt -> if_only A271 | char_while A281 | char_for A291 | char_with A331 | char_def A451 | char_class A251
+simple_stmt -> char_return return_body | variables A411 | maybe_expr_before A391 | import_only import_alias_body | char_import import_only_body | char_from import_with_from_body_full | char_p char_ass | char_b char_reak | char_c char_ontinue | expr_01 A392 | expr_02 A393
+statement_single -> any_blanks A211 | any_tabs A241 | any_comment newline | any_blanks A201 | statement_elmt newline | newline_only maybe_empty_line
+maybe_else -> char_else block
+any_elif -> elif_only any_elif | char_el if_only
+pass -> char_p char_ass
+break -> char_b char_reak
+continue -> char_c char_ontinue
+with_items -> expr A311 | with_item A321
+args_element -> variable_prefix A561 | maybe_expr_before A391 | variables A421 | expr_01 A392 | expr_02 A393
+args_ins -> args_element A341 | variable_prefix A561 | maybe_expr_before A391 | expr_01 A392 | variables A421 | expr_02 A393
+any_args -> open_bracket A351
+comment_body -> comment_elmt comment_body | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '\t' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~' | '`' | '_'
+any_comment -> char_35 any_comment_body | '#'
+expr_elmt -> variable_prefix A561 | variable_name A431 | any_non_complex_number_with_op complex_part | non_complex_number A91 | single_quote A161 | double_quote A171 | double_quote A181 | single_quote A191 | open_curly_bracket A61 | open_square_bracket A41 | open_curly_bracket A31 | open_bracket A51 | char_N char_one | char_T char_rue | char_F char_alse | any_int A81 | int A71 | char_46 int | digit int | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | non_complex_number char_j
+expr_body_02 -> expr_elmt A361 | variable_prefix A561 | variable_name A431 | open_curly_bracket A61 | open_square_bracket A41 | open_curly_bracket A31 | open_bracket A51 | char_T char_rue | char_F char_alse | any_int A81 | int A71 | char_46 int | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | digit int | any_non_complex_number_with_op complex_part | non_complex_number char_j | non_complex_number A91 | single_quote A161 | double_quote A171 | double_quote A181 | single_quote A191 | char_N char_one
+expr_prefix -> op_prefix A371
+maybe_expr_after -> expr_op_infix expr_body
+maybe_expr_before -> expr_body expr_op_infix
+expr_02 -> op_prefix A371 | '\t' | tab blanks | '`' | blank blanks
+assign_01 -> exprs_without_comma separator | variables A421 | expr A401 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+assign_without_op_01 -> exprs_without_comma separator | variables A421 | expr A401 | maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+return_body_01 -> maybe_expr_before A391 | expr_01 A392 | expr_02 A393
+maybe_from_expr -> char_from from_expr_body
+any_raise_elmt -> expr A461
+import_with_from_elmt -> char_import import_all_body | import_only import_alias_body | char_import import_only_body
+import_without_from -> import_only import_alias_body | char_import import_only_body
+import -> char_from import_with_from_body_full | import_only import_alias_body | char_import import_only_body
+parameter_element -> variable_prefix A561
+parameter_default -> variables A421
+maybe_parameter_only -> parameter_element A471 | variable_prefix A561
+access_array -> open_square_bracket A501 | access_array_single A511
+any_hint -> colon expr
+any_other_char_var -> letter other_char_var | digit other_char_var | underscore other_char_var
+variable_single -> first_char_var any_other_char_var | '_' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+maybe_comma -> any_blanks A231 | comma any_blanks | ','
+variable_elmt -> open_bracket A531
+variable_prefix_02 -> op_prefix A371 | '\t' | tab blanks | '`' | blank blanks
+variables_without_comma -> variable_prefix A561 | variable A571
+S0 -> statement_single statement | any_blanks A211 | any_comment newline | any_blanks A201 | newline_only maybe_empty_line | any_tabs A241 | statement_elmt newline
+S -> any_blanks A211 | any_tabs A241 | statement_single statement | any_comment newline | any_blanks A201 | newline_only maybe_empty_line | statement_elmt newline
+any_int -> '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | digit int
+any_op_num_plus_min -> '+' | '-'
+op_new -> char_i char_n | char_n char_ot96in | char_i char_s | char_i char_s96not
+op -> '*' | '%' | '/' | char_42 char_42 | char_47 char_47 | '>' | '<' | char_61 char_61 | char_33 char_61 | char_62 char_61 | char_60 char_61 | '=' | char_43 char_61 | char_45 char_61 | char_42 char_61 | char_47 char_61 | char_47 char_4761 | char_37 char_61 | char_42 char_4261 | char_60 char_6061 | char_62 char_6261 | '&' | '|' | '^' | '~' | char_60 char_60 | char_62 char_62 | char_a char_nd | char_o char_r | char_n char_ot | char_i char_n | char_n char_ot96in | char_i char_s | char_i char_s96not | '+' | '-'
+letter -> 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+symbol -> '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~' | '`' | '_'
+string_multi_body_without_double_quote -> '`' | '!' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 double_quote | '_' | '\t' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '\n'
+string_multi_body_without_single_quote -> '`' | '!' | '\"' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~' | char_92 single_quote | '_' | '\t' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '\n'
+blanks -> '\t' | tab blanks | '`' | blank blanks
+any_blanks -> tab blanks | blank blanks | '\t' | '`'
+any_tabs -> '\t' | tab tabs
+any_underscore -> '_' | underscore underscores
+statement_elmt -> if_only A271 | char_while A281 | char_for A291 | char_with A331 | char_def A451 | char_class A251 | char_from import_with_from_body_full | char_return return_body | char_p char_ass | char_b char_reak | char_c char_ontinue | variables A411 | maybe_expr_before A391 | expr_01 A392 | import_only import_alias_body | char_import import_only_body | expr_02 A393
+any_args_ins -> variable_prefix A561 | maybe_expr_before A391 | variables A421 | args_element A341 | expr_01 A392 | expr_02 A393
+comment_elmt -> 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '`' | '_' | '\t' | '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~'
+any_comment_body -> comment_elmt comment_body | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '`' | '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~' | '_' | '\t'
+end_of_variable_char_01 -> char_42 char_42 | char_47 char_47 | '>' | '<' | char_61 char_61 | char_33 char_61 | char_62 char_61 | char_60 char_61 | char_43 char_61 | char_45 char_61 | char_42 char_61 | char_47 char_61 | char_47 char_4761 | char_37 char_61 | char_42 char_4261 | char_60 char_6061 | char_62 char_6261 | char_60 char_60 | char_62 char_62 | char_a char_nd | char_o char_r | char_n char_ot | char_i char_n | char_n char_ot96in | char_i char_s | char_i char_s96not | '!' | '\"' | '#' | '$' | '%' | '&' | ''' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '`' | '{' | '|' | '}' | '~' | '+' | '-' | '*' | '%' | '/' | '=' | '&' | '|' | '^' | '~'
+any_access_array -> open_square_bracket A501 | access_array_single A511
+first_char_var -> '_' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
