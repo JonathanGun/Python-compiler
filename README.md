@@ -1,9 +1,9 @@
 # Python-compiler
-A python "compiler" (grammar checker) by ITB Informatics Student
+Python "compiler" (grammar checker) written in SWIProlog using Definite Clause Grammar
 
 ## Prerequisites
 1. SWI-Prolog
-2. Python
+2. Python (optional)
 
 ## Installing
 1. clone/download repo ini
@@ -29,4 +29,6 @@ jika loading lama, kemungkinan besar verdict yang akan diberikan adalah syntax e
 - karakter lain selain simbol yang ada di keyboard qwerty
 
 ## Acknowledgement
-Project ini belum ditesting secara menyeluruh, masih banyak ada banyak kesalahan. Mohon dimaklumi karena pembuatan hanya dalam 1-2 hari saja.
+This project is not fully tested. Please issue if you found bugs.
+
+We made this project to fulfill TBFO subject.
